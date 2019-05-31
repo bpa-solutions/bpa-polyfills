@@ -1,0 +1,35 @@
+Input Type Range <input type="range" name="html5shim-1" id="html5shim-1" min="-10" max="10" step="0.20" value="8.2"
+    title="Range: -10 to 10 in steps of 0.2" /><span id="rangevalue">8.2</span><br>
+<script>
+
+    function onRangeChange(rangeInputElmt, listener) {
+
+        var inputEvtHasNeverFired = true;
+
+        var rangeValue = { current: undefined, mostRecent: undefined };
+
+        rangeInputElmt.addEventListener("input", function (evt) {
+            inputEvtHasNeverFired = false;
+            rangeValue.current = evt.target.value;
+            if (rangeValue.current !== rangeValue.mostRecent) {
+                listener(evt);
+            }
+            rangeValue.mostRecent = rangeValue.current;
+        });
+
+        rangeInputElmt.addEventListener("change", function (evt) {
+            if (inputEvtHasNeverFired) {
+                listener(evt);
+            }
+        });
+
+    }
+
+    var range = document.querySelector('input[type="range"]');
+    var value = document.querySelector('#rangevalue');
+
+    onRangeChange(range, function (e) {
+        value.innerHTML = e.target.value;
+    });
+
+</script>
