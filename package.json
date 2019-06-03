@@ -1,6 +1,7 @@
 {
   "name": "@bpa-solutions/bpa-polyfills",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "main": "dist/bundle.js",
   "description": "Collection of polyfills for SPFx with IE11",
   "scripts": {
     "dev": "gulp --gulpfile tasks",

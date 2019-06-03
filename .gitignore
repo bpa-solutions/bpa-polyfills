@@ -75,6 +75,5 @@ typings/
 # FuseBox cache
 .fusebox/
 
-@ Generated
-dist
+# Generated
 tests/bundle.html
