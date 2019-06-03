@@ -2,7 +2,7 @@
 /*
  js-polyfills library
 */
-require('js-polyfills/polyfill');
+require('js-polyfills/polyfill.min');
 
 /*
  load polyfills with Modernizr feature detection
