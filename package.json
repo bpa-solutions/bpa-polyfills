@@ -1,6 +1,6 @@
 {
-  "name": "spfx-polyfills",
-  "version": "1.0.0",
+  "name": "@bpa-solutions/bpa-polyfills",
+  "version": "0.1-19w25",
   "description": "Collection of polyfills for SPFx with IE11",
   "scripts": {
     "dev": "gulp --gulpfile tasks",
