@@ -1,6 +1,6 @@
 {
   "name": "@bpa-solutions/bpa-polyfills",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/bundle.js",
   "description": "Collection of polyfills for SPFx with IE11",
   "scripts": {
