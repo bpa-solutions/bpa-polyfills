@@ -36,3 +36,8 @@ support('Details', Modernizr.details, () => {
 support('Srcset & Pictures', Modernizr.srcset && Modernizr.picture, () => {
     require('respimage');
 });
+
+// Check for Intersection Observer
+support('Intersection Observer', typeof IntersectionObserver !== "undefined", () => {
+    require('intersection-observer');
+});

@@ -1,0 +1,21 @@
+Intersection observer:
+<pre id="intersectionObserver"></pre>
+
+<script>
+    var io = document.querySelector('#intersectionObserver');
+
+    var observer = new IntersectionObserver(function (changes) {
+        for (var index in changes) {
+            var change = changes[index];
+            io.textContent += JSON.stringify(change.time) + '\n';
+            io.textContent += JSON.stringify(change.rootBounds) + '\n';
+            io.textContent += JSON.stringify(change.boundingClientRect) + '\n';
+            io.textContent += JSON.stringify(change.intersectionRect) + '\n';
+            io.textContent += JSON.stringify(change.intersectionRatio) + '\n';
+            io.textContent += JSON.stringify(change.target) + '\n';
+        }
+    }, {});
+
+    // Watch for intersection events on a specific target Element.
+    observer.observe(io);
+</script>

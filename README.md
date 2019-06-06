@@ -39,3 +39,55 @@ import '@bpa-solutions/bpa-polyfills';
 
 ### Support
 This package is intended to be incorporated in [SharePoint SPFx Client-Side WebPart](https://github.com/SharePoint/sp-dev-fx-webparts) with React. It won't cover polyfill already deployed in Microsoft's build tool, like ES6 Promise
+
+
+#### Polyfills list
+__Covered__
+
+JS:
+* ES5
+* ES6
+* E2016 Array Includes
+* ES2017 Object
+* ES2017 String
+* IntersectionObserver
+
+HTML:
+* input type="date"
+* input type="color"
+* details
+* summary
+* srcset
+* pictures
+
+__Missing / ToDo__
+
+Priority 1
+* input type="time" / input type="datetime"
+* css text-orientation
+* css variables
+* css image-set
+* custom elements
+* dialog
+* download attribute
+* form attribute
+* html template
+* push api
+* shadow dom
+
+Priority 2
+* css calc
+* css flex
+* css grid
+* viewport units vw, vh, vmin and vmax
+* html5 form features
+* html5 semantic elements
+* device orientation & device motion
+* dom matches()
+* data uri
+* constraint validation api
+* custom event
+* file api
+* filereader api
+* screen orientation
+* autocomplete attribute

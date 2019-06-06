@@ -77,3 +77,4 @@ typings/
 
 # Generated
 tests/bundle.html
+dist/*.html

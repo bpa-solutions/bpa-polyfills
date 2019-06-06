@@ -1,6 +1,6 @@
 {
   "name": "@bpa-solutions/bpa-polyfills",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/bundle.js",
   "description": "Collection of polyfills for SPFx with IE11",
   "scripts": {
@@ -21,6 +21,7 @@
     "file-loader": "^3.0.1",
     "gulp": "^4.0.2",
     "gulp-modernizr": "^3.2.1",
+    "intersection-observer": "^0.7.0",
     "js-polyfills": "^0.1.42",
     "respimage": "git://github.com/aFarkas/respimage.git",
     "style-loader": "^0.23.1",
