@@ -7,7 +7,15 @@
     "dev": "gulp --gulpfile tasks",
     "build": "set NODE_ENV=production&&gulp build --gulpfile tasks"
   },
-  "author": "",
+  "author": "BPA Solutions",
+  "bugs": {
+    "url": "https://github.com/bpa-solutions/bpa-polyfills/issues"
+  },
+  "homepage": "https://github.com/bpa-solutions/bpa-polyfills",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bpa-solutions/bpa-polyfills.git"
+  },
   "license": "MIT",
   "dependencies": {
     "@types/modernizr": "^3.5.3",
