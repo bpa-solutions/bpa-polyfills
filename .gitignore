@@ -79,3 +79,7 @@ typings/
 tests/bundle.html
 tests/index.html
 temp
+
+# SonarQube
+.scannerwork
+.sonarlint
