@@ -32,4 +32,4 @@ jobs:
       - run: npm run build
 
       - store_artifacts:
-          path: /dist
+          path: ./dist
