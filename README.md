@@ -4,6 +4,7 @@
 [![npm version](https://badge.fury.io/js/%40bpa-solutions%2Fbpa-polyfills.svg)](https://badge.fury.io/js/%40bpa-solutions%2Fbpa-polyfills)
 [![Dependency Status](https://david-dm.org/bpa-solutions/bpa-polyfills.svg)](https://david-dm.org/bpa-solutions/bpa-polyfills)
 [![Dependency Status](https://david-dm.org/bpa-solutions/bpa-polyfills/dev-status.svg)](https://david-dm.org/bpa-solutions/bpa-polyfills#info=devDependencies)
+CI Build: [![CircleCI](https://circleci.com/gh/bpa-solutions/bpa-polyfills.svg?style=svg)](https://circleci.com/gh/bpa-solutions/bpa-polyfills)
 -----
 
 ### Build:

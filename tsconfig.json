@@ -1,11 +1,11 @@
 {
-    "compilerOptions": {
-        "noImplicitAny": false,
-        "module": "es6",
-        "target": "es5",
-        "jsx": "react",
-        "allowJs": true,
-        "skipLibCheck": true,
-        "outDir": "temp",
-    }
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "module": "es6",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "outDir": "temp"
+  }
 }

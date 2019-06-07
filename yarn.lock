@@ -3993,9 +3993,10 @@ resp-modifier@6.0.2:
     debug "^2.2.0"
     minimatch "^3.0.2"
 
-"respimage@git://github.com/aFarkas/respimage.git":
+respimage@^1.4.2:
   version "1.4.2"
-  resolved "git://github.com/aFarkas/respimage.git#a07a74bd426ea22800e3e3d754aef1779fe75a07"
+  resolved "https://registry.yarnpkg.com/respimage/-/respimage-1.4.2.tgz#13799007c61c61b7f479c4c13f82c71994951f88"
+  integrity sha1-E3mQB8YcYbf0ecTBP4LHGZSVH4g=
 
 ret@~0.1.10:
   version "0.1.15"

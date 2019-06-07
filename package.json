@@ -31,7 +31,7 @@
     "gulp-modernizr": "^3.2.1",
     "intersection-observer": "^0.7.0",
     "js-polyfills": "^0.1.42",
-    "respimage": "git://github.com/aFarkas/respimage.git",
+    "respimage": "^1.4.2",
     "style-loader": "^0.23.1",
     "ts-loader": "^6.0.1",
     "typescript": "^3.4.5",

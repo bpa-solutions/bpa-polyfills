@@ -1,15 +1,15 @@
 .jscolor-arrow {
-    background-image: url('./arrow.gif') no-repeat;
+  background-image: url('./arrow.gif') no-repeat;
 }
 
 .jscolor-cross {
-    background-image: url('./cross.gif') no-repeat;
+  background-image: url('./cross.gif') no-repeat;
 }
 
 .jscolor-hs {
-    background: url('./hs.png') 0 0 no-repeat;
+  background: url('./hs.png') 0 0 no-repeat;
 }
 
 .jscolor-hv {
-    background-image: url('./hv.png') 0 0 no-repeat;
+  background-image: url('./hv.png') 0 0 no-repeat;
 }

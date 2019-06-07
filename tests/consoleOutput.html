@@ -2,17 +2,17 @@ Console output:
 <pre id="consoleOutput"></pre>
 
 <script>
-    var co = document.querySelector('#consoleOutput');
-    var source1 = { b: "hello", c: true, d: 7 };
-    var source2 = { b: "hello", c: true, d: 7 };
-    var dest1 = source1;
-    var dest2 = Object.assign({}, source2);
+  var co = document.querySelector('#consoleOutput')
+  var source1 = { b: 'hello', c: true, d: 7 }
+  var source2 = { b: 'hello', c: true, d: 7 }
+  var dest1 = source1
+  var dest2 = Object.assign({}, source2)
 
-    dest1.c = false;
-    dest2.c = false;
+  dest1.c = false
+  dest2.c = false
 
-    co.textContent += JSON.stringify({ source1, dest1 }) + '\n';
-    co.textContent += 'source1.c === dest1.c => ' + (source1.c === dest1.c) + '\n';
-    co.textContent += JSON.stringify({ source2, dest2 }) + '\n';
-    co.textContent += 'source2.c === dest2.c => ' + (source2.c === dest2.c);
+  co.textContent += JSON.stringify({ source1, dest1 }) + '\n'
+  co.textContent += 'source1.c === dest1.c => ' + (source1.c === dest1.c) + '\n'
+  co.textContent += JSON.stringify({ source2, dest2 }) + '\n'
+  co.textContent += 'source2.c === dest2.c => ' + (source2.c === dest2.c)
 </script>
