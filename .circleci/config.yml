@@ -34,10 +34,23 @@ jobs:
       # Store build
       - store_artifacts:
           path: ./dist
+  publish:
+    docker:
+      # specify the version you desire here
+      - image: cibuilds/github:0.10
 
+    working_directory: ~/repo
+
+    steps:
       # Deploy on github
       - run:
           name: 'Publish Release on GitHub'
           command: |
             VERSION=$(npm view "@bpa-solutions/bpa-polyfills" version)
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ./artifacts/
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ./dist/
+workflows:
+  version: 2
+  build_and_publish:
+    jobs:
+      - build
+      - publish
