@@ -35,15 +35,21 @@ jobs:
       - store_artifacts:
           path: ./dist
 
-      # Generate version number
-      - run:
-          name: 'Generating version number'
-          command: |
-            mkdir version;
-            node -p "require('./package.json').version" > ./version/version.txt
+      # Generate Workspace
+      - run: mkdir -p workspace
 
-      - store_artifacts:
-          path: ./version
+      # Version number
+      - run: node -p "require('./package.json').version" > workspace/version.txt
+
+      # Copy build
+      - run: mkdir -p workspace/build
+      - run: cp ./dist/*.* workspace/build
+
+      - persist_to_workspace:
+          root: workspace
+          paths:
+            - version.txt
+            - build
   publish:
     docker:
       # specify the version you desire here
@@ -52,12 +58,14 @@ jobs:
     working_directory: ~/repo
 
     steps:
+      - attach_workspace:
+          at: ./workspace
       # Deploy on github
       - run:
           name: 'Publish Release on GitHub'
           command: |
-            VERSION=$(cat ./version/version.txt)
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ./dist/
+            VERSION=$(cat ./workspace/version.txt)
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ./workspace/dist/
 workflows:
   version: 2
   build_and_publish:
