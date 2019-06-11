@@ -39,7 +39,7 @@ jobs:
       - run:
           name: 'Generating version number'
           command: |
-            mkdir ./version;
+            mkdir version;
             node -p "require('./package.json').version" > ./version.txt
 
       - store_artifacts:
