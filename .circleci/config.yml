@@ -21,7 +21,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: yarn install
+      - run: yarn install  --frozen-lockfile --prefer-offline
 
       - save_cache:
           paths:
@@ -29,7 +29,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # Build
-      - run: npm run build
+      - run: yarn run build
 
       # Store build
       - store_artifacts:
