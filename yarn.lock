@@ -1190,6 +1190,15 @@ css-loader@^3.2.0:
     postcss-value-parser "^4.0.0"
     schema-utils "^2.0.0"
 
+"css-polyfills@https://github.com/FremyCompany/css-grid-polyfill.git":
+  version "0.1.0"
+  resolved "https://github.com/FremyCompany/css-grid-polyfill.git#fa8ac29dbae404b22e8404bfa386801dc6c038a7"
+
+css-vars-ponyfill@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/css-vars-ponyfill/-/css-vars-ponyfill-2.1.1.tgz#61bc0335ad9edcf52b1a2a00065ff541e55b3059"
+  integrity sha512-bkeGukYLbGpZYZev+MQVIhB7LY/GV3thA2qO2wp16CG1XJ2m+kvlVJrQXLXR0PiIJAGZz6LrXC69GAko6Ony8Q==
+
 cssesc@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"

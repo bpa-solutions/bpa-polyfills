@@ -12,7 +12,7 @@ const bundler = webpack(webpackConfig)
 
 function server() {
   let config = {
-    server: ['dist', 'tests'],
+    server: ['dist', 'tests', 'demo'],
     middleware: [
       webpackDevMiddleware(bundler, {
         /* options */

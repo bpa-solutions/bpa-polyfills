@@ -19,6 +19,8 @@ require('better-dom/dist/better-dom')
 //#region Polyfills
 require('better-dateinput-polyfill/dist/better-dateinput-polyfill')
 require('./es6')
+require('./cssVars')
+
 //#endregion Polyfills
 
 //#region Ready callback
@@ -34,5 +36,7 @@ const ready = fn => {
   }
 }
 
-ready(() => {})
+ready(() => {
+  require('css-polyfills/bin/css-polyfills') // CSS Grid Polyfills
+})
 //#endregion Ready callback

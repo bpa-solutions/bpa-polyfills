@@ -1,0 +1,12 @@
+:root {
+    --a: var(--b); /* Chained */
+    --b: var(--c);
+    --c: 10px;
+  }
+
+  .cssVariable {
+    color: blue;
+    color: var(--color); /* from <style> */
+    margin: var(--unknown, 20px); /* Fallback */
+    padding: calc(2 * var(--a)); /* Nested */
+  }
