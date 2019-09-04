@@ -1,6 +1,6 @@
 {
   "name": "@bpa-solutions/bpa-polyfills",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "main": "dist/bundle.js",
   "description": "Collection of polyfills for SPFx with IE11",
   "scripts": {
@@ -24,6 +24,7 @@
     "better-dom": "^4.0.0",
     "css-loader": "^3.2.0",
     "css-polyfills": "https://github.com/FremyCompany/css-grid-polyfill.git",
+    "css-vars-ponyfill": "^2.1.1",
     "details-element-polyfill": "^2.3.1",
     "dialog-polyfill": "^0.5.0",
     "es6-object-assign": "^1.1.0",
