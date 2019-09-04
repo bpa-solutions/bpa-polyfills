@@ -126,9 +126,10 @@ __webpack_require__(3);
  load polyfills with bundled feature detection
 */
 //#region Libraries
-__webpack_require__(18);
+__webpack_require__(17);
 //#endregion Libraries
 //#region Polyfills
+__webpack_require__(18);
 __webpack_require__(19);
 __webpack_require__(20);
 __webpack_require__(23);
@@ -195,15 +196,15 @@ support('Color input type', Modernizr.inputtypes.color, function () {
 });
 // Check for <details> and <summary> support
 support('Details', Modernizr.details, function () {
-    __webpack_require__(15);
+    __webpack_require__(14);
 });
 // Check for <img srcset="..."> and <picture> support
 support('Srcset & Pictures', Modernizr.srcset && Modernizr.picture, function () {
-    __webpack_require__(16);
+    __webpack_require__(15);
 });
 // Check for Intersection Observer
 support('Intersection Observer', typeof IntersectionObserver !== 'undefined', function () {
-    __webpack_require__(17);
+    __webpack_require__(16);
 });
 
 
@@ -239,7 +240,7 @@ support('Intersection Observer', typeof IntersectionObserver !== 'undefined', fu
 ;(function(window, document, undefined){
 
   var tests = [];
-  
+
 
   /**
    * ModernizrProto is the constructor for Modernizr
@@ -286,7 +287,7 @@ support('Intersection Observer', typeof IntersectionObserver !== 'undefined', fu
     }
   };
 
-  
+
 
   // Fake some of Object.create so we can force non test results to be non "own" properties.
   var Modernizr = function() {};
@@ -296,10 +297,10 @@ support('Intersection Observer', typeof IntersectionObserver !== 'undefined', fu
   // Overwrite name so constructor name is nicer :D
   Modernizr = new Modernizr();
 
-  
+
 
   var classes = [];
-  
+
 
   /**
    * is returns a boolean if the typeof an obj is exactly type.
@@ -392,7 +393,7 @@ support('Intersection Observer', typeof IntersectionObserver !== 'undefined', fu
    * @returns {HTMLElement|SVGElement} The root element of the document
    */
   var docElement = document.documentElement;
-  
+
 
   /**
    * A convenience helper to check if the document we are running in is an SVG document
@@ -402,7 +403,7 @@ support('Intersection Observer', typeof IntersectionObserver !== 'undefined', fu
    */
   var isSVG = docElement.nodeName.toLowerCase() === 'svg';
 
-  
+
 
   /**
    * setClasses takes an array of class names and adds them to the root element
@@ -474,7 +475,7 @@ support('Intersection Observer', typeof IntersectionObserver !== 'undefined', fu
     }
   })();
 
-  
+
 
 
   // _l tracks listeners for async tests, as well as tests that execute after the initial run
@@ -682,7 +683,7 @@ support('Intersection Observer', typeof IntersectionObserver !== 'undefined', fu
     ModernizrProto.addTest = addTest;
   });
 
-  
+
 
 
   /**
@@ -1274,7 +1275,7 @@ support('Intersection Observer', typeof IntersectionObserver !== 'undefined', fu
     delete modElem.elem;
   });
 
-  
+
 
   var mStyle = {
     style: modElem.elem.style
@@ -1286,7 +1287,7 @@ support('Intersection Observer', typeof IntersectionObserver !== 'undefined', fu
     delete mStyle.style;
   });
 
-  
+
 
   /**
    * getBody returns the body of a document, or an element that can stand in for
@@ -1628,7 +1629,7 @@ support('Intersection Observer', typeof IntersectionObserver !== 'undefined', fu
     return testProps([prop], undefined, value, useValue);
   };
 
-  
+
 
   /**
    * since we have a fairly large number of input tests that don't mutate the input
@@ -1639,7 +1640,7 @@ support('Intersection Observer', typeof IntersectionObserver !== 'undefined', fu
    * @returns {HTMLInputElement}
    */
   var inputElem = createElement('input');
-  
+
 /*!
 {
   "name": "Form input types",
@@ -1805,7 +1806,7 @@ Modernizr.inputtypes.week
    * ```
    */
   var testStyles = ModernizrProto.testStyles = injectElementWithStyles;
-  
+
 /*!
 {
   "name": "details Element",
@@ -2809,8 +2810,7 @@ var ___CSS_LOADER_URL___1___ = getUrl(__webpack_require__(11));
 var ___CSS_LOADER_URL___2___ = getUrl(__webpack_require__(12));
 var ___CSS_LOADER_URL___3___ = getUrl(__webpack_require__(13));
 // Module
-exports.push([module.i, ".jscolor-arrow {\n  background-image: url(" + ___CSS_LOADER_URL___0___ + ") no-repeat;\n}\n\n.jscolor-cross {\n  background-image: url(" + ___CSS_LOADER_URL___1___ + ") no-repeat;\n}\n\n.jscolor-hs {\n  background: url(" + ___CSS_LOADER_URL___2___ + ") 0 0 no-repeat;\n}\n\n.jscolor-hv {\n  background-image: url(" + ___CSS_LOADER_URL___3___ + ") 0 0 no-repeat;\n}\n", ""]);
-
+exports.push([module.i, ".jscolor-arrow {\r\n  background-image: url(" + ___CSS_LOADER_URL___0___ + ") no-repeat;\r\n}\r\n\r\n.jscolor-cross {\r\n  background-image: url(" + ___CSS_LOADER_URL___1___ + ") no-repeat;\r\n}\r\n\r\n.jscolor-hs {\r\n  background: url(" + ___CSS_LOADER_URL___2___ + ") 0 0 no-repeat;\r\n}\r\n\r\n.jscolor-hv {\r\n  background-image: url(" + ___CSS_LOADER_URL___3___ + ") 0 0 no-repeat;\r\n}\r\n", ""]);
 
 /***/ }),
 /* 8 */
@@ -3143,6 +3143,7 @@ function applyToSingletonTag(style, index, remove, obj) {
     }
   }
 }
+/* istanbul ignore next  */
 
 function applyToTag(style, options, obj) {
   var css = obj.css;
@@ -3251,7 +3252,7 @@ module.exports = function (list, options) {
 };
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports) {
 
 /*
@@ -3451,7 +3452,7 @@ Copyright © 2019 Javan Makhmali
 
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports) {
 
 /*! respimage - v1.4.2 - 2015-08-22
@@ -3459,7 +3460,7 @@ Copyright © 2019 Javan Makhmali
 !function(a,b,c){"use strict";function d(a){return a.trim?a.trim():a.replace(/^\s+|\s+$/g,"")}function e(){var b;R=!1,U=a.devicePixelRatio,S={},T={},b=(U||1)*D.xQuant,D.uT||(D.maxX=Math.max(1.3,D.maxX),b=Math.min(b,D.maxX),v.DPR=b),V.width=Math.max(a.innerWidth||0,B.clientWidth),V.height=Math.max(a.innerHeight||0,B.clientHeight),V.vw=V.width/100,V.vh=V.height/100,V.em=v.getEmValue(),V.rem=V.em,o=D.lazyFactor/2,o=o*b+o,q=.4+.1*b,l=.5+.2*b,m=.5+.25*b,p=b+1.3,(n=V.width>V.height)||(o*=.9),I&&(o*=.9),u=[V.width,V.height,b].join("-")}function f(a,b,c){var d=b*Math.pow(a-.4,1.9);return n||(d/=1.3),a+=d,a>c}function g(a){var b,c=v.getSet(a),d=!1;"pending"!=c&&(d=u,c&&(b=v.setRes(c),d=v.applySetCandidate(b,a))),a[v.ns].evaled=d}function h(a,b){return a.res-b.res}function i(a,b,c){var d;return!c&&b&&(c=a[v.ns].sets,c=c&&c[c.length-1]),d=j(b,c),d&&(b=v.makeUrl(b),a[v.ns].curSrc=b,a[v.ns].curCan=d,d.res||_(d,d.set.sizes)),d}function j(a,b){var c,d,e;if(a&&b)for(e=v.parseSet(b),a=v.makeUrl(a),c=0;c<e.length;c++)if(a==v.makeUrl(e[c].url)){d=e[c];break}return d}function k(a,b){var c,d,e,f,g=a.getElementsByTagName("source");for(c=0,d=g.length;d>c;c++)e=g[c],e[v.ns]=!0,f=e.getAttribute("srcset"),f&&b.push({srcset:f,media:e.getAttribute("media"),type:e.getAttribute("type"),sizes:e.getAttribute("sizes")})}var l,m,n,o,p,q,r,s,t,u,v={},w=function(){},x=b.createElement("img"),y=x.getAttribute,z=x.setAttribute,A=x.removeAttribute,B=b.documentElement,C={},D={xQuant:1,lazyFactor:.4,maxX:2},E="data-pfsrc",F=E+"set",G="webkitBackfaceVisibility"in B.style,H=navigator.userAgent,I=/rident/.test(H)||/ecko/.test(H)&&H.match(/rv\:(\d+)/)&&RegExp.$1>35,J="currentSrc",K=/\s+\+?\d+(e\d+)?w/,L=/((?:\([^)]+\)(?:\s*and\s*|\s*or\s*|\s*not\s*)?)+)?\s*(.+)/,M=/^([\+eE\d\.]+)(w|x)$/,N=/\s*\d+h\s*/,O=a.respimgCFG,P=("https:"==location.protocol,"position:absolute;left:0;visibility:hidden;display:block;padding:0;border:none;font-size:1em;width:1em;overflow:hidden;clip:rect(0px, 0px, 0px, 0px)"),Q="font-size:100%!important;",R=!0,S={},T={},U=a.devicePixelRatio,V={px:1,"in":96},W=b.createElement("a"),X=!1,Y=function(a,b,c,d){a.addEventListener?a.addEventListener(b,c,d||!1):a.attachEvent&&a.attachEvent("on"+b,c)},Z=function(a){var b={};return function(c){return c in b||(b[c]=a(c)),b[c]}},$=function(){var a=/^([\d\.]+)(em|vw|px)$/,b=function(){for(var a=arguments,b=0,c=a[0];++b in a;)c=c.replace(a[b],a[++b]);return c},c=Z(function(a){return"return "+b((a||"").toLowerCase(),/\band\b/g,"&&",/,/g,"||",/min-([a-z-\s]+):/g,"e.$1>=",/max-([a-z-\s]+):/g,"e.$1<=",/calc([^)]+)/g,"($1)",/(\d+[\.]*[\d]*)([a-z]+)/g,"($1 * e.$2)",/^(?!(e.[a-z]|[0-9\.&=|><\+\-\*\(\)\/])).*/gi,"")});return function(b,d){var e;if(!(b in S))if(S[b]=!1,d&&(e=b.match(a)))S[b]=e[1]*V[e[2]];else try{S[b]=new Function("e",c(b))(V)}catch(f){}return S[b]}}(),_=function(a,b){return a.w?(a.cWidth=v.calcListLength(b||"100vw"),a.res=a.w/a.cWidth):a.res=a.x,a},ab=function(c){var d,e,f,g=c||{};if(g.elements&&1==g.elements.nodeType&&("IMG"==g.elements.nodeName.toUpperCase()?g.elements=[g.elements]:(g.context=g.elements,g.elements=null)),g.reparse&&(g.reevaluate=!0,a.console&&console.warn&&console.warn("reparse was renamed to reevaluate!")),d=g.elements||v.qsa(g.context||b,g.reevaluate||g.reselect?v.sel:v.selShort),f=d.length){for(v.setupRun(g),X=!0,e=0;f>e;e++)v.fillImg(d[e],g);v.teardownRun(g)}},bb=Z(function(a){var b=[1,"x"],c=d(a||"");return c&&(c=c.replace(N,""),b=c.match(M)?[1*RegExp.$1,RegExp.$2]:!1),b});if(J in x||(J="src"),C["image/jpeg"]=!0,C["image/gif"]=!0,C["image/png"]=!0,C["image/svg+xml"]=b.implementation.hasFeature("http://wwwindow.w3.org/TR/SVG11/feature#Image","1.1"),v.ns=("ri"+(new Date).getTime()).substr(0,9),v.supSrcset="srcset"in x,v.supSizes="sizes"in x,v.supPicture=!!a.HTMLPictureElement,v.supSrcset&&v.supPicture&&!v.supSizes&&!function(a){x.srcset="data:,a",a.src="data:,a",v.supSrcset=x.complete===a.complete,v.supPicture=v.supSrcset&&v.supPicture}(b.createElement("img")),v.selShort="picture>img,img[srcset]",v.sel=v.selShort,v.cfg=D,v.supSrcset&&(v.sel+=",img["+F+"]"),v.DPR=U||1,v.u=V,v.types=C,s=v.supSrcset&&!v.supSizes,v.setSize=w,v.makeUrl=Z(function(a){return W.href=a,W.href}),v.qsa=function(a,b){return a.querySelectorAll(b)},v.matchesMedia=function(){return v.matchesMedia=a.matchMedia&&(matchMedia("(min-width: 0.1em)")||{}).matches?function(a){return!a||matchMedia(a).matches}:v.mMQ,v.matchesMedia.apply(this,arguments)},v.mMQ=function(a){return a?$(a):!0},v.calcLength=function(a){var b=$(a,!0)||!1;return 0>b&&(b=!1),b},v.supportsType=function(a){return a?C[a]:!0},v.parseSize=Z(function(a){var b=(a||"").match(L);return{media:b&&b[1],length:b&&b[2]}}),v.parseSet=function(a){if(!a.cands){var b,c,d,e,f,g,h=a.srcset;for(a.cands=[];h;)h=h.replace(/^\s+/g,""),b=h.search(/\s/g),d=null,-1!=b?(c=h.slice(0,b),e=c.charAt(c.length-1),","!=e&&c||(c=c.replace(/,+$/,""),d=""),h=h.slice(b+1),null==d&&(f=h.indexOf(","),-1!=f?(d=h.slice(0,f),h=h.slice(f+1)):(d=h,h=""))):(c=h,h=""),c&&(d=bb(d))&&(g={url:c.replace(/^,+/,""),set:a},g[d[1]]=d[0],"x"==d[1]&&1==d[0]&&(a.has1x=!0),a.cands.push(g))}return a.cands},v.getEmValue=function(){var a;if(!r&&(a=b.body)){var c=b.createElement("div"),d=B.style.cssText,e=a.style.cssText;c.style.cssText=P,B.style.cssText=Q,a.style.cssText=Q,a.appendChild(c),r=c.offsetWidth,a.removeChild(c),r=parseFloat(r,10),B.style.cssText=d,a.style.cssText=e}return r||16},v.calcListLength=function(a){if(!(a in T)||D.uT){var b,c,e,f,g,h,i=d(a).split(/\s*,\s*/),j=!1;for(g=0,h=i.length;h>g&&(b=i[g],c=v.parseSize(b),e=c.length,f=c.media,!e||!v.matchesMedia(f)||(j=v.calcLength(e))===!1);g++);T[a]=j?j:V.width}return T[a]},v.setRes=function(a){var b;if(a){b=v.parseSet(a);for(var c=0,d=b.length;d>c;c++)_(b[c],a.sizes)}return b},v.setRes.res=_,v.applySetCandidate=function(a,b){if(a.length){var c,d,e,g,j,k,n,r,s,t,w,x,y,z=b[v.ns],A=u,B=o,C=q;if(r=z.curSrc||b[J],s=z.curCan||i(b,r,a[0].set),d=v.DPR,y=s&&s.res,!n&&r&&(x=I&&!b.complete&&s&&y-.2>d,x||s&&!(p>y)||(s&&d>y&&y>l&&(m>y&&(B*=.8,C+=.04*d),s.res+=B*Math.pow(y-C,2)),t=!z.pic||s&&s.set==a[0].set,s&&t&&s.res>=d&&(n=s))),!n)for(y&&(s.res=s.res-(s.res-y)/2),a.sort(h),k=a.length,n=a[k-1],e=0;k>e;e++)if(c=a[e],c.res>=d){g=e-1,n=a[g]&&(j=c.res-d)&&(x||r!=v.makeUrl(c.url))&&f(a[g].res,j,d)?a[g]:c;break}return y&&(s.res=y),n&&(w=v.makeUrl(n.url),z.curSrc=w,z.curCan=n,w!=r&&v.setSrc(b,n),v.setSize(b)),A}},v.setSrc=function(a,b){var c;a.src=b.url,G&&(c=a.style.zoom,a.style.zoom="0.999",a.style.zoom=c)},v.getSet=function(a){var b,c,d,e=!1,f=a[v.ns].sets;for(b=0;b<f.length&&!e;b++)if(c=f[b],c.srcset&&v.matchesMedia(c.media)&&(d=v.supportsType(c.type))){"pending"==d&&(c=d),e=c;break}return e},v.parseSets=function(a,b,d){var e,f,g,h,i="PICTURE"==b.nodeName.toUpperCase(),l=a[v.ns];(l.src===c||d.src)&&(l.src=y.call(a,"src"),l.src?z.call(a,E,l.src):A.call(a,E)),(l.srcset===c||!v.supSrcset||a.srcset||d.srcset)&&(e=y.call(a,"srcset"),l.srcset=e,h=!0),l.sets=[],i&&(l.pic=!0,k(b,l.sets)),l.srcset?(f={srcset:l.srcset,sizes:y.call(a,"sizes")},l.sets.push(f),g=(s||l.src)&&K.test(l.srcset||""),g||!l.src||j(l.src,f)||f.has1x||(f.srcset+=", "+l.src,f.cands.push({url:l.src,x:1,set:f}))):l.src&&l.sets.push({srcset:l.src,sizes:null}),l.curCan=null,l.curSrc=c,l.supported=!(i||f&&!v.supSrcset||g),h&&v.supSrcset&&!l.supported&&(e?(z.call(a,F,e),a.srcset=""):A.call(a,F)),l.supported&&!l.srcset&&(!l.src&&a.src||a.src!=v.makeUrl(l.src))&&(null==l.src?a.removeAttribute("src"):a.src=l.src),l.parsed=!0},v.fillImg=function(a,b){var c,d,e=b.reselect||b.reevaluate;if(a[v.ns]||(a[v.ns]={}),d=a[v.ns],e||d.evaled!=u){if(!d.parsed||b.reevaluate){if(c=a.parentNode,!c)return;v.parseSets(a,c,b)}d.supported?d.evaled=u:g(a)}},v.setupRun=function(b){(!X||R||U!=a.devicePixelRatio)&&(e(),b.elements||b.context||clearTimeout(t))},v.supPicture?(ab=w,v.fillImg=w):(b.createElement("picture"),function(){var c,d=a.attachEvent?/d$|^c/:/d$|^c|^i/,e=function(){var a=b.readyState||"";h=setTimeout(e,"loading"==a?200:999),b.body&&(c=c||d.test(a),v.fillImgs(),c&&clearTimeout(h))},f=function(){v.fillImgs()},g=function(){clearTimeout(t),R=!0,t=setTimeout(f,99)},h=setTimeout(e,b.body?0:20);Y(a,"resize",g),Y(b,"readystatechange",e)}()),v.respimage=ab,v.fillImgs=ab,v.teardownRun=w,ab._=v,a.respimage=a.picturefill||ab,!a.picturefill)for(a.respimgCFG={ri:v,push:function(a){var b=a.shift();"function"==typeof v[b]?v[b].apply(v,a):(D[b]=a[0],X&&v.fillImgs({reselect:!0}))}};O&&O.length;)a.respimgCFG.push(O.shift());a.picturefill||(a.picturefill=a.respimage,a.picturefillCFG||(a.picturefillCFG=a.respimgCFG))}(window,document);
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports) {
 
 /**
@@ -4206,7 +4207,7 @@ window.IntersectionObserverEntry = IntersectionObserverEntry;
 
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports) {
 
 /**
@@ -5534,7 +5535,7 @@ window.IntersectionObserverEntry = IntersectionObserverEntry;
 })();
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports) {
 
 /**
@@ -6048,25 +6049,25 @@ window.IntersectionObserverEntry = IntersectionObserverEntry;
 })();
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Polyfill for Object.assign
-__webpack_require__(21);
+__webpack_require__(20);
 
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(22).polyfill();
+__webpack_require__(21).polyfill();
 
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7589,14 +7590,14 @@ cssVars({
 	// some code for console polyfilling
 	//
 	if(!window.console) {
-			
+
 		window.console = {
 			backlog: '',
-			
+
 			log: function(x) { this.backlog+=x+'\n'; if(window.debug) alert(x); },
-			
-			dir: function(x) { try { 
-				
+
+			dir: function(x) { try {
+
 				var elm = function(e) {
 					if(e.innerHTML) {
 						return {
@@ -7612,7 +7613,7 @@ cssVars({
 						}
 					}
 				};
-				
+
 				var jsonify = function(o) {
 					var seen=[];
 					var jso=JSON.stringify(o, function(k,v){
@@ -7624,23 +7625,23 @@ cssVars({
 					});
 					return jso;
 				};
-				
-				this.log(jsonify(x)); 
-				
+
+				this.log(jsonify(x));
+
 			} catch(ex) { this.log(x) } },
-			
+
 			warn: function(x) { this.log(x) },
-			
+
 			error: function(x) { this.log("ERROR:"); this.log(x); }
-			
+
 		};
-		
+
 		if(!window.onerror) {
 			window.onerror = function() {
 				console.log([].slice.call(arguments,0).join("\n"))
 			};
 		}
-		
+
 	}
 
 	//
@@ -7660,7 +7661,7 @@ require.define('src/core/polyfill-dom-console.js');
 ////////////////////////////////////////
 
 void function() {
-	
+
 	// request animation frame
     var vendors = ['webkit', 'moz', 'ms', 'o'];
     for (var i = 0; i < vendors.length && !window.requestAnimationFrame; ++i) {
@@ -7669,7 +7670,7 @@ void function() {
         window.cancelAnimationFrame = (window[vp+'CancelAnimationFrame'] || window[vp+'CancelRequestAnimationFrame']);
     }
     if (!window.requestAnimationFrame || !window.cancelAnimationFrame) {
-		
+
 		// tick every 16ms
         var listener_index = 0; var listeners = []; var tmp = []; var tick = function() {
 			var now = +(new Date()); var callbacks = listeners; listeners = tmp;
@@ -7677,27 +7678,27 @@ void function() {
 			listener_index += callbacks.length; callbacks.length = 0; tmp = callbacks;
 			setTimeout(tick, 16);
 		}; tick();
-		
+
 		// add a listener
         window.requestAnimationFrame = function(callback) {
             return listener_index + listeners.push(callback);
         };
-		
+
 		// remove a listener
         window.cancelAnimationFrame = function(index) {
 			index -= listener_index; if(index >= 0 && index < listeners.length) {
 				listeners[index] = function() {};
 			}
 		};
-		
+
     }
-	
+
 	// setImmediate
 	if(!window.setImmediate) {
 		window.setImmediate = function(f) { return setTimeout(f, 0) };
 		window.cancelImmediate = clearTimeout;
 	}
-	
+
 }();
 
 require.define('src/core/polyfill-dom-requestAnimationFrame.js');
@@ -7707,14 +7708,14 @@ require.define('src/core/polyfill-dom-requestAnimationFrame.js');
 //
 // note: this file is based on Tab Atkins's CSS Parser
 // please include him (@tabatkins) if you open any issue for this file
-// 
+//
 module.exports = (function(window, document) { "use strict";
 
-// 
+//
 // exports
 //
-var cssSyntax = { 
-	tokenize: function(string) {/*filled later*/}, 
+var cssSyntax = {
+	tokenize: function(string) {/*filled later*/},
 	parse: function(tokens) {/*filled later*/}
 };
 
@@ -7724,7 +7725,7 @@ var cssSyntax = {
 
 // Add support for token lists (superclass of array)
 function TokenList() {
-	var array = []; 
+	var array = [];
 	array.toCSSString=TokenListToCSSString;
 	return array;
 }
@@ -8409,7 +8410,7 @@ FunctionToken.prototype.toString = function() { return "FUNCTION("+this.value+")
 FunctionToken.prototype.toCSSString = function() {
 	return escapeIdent(this.value) + "(";
 }
-	
+
 function AtKeywordToken(val) {
 	this.value = val;
 }
@@ -8919,11 +8920,11 @@ function AtRule(name) {
 	return this;
 }
 AtRule.prototype = new CSSParserRule;
-AtRule.prototype.toCSSString = function() { 
+AtRule.prototype.toCSSString = function() {
 	if(this.value) {
-		return "@" + escapeIdent(this.name) + " " + this.prelude.toCSSString() + this.value.toCSSString(); 
+		return "@" + escapeIdent(this.name) + " " + this.prelude.toCSSString() + this.value.toCSSString();
 	} else {
-		return "@" + escapeIdent(this.name) + " " + this.prelude.toCSSString() + '; '; 
+		return "@" + escapeIdent(this.name) + " " + this.prelude.toCSSString() + '; ';
 	}
 }
 AtRule.prototype.toStylesheet = function() {
@@ -8972,13 +8973,13 @@ SimpleBlock.prototype.toCSSString = function() {
 	switch(this.name) {
 		case "(":
 			return "(" + this.value.toCSSString() + ")";
-			
+
 		case "[":
 			return "[" + this.value.toCSSString() + "]";
-			
+
 		case "{":
 			return "{" + this.value.toCSSString() + "}";
-		
+
 		default: //best guess
 			return this.name + this.value.toCSSString() + this.name;
 	}
@@ -9052,38 +9053,38 @@ module.exports = (function(window, document) { "use strict";
 	// some other basic om code
 	//
 	var domEvents = {
-		
+
 		//
 		// the following functions are about event cloning
 		//
 		cloneMouseEvent: function cloneMouseEvent(e) {
 			var evt = document.createEvent("MouseEvent");
-			evt.initMouseEvent( 
-				e.type, 
-				e.canBubble||e.bubbles, 
-				e.cancelable, 
-				e.view, 
-				e.detail, 
-				e.screenX, 
-				e.screenY, 
-				e.clientX, 
-				e.clientY, 
-				e.ctrlKey, 
-				e.altKey, 
-				e.shiftKey, 
-				e.metaKey, 
-				e.button, 
+			evt.initMouseEvent(
+				e.type,
+				e.canBubble||e.bubbles,
+				e.cancelable,
+				e.view,
+				e.detail,
+				e.screenX,
+				e.screenY,
+				e.clientX,
+				e.clientY,
+				e.ctrlKey,
+				e.altKey,
+				e.shiftKey,
+				e.metaKey,
+				e.button,
 				e.relatedTarget
 			);
 			return evt;
 		},
-		
+
 		cloneKeyboardEvent: function cloneKeyboardEvent(e) {
 			// TODO: this doesn't work cross-browser...
 			// see https://gist.github.com/termi/4654819/ for the huge code
 			return domEvents.cloneCustomEvent(e);
 		},
-		
+
 		cloneCustomEvent: function cloneCustomEvent(e) {
 			var ne = document.createEvent("CustomEvent");
 			ne.initCustomEvent(e.type, e.canBubble||e.bubbles, e.cancelable, "detail" in e ? e.detail : e);
@@ -9097,9 +9098,9 @@ module.exports = (function(window, document) { "use strict";
 			}
 			return ne;
 		},
-		
+
 		cloneEvent: function cloneEvent(e) {
-			
+
 			if(e instanceof MouseEvent) {
 				return domEvents.cloneMouseEvent(e);
 			} else if(e instanceof KeyboardEvent) {
@@ -9107,35 +9108,35 @@ module.exports = (function(window, document) { "use strict";
 			} else {
 				return domEvents.cloneCustomEvent(e);
 			}
-			
+
 		},
-		
+
 		//
 		// allows you to drop event support to any class easily
 		//
 		EventTarget: {
 			implementsIn: function(eventClass, static_class) {
-				
+
 				if(!static_class && typeof(eventClass)=="function") eventClass=eventClass.prototype;
-				
+
 				eventClass.dispatchEvent = domEvents.EventTarget.prototype.dispatchEvent;
 				eventClass.addEventListener = domEvents.EventTarget.prototype.addEventListener;
 				eventClass.removeEventListener = domEvents.EventTarget.prototype.removeEventListener;
-				
+
 			},
 			prototype: {}
 		}
-		
+
 	};
 
 	domEvents.EventTarget.prototype.addEventListener = function(eventType,f) {
 		if(!this.eventListeners) this.eventListeners=[];
-		
+
 		var ls = (this.eventListeners[eventType] || (this.eventListeners[eventType]=[]));
 		if(ls.indexOf(f)==-1) {
 			ls.push(f);
 		}
-		
+
 	}
 
 	domEvents.EventTarget.prototype.removeEventListener = function(eventType,f) {
@@ -9145,12 +9146,12 @@ module.exports = (function(window, document) { "use strict";
 		if((i=ls.indexOf(f))!==-1) {
 			ls.splice(i,1);
 		}
-		
+
 	}
 
 	domEvents.EventTarget.prototype.dispatchEvent = function(event_or_type) {
 		if(!this.eventListeners) this.eventListeners=[];
-		
+
 		// abort quickly when no listener has been set up
 		if(typeof(event_or_type) == "string") {
 			if(!this.eventListeners[event_or_type] || this.eventListeners[event_or_type].length==0) {
@@ -9161,13 +9162,13 @@ module.exports = (function(window, document) { "use strict";
 				return;
 			}
 		}
-		
+
 		// convert the event
 		var event = event_or_type;
 		function setUpPropertyForwarding(e,ee,key) {
 			Object.defineProperty(ee,key,{
 				get:function() {
-					var v = e[key]; 
+					var v = e[key];
 					if(typeof(v)=="function") {
 						return v.bind(e);
 					} else {
@@ -9183,53 +9184,53 @@ module.exports = (function(window, document) { "use strict";
 			try { Object.defineProperty(e,"target",{get:function() {return v}}); }
 			catch(ex) {}
 			finally {
-				
+
 				if(e.target !== v) {
-					
+
 					var ee = Object.create(Object.getPrototypeOf(e));
 					ee = setUpTarget(ee,v);
 					for(key in e) {
 						if(key != "target") setUpPropertyForwarding(e,ee,key);
 					}
 					return ee;
-					
+
 				} else {
-					
+
 					return e;
-					
+
 				}
-				
+
 			}
 		}
-		
+
 		// try to set the target
 		if(typeof(event)=="object") {
 			try { event=setUpTarget(event,this); } catch(ex) {}
-			
+
 		} else if(typeof(event)=="string") {
 			event = document.createEvent("CustomEvent");
 			event.initCustomEvent(event_or_type, /*canBubble:*/ true, /*cancelable:*/ false, /*detail:*/this);
 			try { event=setUpTarget(event,this); } catch(ex) {}
-			
+
 		} else {
 			throw new Error("dispatchEvent expect an Event object or a string containing the event type");
 		}
-		
+
 		// call all listeners
 		var ls = (this.eventListeners[event.type] || (this.eventListeners[event.type]=[]));
 		for(var i=ls.length; i--;) {
-			try { 
+			try {
 				ls[i](event);
 			} catch(ex) {
 				setImmediate(function() { throw ex; });
 			}
 		}
-		
+
 		return event.isDefaultPrevented;
 	}
-	
+
 	return domEvents;
-	
+
 })(window, document);
 require.define('src/core/dom-events.js');
 
@@ -9259,41 +9260,41 @@ module.exports = (function(window, document) { "use strict";
 	///
 	function EventStream(connect, disconnect, reconnect) {
 		var self=this;
-		
+
 		// validate arguments
 		if(!disconnect) disconnect=function(){};
 		if(!reconnect) reconnect=connect;
-		
+
 		// high-level states
 		var isConnected=false;
 		var isDisconnected=false;
 		var shouldDisconnect=false;
-		
+
 		// global variables
 		var callback=null;
 		var yieldEvent = function() {
-			
+
 			// call the callback function, and pend disposal
 			shouldDisconnect=true;
 			try { callback && callback(self); } catch(ex) { setImmediate(function() { throw ex; }); }
-			
+
 			// if no action was taken, dispose
 			if(shouldDisconnect) { dispose(); }
-			
+
 		}
-		
+
 		// export the interface
 		var schedule = this.schedule = function(newCallback) {
-		
+
 			// do not allow to schedule on disconnected event streams
 			if(isDisconnected) { throw new Error("Cannot schedule on a disconnected event stream"); }
-			
+
 			// do not allow to schedule on already scheduled event streams
 			if(isConnected && !shouldDisconnect) { throw new Error("Cannot schedule on an already-scheduled event stream"); }
-			
+
 			// schedule the new callback
 			callback=newCallback; shouldDisconnect=false;
-			
+
 			// reconnect to the stream
 			if(isConnected) {
 				reconnect(yieldEvent);
@@ -9302,17 +9303,17 @@ module.exports = (function(window, document) { "use strict";
 				isConnected=true;
 			}
 		}
-		
+
 		var dispose = this.dispose = function() {
-		
+
 			// do not allow to dispose non-connected streams
 			if(isConnected) {
-			
+
 				// disconnect & save resources
-				disconnect(); 
-				self=null; yieldEvent=null; callback=null; 
+				disconnect();
+				self=null; yieldEvent=null; callback=null;
 				isConnected=false; isDisconnected=true; shouldDisconnect=false;
-				
+
 			}
 		}
 	}
@@ -9321,34 +9322,34 @@ module.exports = (function(window, document) { "use strict";
 	/// call a function every frame
 	///
 	function AnimationFrameEventStream(options) {
-		
+
 		// flag that says whether the observer is still needed or not
 		var rid = 0;
-			
+
 		// start the event stream
 		EventStream.call(
-			this, 
+			this,
 			function connect(yieldEvent) { rid = requestAnimationFrame(yieldEvent); },
 			function disconnect() { cancelAnimationFrame(rid); }
 		);
-		
+
 	}
 
 	///
 	/// call a function every timeout
 	///
 	function TimeoutEventStream(options) {
-		
+
 		// flag that says whether the observer is still needed or not
 		var rid = 0; var timeout=(typeof(options)=="number") ? (+options) : ("timeout" in options ? +options.timeout : 333);
-			
+
 		// start the event stream
 		EventStream.call(
-			this, 
+			this,
 			function connect(yieldEvent) { rid = setTimeout(yieldEvent, timeout); },
 			function disconnect() { clearTimeout(rid); }
 		);
-		
+
 	}
 
 	///
@@ -9359,7 +9360,7 @@ module.exports = (function(window, document) { "use strict";
 
 		// flag that says whether the event is still observed or not
 		var scheduled = false; var interval=0;
-		
+
 		// handle the synchronous nature of mutation events
 		var yieldEvent=null;
 		var yieldEventDelayed = function() {
@@ -9367,37 +9368,37 @@ module.exports = (function(window, document) { "use strict";
 			window.removeEventListener(pointermove, yieldEventDelayed, true);
 			scheduled = requestAnimationFrame(yieldEvent);
 		}
-		
+
 		// start the event stream
 		EventStream.call(
-			this, 
+			this,
 			function connect(newYieldEvent) {
 				yieldEvent=newYieldEvent;
 				window.addEventListener(pointermove, yieldEventDelayed, true);
 			},
-			function disconnect() { 
+			function disconnect() {
 				window.removeEventListener(pointermove, yieldEventDelayed, true);
 				cancelAnimationFrame(scheduled); yieldEventDelayed=null; yieldEvent=null; scheduled=false;
 			},
-			function reconnect(newYieldEvent) { 
+			function reconnect(newYieldEvent) {
 				yieldEvent=newYieldEvent; scheduled=false;
 				window.addEventListener(pointermove, yieldEventDelayed, true);
 			}
 		);
-		
+
 	}
 
 	///
 	/// call a function every time the mouse is clicked/unclicked
 	///
 	function MouseButtonEventStream() {
-		var self=this; 
+		var self=this;
 		var pointerup = (("PointerEvent" in window) ? "pointerup" : (("MSPointerEvent" in window) ? "MSPointerUp" : "mouseup"));
 		var pointerdown = (("PointerEvent" in window) ? "pointerdown" : (("MSPointerEvent" in window) ? "MSPointerDown" : "mousedown"));
 
 		// flag that says whether the event is still observed or not
 		var scheduled = false; var interval=0;
-		
+
 		// handle the synchronous nature of mutation events
 		var yieldEvent=null;
 		var yieldEventDelayed = function() {
@@ -9406,27 +9407,27 @@ module.exports = (function(window, document) { "use strict";
 			window.removeEventListener(pointerdown, yieldEventDelayed, true);
 			scheduled = requestAnimationFrame(yieldEvent);
 		}
-		
+
 		// start the event stream
 		EventStream.call(
-			this, 
+			this,
 			function connect(newYieldEvent) {
 				yieldEvent=newYieldEvent;
 				window.addEventListener(pointerup, yieldEventDelayed, true);
 				window.addEventListener(pointerdown, yieldEventDelayed, true);
 			},
-			function disconnect() { 
+			function disconnect() {
 				window.removeEventListener(pointerup, yieldEventDelayed, true);
 				window.removeEventListener(pointerdown, yieldEventDelayed, true);
 				cancelAnimationFrame(scheduled); yieldEventDelayed=null; yieldEvent=null; scheduled=false;
 			},
-			function reconnect(newYieldEvent) { 
+			function reconnect(newYieldEvent) {
 				yieldEvent=newYieldEvent; scheduled=false;
 				window.addEventListener(pointerup, yieldEventDelayed, true);
 				window.addEventListener(pointerdown, yieldEventDelayed, true);
 			}
 		);
-		
+
 	}
 
 	///
@@ -9435,30 +9436,30 @@ module.exports = (function(window, document) { "use strict";
 	var DOMUpdateEventStream;
 	if("MutationObserver" in window) {
 		DOMUpdateEventStream = function DOMUpdateEventStream(options) {
-			 
+
 			// configuration of the observer
 			if(options) {
 				var target = "target" in options ? options.target : document.documentElement;
-				var config = { 
-					subtree: "subtree" in options ? !!options.subtree : true, 
-					attributes: "attributes" in options ? !!options.attributes : true, 
-					childList: "childList" in options ? !!options.childList : true, 
+				var config = {
+					subtree: "subtree" in options ? !!options.subtree : true,
+					attributes: "attributes" in options ? !!options.attributes : true,
+					childList: "childList" in options ? !!options.childList : true,
 					characterData: "characterData" in options ? !!options.characterData : false
 				};
 			} else {
 				var target = document.documentElement;
-				var config = { 
-					subtree: true, 
-					attributes: true, 
-					childList: true, 
+				var config = {
+					subtree: true,
+					attributes: true,
+					childList: true,
 					characterData: false
 				};
 			}
-								
+
 			// start the event stream
 			var observer = null;
 			EventStream.call(
-				this, 
+				this,
 				function connect(yieldEvent) { if(config) { observer=new MutationObserver(yieldEvent); observer.observe(target,config); target=null; config=null; } },
 				function disconnect() { observer && observer.disconnect(); observer=null; },
 				function reconnect() { observer.takeRecords(); }
@@ -9471,14 +9472,14 @@ module.exports = (function(window, document) { "use strict";
 
 			// flag that says whether the event is still observed or not
 			var scheduled = false;
-			
+
 			// configuration of the observer
 			if(options) {
 				var target = "target" in options ? options.target : document.documentElement;
 			} else {
 				var target = document.documentElement;
 			}
-			
+
 			// handle the synchronous nature of mutation events
 			var yieldEvent=null;
 			var yieldEventDelayed = function() {
@@ -9488,26 +9489,26 @@ module.exports = (function(window, document) { "use strict";
 				target.removeEventListener("DOMSubtreeModified", yieldEventDelayed, false);
 				scheduled = requestAnimationFrame(yieldEvent);
 			}
-			
+
 			// start the event stream
 			EventStream.call(
-				this, 
+				this,
 				function connect(newYieldEvent) {
 					yieldEvent=newYieldEvent;
 					document.addEventListener("DOMContentLoaded", yieldEventDelayed, false);
 					target.addEventListener("DOMSubtreeModified", yieldEventDelayed, false);
 				},
-				function disconnect() { 
+				function disconnect() {
 					document.removeEventListener("DOMContentLoaded", yieldEventDelayed, false);
 					target.removeEventListener("DOMSubtreeModified", yieldEventDelayed, false);
 					cancelAnimationFrame(scheduled); yieldEventDelayed=null; yieldEvent=null; scheduled=false;
 				},
-				function reconnect(newYieldEvent) { 
+				function reconnect(newYieldEvent) {
 					yieldEvent=newYieldEvent; scheduled=false;
 					target.addEventListener("DOMSubtreeModified", yieldEventDelayed, false);
 				}
 			);
-			
+
 		}
 	} else {
 		DOMUpdateEventStream = AnimationFrameEventStream;
@@ -9518,43 +9519,43 @@ module.exports = (function(window, document) { "use strict";
 	///
 	function FocusEventStream() {
 		var self=this;
-		
+
 		// handle the filtering nature of focus events
 		var yieldEvent=null; var previousActiveElement=null; var previousHasFocus=false; var rid=0;
 		var yieldEventDelayed = function() {
-			
+
 			// if the focus didn't change
 			if(previousActiveElement==document.activeElement && previousHasFocus==document.hasFocus()) {
-				
+
 				// then do not generate an event
 				setTimeout(yieldEventDelayed, 333); // focus that didn't move is expected to stay
-				
+
 			} else {
-				
+
 				// else, generate one & save config
 				previousActiveElement=document.activeElement;
 				previousHasFocus=document.hasFocus();
 				yieldEvent();
-				
+
 			}
 		}
-		
+
 		// start the event stream
 		EventStream.call(
-			this, 
+			this,
 			function connect(newYieldEvent) {
 				yieldEvent=newYieldEvent;
 				rid=setTimeout(yieldEventDelayed, 500); // let the document load
 			},
-			function disconnect() { 
+			function disconnect() {
 				clearTimeout(rid); yieldEventDelayed=null; yieldEvent=null; rid=0;
 			},
-			function reconnect(newYieldEvent) { 
+			function reconnect(newYieldEvent) {
 				yieldEvent=newYieldEvent;
 				rid=setTimeout(yieldEventDelayed, 100); // focus by tab navigation moves fast
 			}
 		);
-		
+
 	}
 
 	///
@@ -9563,29 +9564,29 @@ module.exports = (function(window, document) { "use strict";
 	///
 	function CompositeEventStream(stream1, stream2) {
 		var self=this;
-		
+
 		// fields
 		var yieldEvent=null; var s1=false, s2=false;
-		var yieldEventWrapper=function(s) { 
+		var yieldEventWrapper=function(s) {
 			if(s==stream1) s1=true;
 			if(s==stream2) s2=true;
 			if(s1&&s2) return;
 			yieldEvent(self);
 		}
-		
+
 		// start the event stream
 		EventStream.call(
-			this, 
+			this,
 			function connect(newYieldEvent) {
 				yieldEvent=newYieldEvent;
 				stream1.schedule(yieldEventWrapper);
 				stream2.schedule(yieldEventWrapper);
 			},
-			function disconnect() { 
+			function disconnect() {
 				stream1.dispose();
 				stream2.dispose();
 			},
-			function reconnect(newYieldEvent) { 
+			function reconnect(newYieldEvent) {
 				yieldEvent=newYieldEvent;
 				s1 && stream1.schedule(yieldEventWrapper);
 				s2 && stream2.schedule(yieldEventWrapper);
@@ -9593,7 +9594,7 @@ module.exports = (function(window, document) { "use strict";
 			}
 		);
 	}
-	
+
 	return {
 		EventStream:                EventStream,
 		AnimationFrameEventStream:  AnimationFrameEventStream,
@@ -9639,189 +9640,189 @@ module.exports = (function(window, document) { "use strict";
 	/// the live querySelectorAll implementation
 	///
 	function querySelectorLive(selector, handler, root) {
-		
+
 		// restrict the selector coverage to some part of the DOM only
 		var root = root || document;
-		
+
 		// TODO: make use of "mutatedAncestorElement" to update only elements inside the mutated zone
-		
+
 		var currentElms = [];
 		var loop = function loop(eventStream) {
-			
+
 			// schedule next run
 			eventStream.schedule(loop);
-			
+
 			// update elements matching the selector
 			var newElms = [];
 			var oldElms = currentElms.slice(0);
 			var temps = root.querySelectorAll(selector);
 			for(var i=newElms.length=temps.length; i;) { newElms.push(temps[--i]); }
 			currentElms = newElms.slice(0); temps=null;
-			
+
 			// first let's clear all elements that have been removed from the document
 			oldElms = oldElms.filter(function(e) {
-				
+
 				// check whether the current element is still there
 				var isStillInDocument = (
-					e===document.documentElement 
+					e===document.documentElement
 					|| document.documentElement.contains(e)
 				);
-				
+
 				if(isStillInDocument) {
-					
+
 					// NEED_COMPARE: we will compare this element to the new list
 					return true;
-					
+
 				} else {
-					
+
 					// DELETE: raise onremoved, pop old elements
 					try { handler.onremoved && handler.onremoved(e); } catch(ex) { setImmediate(function() {throw ex})}
 					return false;
-					
+
 				}
-				
+
 			});
-			
+
 			// now pop and match until both lists are exhausted
 			// (we use the fact the returned elements are in document order)
 			var el1 = oldElms.pop();
 			var el2 = newElms.pop();
 			while(el1 || el2) {
 				if(el1===el2) {
-				
+
 					// MATCH: pop both elements
 					el1 = oldElms.pop();
 					el2 = newElms.pop();
-					
+
 				} else if (el2 && /*el1 is after el2*/(!el1||(el2.compareDocumentPosition(el1) & (1|2|8|32))===0)) {
-					
+
 					// INSERT: raise onadded, pop new elements
 					try { handler.onadded && handler.onadded(el2); } catch(ex) { setImmediate(function() {throw ex})}
 					el2 = newElms.pop();
-					
+
 				} else {
-				
+
 					// DELETE: raise onremoved, pop old elements
 					try { handler.onremoved && handler.onremoved(el1); } catch(ex) { setImmediate(function() {throw ex})}
 					el1 = oldElms.pop();
-					
+
 				}
 			}
-			
+
 		};
-		
+
 		// use the event stream that best matches our needs
 		var simpleSelector = selector.replace(/:(dir|lang|root|empty|blank|nth-child|nth-last-child|first-child|last-child|only-child|nth-of-type|nth-last-of-child|fist-of-type|last-of-type|only-of-type|not|matches|default)\b/gi,'')
 		var eventStream; if(simpleSelector.indexOf(':') == -1) {
-			
+
 			// static stuff only
-			eventStream = new DOMUpdateEventStream({target:root}); 
-			
+			eventStream = new DOMUpdateEventStream({target:root});
+
 		} else {
-			
+
 			// dynamic stuff too
-			eventStream = new DOMUpdateEventStream({target:root}); 
+			eventStream = new DOMUpdateEventStream({target:root});
 			if(DOMUpdateEventStream != AnimationFrameEventStream) {
-			
+
 				// detect the presence of focus-related pseudo-classes
 				var reg = /:(focus|active)\b/gi;
 				if(reg.test(simpleSelector)) {
-					
+
 					// mouse events should be listened
 					eventStream = new CompositeEventStream(
 						new FocusEventStream(),
 						eventStream
 					);
-					
+
 					// simplify simpleSelector
 					var reg = /:(focus)\b/gi;
 					simpleSelector = simpleSelector.replace(reg, ''); // :active has other hooks
-					
+
 				}
-				
+
 				// detect the presence of mouse-button-related pseudo-classes
 				var reg = /:(active)\b/gi;
 				if(reg.test(simpleSelector)) {
-					
+
 					// mouse events should be listened
 					eventStream = new CompositeEventStream(
 						new MouseButtonEventStream(),
 						eventStream
 					);
-					
+
 					// simplify simpleSelector
 					simpleSelector = simpleSelector.replace(reg, '');
-					
+
 				}
 
 				// detect the presence of user input pseudo-classes
 				var reg = /:(target|checked|indeterminate|valid|invalid|in-range|out-of-range|user-error)\b/gi;
 				if(reg.test(simpleSelector)) {
-					
+
 					// slowly dynamic stuff do happen
 					eventStream = new CompositeEventStream(
 						new TimeoutEventStream(250),
 						eventStream
 					);
-					
+
 					// simplify simpleSelector
 					simpleSelector = simpleSelector.replace(reg, '');
 
 					var reg = /:(any-link|link|visited|local-link|enabled|disabled|read-only|read-write|required|optional)\b/gi;
 					// simplify simpleSelector
 					simpleSelector = simpleSelector.replace(reg, '');
-					
+
 				}
-				
+
 				// detect the presence of nearly-static pseudo-classes
 				var reg = /:(any-link|link|visited|local-link|enabled|disabled|read-only|read-write|required|optional)\b/gi;
 				if(reg.test(simpleSelector)) {
-					
+
 					// nearly static stuff do happen
 					eventStream = new CompositeEventStream(
 						new TimeoutEventStream(333),
 						eventStream
 					);
-					
+
 					// simplify simpleSelector
 					simpleSelector = simpleSelector.replace(reg, '');
-					
+
 				}
-				
+
 				// detect the presence of mouse-related pseudo-classes
 				var reg = /:(hover)\b/gi;
 				if(reg.test(simpleSelector)) {
-					
+
 					// mouse events should be listened
 					eventStream = new CompositeEventStream(
 						new MouseEventStream(),
 						eventStream
 					);
-					
+
 					// simplify simpleSelector
 					simpleSelector = simpleSelector.replace(reg, '');
-					
+
 				}
-				
+
 				// detect the presence of unknown pseudo-classes
 				if(simpleSelector.indexOf(':') !== -1) {
-					
+
 					// other stuff do happen, too (let's give up on events)
-					eventStream = new AnimationFrameEventStream(); 
-					
+					eventStream = new AnimationFrameEventStream();
+
 				}
-				
+
 			}
-			
+
 		}
-		
+
 		// start handling changes
 		loop(eventStream);
-		
+
 	}
-	
+
 	return querySelectorLive;
-	
+
 })(window, document);
 require.define('src/core/dom-query-selector-live.js');
 
@@ -9830,115 +9831,115 @@ require.define('src/core/dom-query-selector-live.js');
 // TODO: comment about the 'no_auto_stylesheet_detection' flag?
 
 module.exports = (function(window, document) { "use strict";
-	
+
 	// import dependencies
 	require('src/core/polyfill-dom-console.js');
 	require('src/core/polyfill-dom-requestAnimationFrame.js');
 	var cssSyntax = require('src/core/css-syntax.js');
 	var domEvents = require('src/core/dom-events.js');
 	var querySelectorLive = require('src/core/dom-query-selector-live.js');
-	
+
 	// define the module
 	var cssCascade = {
-		
+
 		//
 		// returns the priority of a unique selector (NO COMMA!)
 		// { the return value is an integer, with the same formula as webkit }
 		//
 		computeSelectorPriorityOf: function computeSelectorPriorityOf(selector) {
 			if(typeof selector == "string") selector = cssSyntax.parse(selector.trim()+"{}").value[0].selector;
-			
+
 			var numberOfIDs = 0;
 			var numberOfClasses = 0;
 			var numberOfTags = 0;
-			
+
 			// TODO: improve this parser, or find one on the web
 			for(var i = 0; i < selector.length; i++) {
-				
+
 				if(selector[i] instanceof cssSyntax.IdentifierToken) {
 					numberOfTags++;
-					
+
 				} else if(selector[i] instanceof cssSyntax.DelimToken) {
 					if(selector[i].value==".") {
 						numberOfClasses++; i++;
 					}
-					
+
 				} else if(selector[i] instanceof cssSyntax.ColonToken) {
 					if(selector[++i] instanceof cssSyntax.ColonToken) {
 						numberOfTags++; i++;
-						
+
 					} else if((selector[i] instanceof cssSyntax.Func) && (/^(not|matches)$/i).test(selector[i].name)) {
 						var nestedPriority = this.computeSelectorPriorityOf(selector[i].value);
 						numberOfTags += nestedPriority % 256; nestedPriority /= 256;
 						numberOfClasses += nestedPriority % 256; nestedPriority /= 256;
 						numberOfIDs += nestedPriority;
-						
+
 					} else {
 						numberOfClasses++;
-						
+
 					}
-					
+
 				} else if(selector[i] instanceof cssSyntax.SimpleBlock) {
 					if(selector[i].name=="[") {
 						numberOfClasses++;
 					}
-					
+
 				} else if(selector[i] instanceof cssSyntax.HashToken) {
 					numberOfIDs++;
-					
+
 				} else {
 					// TODO: stop ignoring unknown symbols?
-					
+
 				}
-				
+
 			}
-			
+
 			if(numberOfIDs>255) numberOfIds=255;
 			if(numberOfClasses>255) numberOfClasses=255;
 			if(numberOfTags>255) numberOfTags=255;
-			
+
 			return ((numberOfIDs*256)+numberOfClasses)*256+numberOfTags;
-			
+
 		},
-		
+
 		//
 		// returns an array of the css rules matching an element
 		//
 		findAllMatchingRules: function findAllMatchingRules(element) {
 			return this.findAllMatchingRulesWithPseudo(element);
 		},
-		
+
 		//
 		// returns an array of the css rules matching a pseudo-element
 		//
 		findAllMatchingRulesWithPseudo: function findAllMatchingRules(element,pseudo) {
 			pseudo = pseudo ? (''+pseudo).toLowerCase() : pseudo;
-			
+
 			// let's look for new results if needed...
 			var results = [];
-			
+
 			// walk the whole stylesheet...
 			var visit = function(rules) {
 				try {
 					for(var r = rules.length; r--; ) {
-						var rule = rules[r]; 
-						
+						var rule = rules[r];
+
 						// media queries hook
 						if(rule.disabled) continue;
-						
+
 						if(rule instanceof cssSyntax.StyleRule) {
-							
+
 							// consider each selector independently
 							var subrules = rule.subRules || cssCascade.splitRule(rule);
 							for(var sr = subrules.length; sr--; ) {
-								
+
 								var selector = subrules[sr].selector.toCSSString().replace(/ *(\/\*\*\/|  ) */g,' ').trim();
 								if(pseudo) {
 									// WE ONLY ACCEPT SELECTORS ENDING WITH THE PSEUDO
 									var selectorLow = selector.toLowerCase();
 									var newLength = selector.length-pseudo.length-1;
 									if(newLength<=0) continue;
-									
+
 									if(selectorLow.lastIndexOf('::'+pseudo)==newLength-1) {
 										selector = selector.substr(0,newLength-1);
 									} else if(selectorLow.lastIndexOf(':'+pseudo)==newLength) {
@@ -9946,16 +9947,16 @@ module.exports = (function(window, document) { "use strict";
 									} else {
 										continue;
 									}
-									
+
 									// fix selectors like "#element > :first-child ~ ::before"
 									if(selector.trim().length == 0) { selector = '*' }
 									else if(selector[selector.length-1] == ' ') { selector += '*' }
 									else if(selector[selector.length-1] == '+') { selector += '*' }
 									else if(selector[selector.length-1] == '>') { selector += '*' }
 									else if(selector[selector.length-1] == '~') { selector += '*' }
-									
+
 								}
-								
+
 								// look if the selector matches
 								var isMatching = false;
 								try {
@@ -9967,67 +9968,67 @@ module.exports = (function(window, document) { "use strict";
 									else if(element.webkitMatchesSelector) isMatching=element.webkitMatchesSelector(selector)
 									else { throw new Error("no element.matches?") }
 								} catch(ex) { debugger; setImmediate(function() { throw ex; }) }
-								
+
 								// if yes, add it to the list of matched selectors
 								if(isMatching) { results.push(subrules[sr]); }
-								
+
 							}
-							
+
 						} else if(rule instanceof cssSyntax.AtRule && rule.name=="media") {
-							
+
 							// visit them
 							visit(rule.toStylesheet().value);
-							
+
 						}
-						
+
 					}
 				} catch (ex) {
 					setImmediate(function() { throw ex; });
 				}
 			}
-			
+
 			for(var s=cssCascade.stylesheets.length; s--; ) {
 				var rules = cssCascade.stylesheets[s];
 				visit(rules);
 			}
-			
+
 			return results;
 		},
-		
+
 		//
 		// a list of all properties supported by the current browser
 		//
 		allCSSProperties: null,
 		getAllCSSProperties: function getAllCSSProperties() {
-			
+
 			if(this.allCSSProperties) return this.allCSSProperties;
-			
+
 			// get all claimed properties
 			var s = getComputedStyle(document.documentElement); var ps = new Array(s.length);
 			for(var i=s.length; i--; ) {
 				ps[i] = s[i];
 			}
-			
+
 			// FIX A BUG WHERE WEBKIT DOESN'T REPORT ALL PROPERTIES
 			if(ps.indexOf('content')==-1) {ps.push('content');}
 			if(ps.indexOf('counter-reset')==-1) {
-				
+
 				ps.push('counter-reset');
 				ps.push('counter-increment');
-				
+
 				// FIX A BUG WHERE WEBKIT RETURNS SHIT FOR THE COMPUTED VALUE OF COUNTER-RESET
 				cssCascade.computationUnsafeProperties['counter-reset']=true;
-				
+
 			}
-			
+
 			// save in a cache for faster access the next times
 			return this.allCSSProperties = ps;
-			
+
 		},
-		
-		// 
+
+		//
 		// those properties are not safe for computation->specified round-tripping
-		// 
+		//
 		computationUnsafeProperties: {
 			"bottom"          : true,
 			"direction"       : true,
@@ -10055,7 +10056,7 @@ module.exports = (function(window, document) { "use strict";
 			"width"           : true,
 			__proto__         : null,
 		},
-		
+
 		//
 		// a list of property we should inherit...
 		//
@@ -10092,54 +10093,54 @@ module.exports = (function(window, document) { "use strict";
 			"word-wrap"             : true,
 			__proto__               : null,
 		},
-		
+
 		//
 		// returns the default style for a tag
 		//
 		defaultStylesForTag: Object.create ? Object.create(null) : {},
 		getDefaultStyleForTag: function getDefaultStyleForTag(tagName) {
-			
+
 			// get result from cache
 			var result = this.defaultStylesForTag[tagName];
 			if(result) return result;
-			
+
 			// create dummy virtual element
 			var element = document.createElement(tagName);
 			var style = this.defaultStylesForTag[tagName] = getComputedStyle(element);
 			if(style.display) return style;
-			
+
 			// webkit fix: insert the dummy element anywhere (head -> display:none)
 			document.head.insertBefore(element, document.head.firstChild);
 			return style;
 		},
-		
-		// 
-		// returns the specified style of an element. 
+
+		//
+		// returns the specified style of an element.
 		// REMARK: may or may not unwrap "inherit" and "initial" depending on implementation
 		// REMARK: giving "matchedRules" as a parameter allow you to mutualize the "findAllMatching" rules calls
-		// 
+		//
 		getSpecifiedStyle: function getSpecifiedStyle(element, cssPropertyName, matchedRules) {
-			
+
 			// hook for css regions
 			var fragmentSource;
 			if(fragmentSource=element.getAttribute('data-css-regions-fragment-of')) {
 				fragmentSource = document.querySelector('[data-css-regions-fragment-source="'+fragmentSource+'"]');
 				if(fragmentSource) return cssCascade.getSpecifiedStyle(fragmentSource, cssPropertyName);
 			}
-			
+
 			// give IE a thumbs up for this!
 			if(element.currentStyle && !window.opera) {
-				
+
 				// ask IE to manage the style himself...
 				var bestValue = element.myStyle[cssPropertyName] || element.currentStyle[cssPropertyName];
-				
+
 				// return a parsed representation of the value
 				return cssSyntax.parseAListOfComponentValues(bestValue);
-				
+
 			} else {
-				
+
 				// TODO: support the "initial" and "inherit" things?
-				
+
 				// first, let's try inline style as it's fast and generally accurate
 				// TODO: what if important rules override that?
 				try {
@@ -10147,7 +10148,7 @@ module.exports = (function(window, document) { "use strict";
 						return cssSyntax.parseAListOfComponentValues(bestValue);
 					}
 				} catch(ex) {}
-				
+
 				// find all relevant style rules
 				var isBestImportant=false; var bestPriority = 0; var bestValue = new cssSyntax.TokenList();
 				var rules = matchedRules || (
@@ -10155,14 +10156,14 @@ module.exports = (function(window, document) { "use strict";
 					? element.myMatchedRules || []
 					: cssCascade.findAllMatchingRules(element)
 				);
-				
+
 				var visit = function(rules) {
-					
+
 					for(var i=rules.length; i--; ) {
-						
+
 						// media queries hook
 						if(rules[i].disabled) continue;
-						
+
 						// find a relevant declaration
 						if(rules[i] instanceof cssSyntax.StyleRule) {
 							var decls = rules[i].getDeclarations();
@@ -10171,7 +10172,7 @@ module.exports = (function(window, document) { "use strict";
 									if(decls[j].name==cssPropertyName) {
 										// only works if selectors containing a "," are deduplicated
 										var currentPriority = cssCascade.computeSelectorPriorityOf(rules[i].selector);
-										
+
 										if(isBestImportant) {
 											// only an important declaration can beat another important declaration
 											if(decls[j].important) {
@@ -10198,70 +10199,70 @@ module.exports = (function(window, document) { "use strict";
 								}
 							}
 						} else if((rules[i] instanceof cssSyntax.AtRule) && (rules[i].name=="media")) {
-							
+
 							// visit them
 							visit(rules[i].toStylesheet())
-							
+
 						}
-						
+
 					}
-					
+
 				}
 				visit(rules);
-				
+
 				// return our best guess...
 				return bestValue||null;
-				
+
 			}
-			
+
 		},
-		
-		
+
+
 		//
 		// start monitoring a new stylesheet
 		// (should usually not be used because stylesheets load automatically)
 		//
 		stylesheets: [],
 		loadStyleSheet: function loadStyleSheet(cssText,i) {
-			
+
 			// load in order
-			
+
 			// parse the stylesheet content
 			var rules = cssSyntax.parse(cssText).value;
-			
+
 			// add the stylesheet into the object model
-			if(typeof(i)!=="undefined") { cssCascade.stylesheets[i]=rules; } 
+			if(typeof(i)!=="undefined") { cssCascade.stylesheets[i]=rules; }
 			else { i=cssCascade.stylesheets.push(rules);}
-			
+
 			// make sure to monitor the required rules
 			cssCascade.startMonitoringStylesheet(rules)
-			
+
 		},
-		
+
 		//
 		// start monitoring a new stylesheet
 		// (should usually not be used because stylesheets load automatically)
 		//
 		loadStyleSheetTag: function loadStyleSheetTag(stylesheet,i) {
-			
+
 			if(stylesheet.hasAttribute('data-css-polyfilled')) {
 				return;
 			}
-			
+
 			if(stylesheet.tagName=='LINK') {
-				
+
 				// oh, no, we have to download it...
 				try {
-					
+
 					// dummy value in-between
 					cssCascade.stylesheets[i] = new cssSyntax.TokenList();
-					
+
 					//
 					var xhr = new XMLHttpRequest(); xhr.href = stylesheet.href;
-					xhr.open('GET',stylesheet.href,true); xhr.ruleIndex = i; 
+					xhr.open('GET',stylesheet.href,true); xhr.ruleIndex = i;
 					xhr.onreadystatechange = function() {
-						if(this.readyState==4) { 
-							
+						if(this.readyState==4) {
+
 							// status 0 is a webkit bug for local files
 							if(this.status==200||this.status==0) {
 								cssCascade.loadStyleSheet(this.responseText,this.ruleIndex)
@@ -10271,85 +10272,85 @@ module.exports = (function(window, document) { "use strict";
 						}
 					};
 					xhr.send();
-					
+
 				} catch(ex) {
 					cssConsole.log("css-cascade polyfill failled to load: " + stylesheet.href);
 				}
-				
+
 			} else {
-				
+
 				// oh, cool, we just have to parse the content!
 				cssCascade.loadStyleSheet(stylesheet.textContent,i);
-				
+
 			}
-			
+
 			// mark the stylesheet as ok
 			stylesheet.setAttribute('data-css-polyfilled',true);
-			
+
 		},
-		
+
 		//
 		// calling this function will load all currently existing stylesheets in the document
 		// (should usually not be used because stylesheets load automatically)
 		//
 		selectorForStylesheets: "style:not([data-no-css-polyfill]):not([data-css-polyfilled]), link[rel=stylesheet]:not([data-no-css-polyfill]):not([data-css-polyfilled])",
 		loadAllStyleSheets: function loadAllStyleSheets() {
-			
+
 			// for all stylesheets in the <head> tag...
 			var head = document.head || document.documentElement;
 			var stylesheets = head.querySelectorAll(cssCascade.selectorForStylesheets);
-			
+
 			var intialLength = this.stylesheets.length;
 			this.stylesheets.length += stylesheets.length
-			
+
 			// for all of them...
 			for(var i = stylesheets.length; i--;) {
-				
-				// 
+
+				//
 				// load the stylesheet
-				// 
-				var stylesheet = stylesheets[i]; 
+				//
+				var stylesheet = stylesheets[i];
 				cssCascade.loadStyleSheetTag(stylesheet,intialLength+i)
-				
+
 			}
 		},
-		
+
 		//
 		// this is where we store event handlers for monitored properties
 		//
 		monitoredProperties: Object.create ? Object.create(null) : {},
 		monitoredPropertiesHandler: {
 			onupdate: function(element, rule) {
-				
+
 				// we need to find all regexps that matches
 				var mps = cssCascade.monitoredProperties;
 				var decls = rule.getDeclarations();
 				for(var j=decls.length-1; j>=0; j--) {
 					if(decls[j].type=="DECLARATION") {
 						if(decls[j].name in mps) {
-							
+
 							// call all handlers waiting for this
 							var hs = mps[decls[j].name];
 							for(var hi=hs.length; hi--;) {
 								hs[hi].onupdate(element,rule);
 							};
-							
+
 							// don't call twice
 							break;
-							
+
 						}
 					}
 				}
-				
+
 			}
 		},
-		
+
 		//
 		// add an handler to some properties (aka fire when their value *MAY* be affected)
 		// REMARK: because this event does not promise the value changed, you may want to figure it out before relayouting
 		//
 		startMonitoringProperties: function startMonitoringProperties(properties, handler) {
-			
+
 			for(var i=properties.length; i--; ) {
 				var property = properties[i];
 				var handlers = (
@@ -10358,79 +10359,79 @@ module.exports = (function(window, document) { "use strict";
 				);
 				handlers.push(handler)
 			}
-			
+
 			for(var s=0; s<cssCascade.stylesheets.length; s++) {
 				var currentStylesheet = cssCascade.stylesheets[s];
 				cssCascade.startMonitoringStylesheet(currentStylesheet);
 			}
-			
+
 		},
-		
+
 		//
 		// calling this function will detect monitored rules in the stylesheet
 		// (should usually not be used because stylesheets load automatically)
 		//
 		startMonitoringStylesheet: function startMonitoringStylesheet(rules) {
 			for(var i=0; i<rules.length; i++) {
-				
+
 				// only consider style rules
 				if(rules[i] instanceof cssSyntax.StyleRule) {
-					
+
 					// try to see if the current rule is worth monitoring
 					if(rules[i].isMonitored) continue;
-					
+
 					// for that, let's see if we can find a declaration we should watch
 					var decls = rules[i].getDeclarations();
 					for(var j=decls.length-1; j>=0; j--) {
 						if(decls[j].type=="DECLARATION") {
 							if(decls[j].name in cssCascade.monitoredProperties) {
-								
+
 								// if we found some, start monitoring
 								cssCascade.startMonitoringRule(rules[i]);
 								break;
-								
+
 							}
 						}
 					}
-					
+
 				} else if(rules[i] instanceof cssSyntax.AtRule) {
-					
+
 					// handle @media
 					if(rules[i].name == "media" && window.matchMedia) {
-						
+
 						cssCascade.startMonitoringMedia(rules[i]);
-						
+
 					}
-					
+
 				}
-				
+
 			}
 		},
-		
+
 		//
 		// calling this function will detect media query updates and fire events accordingly
 		// (should usually not be used because stylesheets load automatically)
 		//
 		startMonitoringMedia: function startMonitoringMedia(atrule) {
 			try {
-				
+
 				var media = window.matchMedia(atrule.prelude.toCSSString());
-				
+
 				// update all the rules when needed
 				var rules = atrule.toStylesheet().value;
 				cssCascade.updateMedia(rules, !media.matches, false);
 				media.addListener(
 					function(newMedia) { cssCascade.updateMedia(rules, !newMedia.matches, true); }
 				);
-				
+
 				// it seems I like taking risks...
 				cssCascade.startMonitoringStylesheet(rules);
-				
+
 			} catch(ex) {
 				setImmediate(function() { throw ex; })
 			}
 		},
-		
+
 		//
 		// define what happens when a media query status changes
 		//
@@ -10445,7 +10446,7 @@ module.exports = (function(window, document) { "use strict";
 					}
 				}
 			}
-			
+
 			// in case of update, all elements matching the selector went potentially updated...
 			if(update) {
 				for(var i=rules.length; i--; ) {
@@ -10456,15 +10457,15 @@ module.exports = (function(window, document) { "use strict";
 				}
 			}
 		},
-		
-		// 
+
+		//
 		// splits a rule if it has multiple selectors
-		// 
+		//
 		splitRule: function splitRule(rule) {
-			
+
 			// create an array for all the subrules
 			var rules = [];
-			
+
 			// fill the array
 			var currentRule = new cssSyntax.StyleRule(); currentRule.disabled=rule.disabled;
 			for(var i=0; i<rule.selector.length; i++) {
@@ -10476,76 +10477,76 @@ module.exports = (function(window, document) { "use strict";
 				}
 			}
 			currentRule.value = rule.value; rules.push(currentRule);
-			
+
 			// save the result of the split as subrules
 			return rule.subRules = rules;
-			
+
 		},
-		
-		// 
+
+		//
 		// ask the css-selector implementation to notify changes for the rules
-		// 
+		//
 		startMonitoringRule: function startMonitoringRule(rule) {
-			
+
 			// avoid monitoring rules twice
 			if(!rule.isMonitored) { rule.isMonitored=true } else { return; }
-			
+
 			// split the rule if it has multiple selectors
 			var rules = rule.subRules || cssCascade.splitRule(rule);
-			
+
 			// monitor the rules
 			for(var i=0; i<rules.length; i++) {
 				rule = rules[i];
 				querySelectorLive(rule.selector.toCSSString(), {
 					onadded: function(e) {
-						
+
 						// add the rule to the matching list of this element
 						(e.myMatchedRules = e.myMatchedRules || []).unshift(rule); // TODO: does not respect priority order
-						
+
 						// generate an update event
 						cssCascade.monitoredPropertiesHandler.onupdate(e, rule);
-						
+
 					},
 					onremoved: function(e) {
-						
+
 						// remove the rule from the matching list of this element
 						if(e.myMatchedRules) e.myMatchedRules.splice(e.myMatchedRules.indexOf(rule), 1);
-						
+
 						// generate an update event
 						cssCascade.monitoredPropertiesHandler.onupdate(e, rule);
-						
+
 					}
 				});
 			}
-			
+
 		},
-		
+
 		//
 		// converts a css property name to a javascript name
 		//
-		toCamelCase: function toCamelCase(variable) { 
+		toCamelCase: function toCamelCase(variable) {
 			return variable.replace(
-				/-([a-z])/g, 
-				function(str,letter) { 
+				/-([a-z])/g,
+				function(str,letter) {
 					return letter.toUpperCase();
 				}
 			);
 		},
-		
+
 		//
 		// add some magic code to support properties on the style interface
 		//
 		polyfillStyleInterface: function(cssPropertyName) {
-			
+
 			var prop = {
-				
+
 				get: function() {
-					
+
 					// check we know which element we work on
 					try { if(!this.parentElement) throw new Error("Please use the anHTMLElement.myStyle property to get polyfilled properties") }
 					catch(ex) { setImmediate(function() { throw ex; }); return ''; }
-					
-					try { 
+
+					try {
 						// non-computed style: return the local style of the element
 						this.clip = (this.clip===undefined?'':this.clip);
 						return this.parentElement.getAttribute('data-style-'+cssPropertyName);
@@ -10554,27 +10555,27 @@ module.exports = (function(window, document) { "use strict";
 						var value = cssCascade.getSpecifiedStyle(this.parentElement, cssPropertyName, undefined, true);
 						return value && value.length>0 ? value.toCSSString() : '';
 					}
-					
+
 				},
-				
+
 				set: function(v) {
-					
+
 					// check that the style is writable
 					this.clip = (this.clip===undefined?'':this.clip);
 
 					// check we know which element we work on
 					try { if(!this.parentElement) throw new Error("Please use the anHTMLElement.myStyle property to set polyfilled properties") }
 					catch(ex) { setImmediate(function() { throw ex; }); return; }
-					
+
 					// modify the local style of the element
 					if(this.parentElement.getAttribute('data-style-'+cssPropertyName) != v) {
 						this.parentElement.setAttribute('data-style-'+cssPropertyName,v);
 					}
-					
+
 				}
-				
+
 			};
-			
+
 			var styleProtos = [];
 			try { styleProtos.push(Object.getPrototypeOf(document.documentElement.style) || CSSStyleDeclaration); } catch (ex) {}
 			//try { styleProtos.push(Object.getPrototypeOf(getComputedStyle(document.documentElement))); } catch (ex) {}
@@ -10583,7 +10584,7 @@ module.exports = (function(window, document) { "use strict";
 			//try { styleProtos.push(Object.getPrototypeOf(document.documentElement.specifiedStyle)); } catch (ex) {}
 			//try { styleProtos.push(Object.getPrototypeOf(document.documentElement.cascadedStyle)); } catch (ex) {}
 			//try { styleProtos.push(Object.getPrototypeOf(document.documentElement.usedStyle)); } catch (ex) {}
-			
+
 			for(var i = styleProtos.length; i--;) {
 				var styleProto = styleProtos[i];
 				Object.defineProperty(styleProto,cssPropertyName,prop);
@@ -10591,13 +10592,13 @@ module.exports = (function(window, document) { "use strict";
 			}
 			cssCascade.startMonitoringRule(cssSyntax.parse('[style*="'+cssPropertyName+'"]{'+cssPropertyName+':attr(style)}').value[0]);
 			cssCascade.startMonitoringRule(cssSyntax.parse('[data-style-'+cssPropertyName+']{'+cssPropertyName+':attr(style)}').value[0]);
-			
+
 			// add to the list of polyfilled properties...
 			cssCascade.getAllCSSProperties().push(cssPropertyName);
 			cssCascade.computationUnsafeProperties[cssPropertyName] = true;
-			
+
 		}
-		
+
 	};
 
 	//
@@ -10606,7 +10607,7 @@ module.exports = (function(window, document) { "use strict";
 	domEvents.EventTarget.implementsIn(cssCascade);
 	Object.defineProperty(Element.prototype,'myStyle',{
 		get: function() {
-			var style = this.style; 
+			var style = this.style;
 			if(!style.parentElement) style.parentElement = this;
 			return style;
 		}
@@ -10618,7 +10619,7 @@ module.exports = (function(window, document) { "use strict";
 	// and again if some style tag is added to the DOM
 	//
 	if(!("no_auto_stylesheet_detection" in window)) {
-		
+
 		cssCascade.loadAllStyleSheets();
 		document.addEventListener("DOMContentLoaded", function() {
 			cssCascade.loadAllStyleSheets();
@@ -10634,7 +10635,7 @@ module.exports = (function(window, document) { "use strict";
 			)
 		})
 	}
-	
+
 	return cssCascade;
 
 })(window, document);
@@ -10653,27 +10654,27 @@ module.exports = (function(window, document) { "use strict";
 		if(!style.parentElement) { style.parentElement = element; }
 		return style;
 	}
-	
+
 	function currentStyleOf(element) {
 		var style = element.cascadedStyle || element.specifiedStyle || element.currentStyle || getComputedStyle(element); // TODO: check CSSOM spec for real name
 		if(!style.parentElement) { style.parentElement = element; }
 		return style;
 	}
-	
+
 	function styleOf(element) {
 		var style = element.style;
 		if(!style.parentElement) { style.parentElement = element; }
 		return style;
 	}
-	
+
 	function runtimeStyleOf(element) {
 		var style = /*element.runtimeStyle || */element.style;
 		if(!style.parentElement) { style.parentElement = element; }
 		return style;
 	}
-	
+
 	function enforceStyle(element, property, value) {
-		
+
 		var propertyBackup = null;
 		var usedValue = usedStyleOf(element).getPropertyValue(property);
 		if(value instanceof Array) {
@@ -10682,10 +10683,10 @@ module.exports = (function(window, document) { "use strict";
 		} else {
 			value = ''+value;
 		}
-		
+
 		if(usedValue != value) {
 			var style = runtimeStyleOf(element);
-			propertyBackup = { 
+			propertyBackup = {
 				value:     style.getPropertyValue(property),
 				priority:  style.getPropertyPriority(property),
 				property:  property
@@ -10693,11 +10694,11 @@ module.exports = (function(window, document) { "use strict";
 			style.setProperty(property, "", ""); // reset [0]
 			style.setProperty(property, "" + value, "important");
 		}
-		
+
 		return propertyBackup;
-		
+
 	}
-	
+
 	function enforceStyles(element, propertyValues, backups) {
 		var backups = backups || [];
 		for(var property in propertyValues) { if(propertyValues.hasOwnProperty(key)) {
@@ -10710,30 +10711,30 @@ module.exports = (function(window, document) { "use strict";
 	function restoreStyle(element, backup) {
 
 		if(backup) {
-		
+
 			// get the element runtime style
 			var style = runtimeStyleOf(element);
-			
+
 			// reset [0]
 			style.setProperty(backup.property, "", "");
-			
+
 			// restore
 			if(backup.value) {
 				style.setProperty(backup.property, backup.value, "");
 				style.setProperty(backup.property, backup.value, backup.priority);
 			}
-			
+
 		}
 
 	}
-	
+
 	function restoreStyles(element, backups) {
 		if(!backups || !(backups.length > 0)) { return; }
 		for(var i=backups.length; i--;) {
 			restoreStyle(element, backups[i]);
 		}
 	}
-	
+
 	var cssStyle = {
 		styleOf: styleOf,
 		usedStyleOf: usedStyleOf,
@@ -10744,7 +10745,7 @@ module.exports = (function(window, document) { "use strict";
 		restoreStyle: restoreStyle,
 		restoreStyles: restoreStyles,
 	};
-	
+
 	return cssStyle;
 
 })(window);
@@ -10753,18 +10754,18 @@ require.define('src/core/css-style.js');
 ////////////////////////////////////////
 
 module.exports = (function(window, document) { "use strict";
-	
+
 	var VSS_COUNT = 0;
 	function VirtualStylesheetFactory() {
 		var This = this || Object.create(VirtualStylesheet.prototype);
-		
+
 		// create the style sheet
 		var styleElement = document.createElement('style');
 		styleElement.id = "virtual-stylesheet-" + (VSS_COUNT++);
 		styleElement.setAttribute('data-no-css-polyfill', 'true');
 		styleElement.appendChild(document.createTextNode(''));
 		document.querySelector(':root > head').appendChild(styleElement);
-		
+
 		// grab its stylesheet object
 		var ss = styleElement.sheet;
 		if(!ss.cssRules) ss.cssRules = ss.rules;
@@ -10776,35 +10777,35 @@ module.exports = (function(window, document) { "use strict";
 			var index = typeof(i)=='number' ? i : ss.cssRules.length;
 			return ss.insertRule(rule, index);
 		}
-		
+
 		// create the mapping table
 		var rules = [];
-		
+
 		// add the factory
-		
+
 		This.stylesheets = Object.create(null);
 		This.createStyleSheet = function(name) {
 			return This.stylesheets[name] || (This.stylesheets[name] = new VirtualStylesheet(this, name));
 		}
-		
+
 		// add the methods
-		
+
 		This.addRule = function(selector, declarations, stylesheet, enabled) {
-			
+
 			// convert selector & declarations to a non-empty string
 			selector = '' + selector + ' ';
 			declarations = '' + declarations + ' ';
-			
+
 			// add the rule to the known rules
 			rules.push({ stylesheet: stylesheet, selector: selector, declarations: declarations, enabled: enabled });
-			
+
 			// add the rule to the enabled stylesheet, if needed
 			if(enabled) {
 				ss.addRule(selector, declarations);
 			}
-			
+
 		}
-		
+
 		This.disableAllRules = function(stylesheet) {
 			var ssIndex = ss.cssRules.length;
 			for(var i = rules.length; i--;) { var rule = rules[i];
@@ -10817,7 +10818,7 @@ module.exports = (function(window, document) { "use strict";
 				}
 			}
 		}
-		
+
 		This.enableAllRules = function(stylesheet) {
 			var ssIndex = 0;
 			for(var i = 0; i<rules.length; i++) { var rule = rules[i];
@@ -10832,7 +10833,7 @@ module.exports = (function(window, document) { "use strict";
 				}
 			}
 		}
-		
+
 		This.deleteAllRules = function(stylesheet) {
 			var ssIndex = ss.cssRules.length;
 			for(var i = rules.length; i--;) { var rule = rules[i];
@@ -10845,24 +10846,24 @@ module.exports = (function(window, document) { "use strict";
 				}
 			}
 		}
-		
+
 	}
-	
+
 	function VirtualStylesheet(factory, name) {
 		this.factory = factory;
 		this.name = name;
 		this.enabled = true;
 	}
-	
+
 	VirtualStylesheet.prototype.addRule = function(selector, declarations) {
 		this.factory.addRule(selector, declarations, this.name, this.enabled);
 	}
-	
+
 	VirtualStylesheet.prototype.set = function(element, properties) {
-		
+
 		// give an id to the element
 		if(!element.id) { element.id = element.uniqueID; }
-	
+
 		// compute the css rule to add
 		var selector = "#"+element.id;
 		var rule = ""; for(var property in properties) {
@@ -10870,32 +10871,32 @@ module.exports = (function(window, document) { "use strict";
 				rule += property + ": " + properties[property] + " !important; ";
 			}
 		}
-		
+
 		// and then add it
 		this.addRule(selector, rule);
-		
+
 	}
-	
+
 	VirtualStylesheet.prototype.enable = function() {
 		this.factory.enableAllRules(this.name); this.enabled=true;
 	}
-	
+
 	VirtualStylesheet.prototype.disable = function() {
 		this.factory.disableAllRules(this.name); this.enabled=false;
 	}
-	
+
 	VirtualStylesheet.prototype.clear = function() {
 		this.factory.deleteAllRules(this.name);
 	}
-	
+
 	VirtualStylesheet.prototype.revoke = function() {
 		this.clear();
 	}
-	
+
 	VirtualStylesheetFactory.VirtualStylesheet = VirtualStylesheet;
 	VirtualStylesheetFactory.VirtualStylesheetFactory = VirtualStylesheetFactory;
 	return VirtualStylesheetFactory;
-	
+
 })(window, document)
 require.define('src/core/css-virtual-stylesheet-factory.js');
 
@@ -10918,40 +10919,40 @@ require.define('src/core/polyfill-dom-uniqueID.js');
 ////////////////////////////////////////
 
 module.exports = (function(window, document) {
-	
+
 	// import dependencies
 	var cssStyle  = require('src/core/css-style.js'),
 	    usedStyleOf     = cssStyle.usedStyleOf,
 	    currentStyleOf  = cssStyle.currentStyleOf,
 	    enforceStyle    = cssStyle.enforceStyle,
 	    restoreStyle    = cssStyle.restoreStyle;
-	
+
 	// define the module
 	var cssSizing = {
-		
+
 		absoluteMinWidthOf: function(element) {
 
 			//
 			// make the parent a relative container (if necessary)
 			//
 			var parentPositionBackup = enforceStyle(element.parentNode, "position", "relative");
-			
+
 			//
 			// remove the element from the flow (if necessary)
 			//
 			var positionBackup = enforceStyle(element, "position", "absolute");
-			
+
 			//
 			// put impossible sizing constraints to the element
 			//
 			var widthBackup = enforceStyle(element, "width", "0px");
 			var minWidthBackup = enforceStyle(element, "min-width", "0px");
-			
+
 			//
 			// see what size is finally being used
 			//
 			var result = element.offsetWidth;
-			
+
 			//
 			// restore styling where needed
 			//
@@ -10959,16 +10960,16 @@ module.exports = (function(window, document) {
 			restoreStyle(element, widthBackup);
 			restoreStyle(element, positionBackup);
 			restoreStyle(element.parentNode, parentPositionBackup);
-			
+
 			//
 			// return the result
 			//
 			return result;
-				
+
 		},
-		
+
 		minWidthOf: function(element) {
-		
+
 			//
 			// make the parent an infinite relative container (if necessary)
 			//
@@ -10976,22 +10977,22 @@ module.exports = (function(window, document) {
 			var parentWidthBackup = enforceStyle(element.parentNode, "width", "0px");
 			var parentMinWidthBackup = enforceStyle(element.parentNode, "min-width", "0px");
 			var parentMaxWidthBackup = enforceStyle(element.parentNode, "max-width", "0px");
-			
+
 			//
 			// remove the element from the flow (if necessary)
 			//
 			var positionBackup = enforceStyle(element, "position", "absolute");
-			
+
 			//
 			// put impossible sizing constraints to the element
 			//
 			var widthBackup = enforceStyle(element, "width", "auto");
-			
+
 			//
 			// see what size is finally being used
 			//
 			var result = element.offsetWidth;
-			
+
 			//
 			// restore styling where needed
 			//
@@ -11001,72 +11002,72 @@ module.exports = (function(window, document) {
 			restoreStyle(element.parentNode, parentMaxWidthBackup);
 			restoreStyle(element.parentNode, parentMinWidthBackup);
 			restoreStyle(element.parentNode, parentPositionBackup);
-			
+
 			//
 			// return the result
 			//
 			return result;
 		},
-		
+
 		maxWidthOf: function(element) {
-		
+
 			//
 			// make the parent a relative container (if necessary)
 			//
 			var parentPositionBackup = enforceStyle(element.parentNode, "position", "relative");
-			
+
 			//
 			// remove the element from the flow (if necessary)
 			//
 			var positionBackup = enforceStyle(element, "position", "absolute");
-			
+
 			//
 			// put impossible sizing constraints to the element
 			//
 			var widthBackup = enforceStyle(element, "width", "auto");
-			
+
 			//
 			// see what size is finally being used
 			//
 			var result = element.offsetWidth;
-					
+
 			//
 			// restore styling where needed
 			//
 			restoreStyle(element, widthBackup);
 			restoreStyle(element, positionBackup);
 			restoreStyle(element.parentNode, parentPositionBackup);
-			
+
 			//
 			// return the result
 			//
 			return result;
 		},
-		
+
 		absoluteMaxWidthOf: function(element) {
-		
+
 			//
 			// make the parent an infinite relative container (if necessary)
 			//
 			var parentPositionBackup = enforceStyle(element.parentNode, "position", "relative");
 			var parentWidthBackup = enforceStyle(element.parentNode, "width", "9999px");
 			var parentMinWidthBackup = enforceStyle(element.parentNode, "min-width", "9999px");
-			
+
 			//
 			// remove the element from the flow (if necessary)
 			//
 			var positionBackup = enforceStyle(element, "position", "absolute");
-			
+
 			//
 			// put impossible sizing constraints to the element
 			//
 			var widthBackup = enforceStyle(element, "width", "auto");
-			
+
 			//
 			// see what size is finally being used
 			//
 			var result = element.offsetWidth;
-			
+
 			//
 			// restore styling where needed
 			//
@@ -11075,17 +11076,17 @@ module.exports = (function(window, document) {
 			restoreStyle(element.parentNode, parentWidthBackup);
 			restoreStyle(element.parentNode, parentMinWidthBackup);
 			restoreStyle(element.parentNode, parentPositionBackup);
-			
+
 			//
 			// return the result
 			//
 			return result;
 		},
-		
+
 	};
-	
+
 	return cssSizing;
-	
+
 })(window, document)
 require.define('src/core/css-sizing.js');
 
@@ -11095,13 +11096,13 @@ require.define('src/core/css-sizing.js');
 // The Box module defines algorithms for dealing with css boxes
 //
 module.exports = (function(window, document) {
-	
-	// Original code licensed by Adobe Systems Incorporated under the Apache License 2.0. 
+
+	// Original code licensed by Adobe Systems Incorporated under the Apache License 2.0.
 	// https://github.com/adobe-webplatform/brackets-css-shapes-editor/blob/master/thirdparty/CSSShapesEditor.js#L442
 
 	var cssBox = cssBox || {};
-	cssBox.getBox = 
-		
+	cssBox.getBox =
+
 		// returns {top/left/bottom/right} for 'content/padding/border/margin-box' relative to the border box top-left corner.
 		function getBox(element, boxType){
 			var width = element.offsetWidth,
@@ -11166,9 +11167,9 @@ module.exports = (function(window, document) {
 
 			return box;
 		};
-	
+
 	return cssBox;
-	
+
 })(window, document);
 require.define('src/core/css-box.js');
 
@@ -11178,35 +11179,35 @@ require.define('src/core/css-box.js');
 // The CSS Units module is handling conversions between units
 //
 module.exports = (function(window, document) {
-	
+
 	// import dependencies
 	var getBox = require('src/core/css-box.js').getBox;
-	
+
 	// define the module
 	var cssUnits = {
-		
+
 		// converts "cssLength" from its inherent unit to pixels, and returns the result as a float
 		convertToPixels: function convertToPixels(cssLength, element, opts) {
-			
+
 			if(typeof cssLength == "string") {
-			
+
 				var match = cssLength.match(/^\s*(-?\d+(?:\.\d+)?)(\S*)\s*$/);
 				var currentLength = match ? parseFloat(match[1]) : 0.0;
 				var currentUnit = match ? match[2] : '';
-					
+
 			} else {
-				
+
 				var currentLength = cssLength.value;
 				var currentUnit = cssLength.unit;
-				
+
 			}
 
 			var converter = convertToPixels.converters[currentUnit];
 			if (!converter) throw new Error("No suitable conversion from unit '"+currentUnit+"' to unit 'px'");
-			
+
 			var convertedLength = converter.call(null, currentLength, element||document.documentElement, opts)
 			return Math.round(20*convertedLength)/20;
-			
+
 		},
 
 		// converts "pixelLength" from pixels to "destinUnit", and returns the result as a float
@@ -11217,11 +11218,11 @@ module.exports = (function(window, document) {
 
 			var convertedLength = converter.call(null, pixelLength, element||document.documentElement, opts)
 			return Math.round(20*convertedLength)/20;
-			
+
 		},
-		
+
 	}
-	
+
 	cssUnits.convertToPixels.converters = {
 		'px' : function(x) { return x; },
 		'in' : function(x) { return x * 96; },
@@ -11249,13 +11250,13 @@ module.exports = (function(window, document) {
 				case opts.isRadius:
 					var radius = Math.sqrt( box.height*box.height + box.width*box.width ) / Math.sqrt(2);
 					return Math.round(x/100*radius);
-					
+
 				case opts.isHeightRelated:
 					return x/100*box.height;
-					
+
 				case opts.isWidthRelated: default:
 					return x/100*box.width;
-					
+
 			}
 
 		}
@@ -11288,19 +11289,19 @@ module.exports = (function(window, document) {
 				case opts.isRadius:
 					var radius = Math.sqrt( box.height*box.height + box.width*box.width ) / Math.sqrt(2);
 					return Math.round(x*100/radius);
-					
+
 				case opts.isHeightRelated:
 					return x*100/box.height;
-					
+
 				case opts.isWidthRelated: default:
 					return x*100/box.width;
-					
+
 			}
 
 
 		}
 	};
-	
+
 	return cssUnits;
 
 })(window, document);
@@ -11309,64 +11310,64 @@ require.define('src/core/css-units.js');
 ////////////////////////////////////////
 
 module.exports = (function(window, document) { "use strict";
-	
+
 	// import dependencies
 	var cssSyntax = require('src/core/css-syntax.js');
-	
+
 	var cssStyle  = require('src/core/css-style.js'),
 	    usedStyleOf     = cssStyle.usedStyleOf,
 	    currentStyleOf  = cssStyle.currentStyleOf,
 	    enforceStyle    = cssStyle.enforceStyle,
 	    restoreStyle    = cssStyle.restoreStyle;
-		
+
 	var VirtualStylesheetFactory = require('src/core/css-virtual-stylesheet-factory.js');
-	
+
 	require('src/core/polyfill-dom-uniqueID.js');
 	require('src/core/polyfill-dom-requestAnimationFrame.js');
-	
+
 	var virtualStylesheetFactory = new VirtualStylesheetFactory();
-	
+
 	var createRuntimeStyle = function(reason, element) {
-		
+
 		// expand the reason
 		if(element) {
 			reason = (element.id || element.uniqueID) + '-' + reason;
 		}
-		
+
 		// return a virtual stylesheet
 		return virtualStylesheetFactory.createStyleSheet(reason);
-		
+
 	}
-	
+
 	var cssSizing = require('src/core/css-sizing.js');
-	
+
 	var cssUnits = require('src/core/css-units.js');
-	
+
 	// define the module
 	var LOCATE_AUTO = 0;
 	var LOCATE_LINE = 1;
 	var LOCATE_SPAN = 2;
 	var LOCATE_AREA = 3;
-	
+
 	var ALIGN_START  = 0;
 	var ALIGN_CENTER = 1;
 	var ALIGN_END    = 2;
 	var ALIGN_FIT    = 3;
-	
+
 	var TRACK_BREADTH_AUTO        = 0;
 	var TRACK_BREADTH_LENGTH      = 1;
 	var TRACK_BREADTH_FRACTION    = 2;
 	var TRACK_BREADTH_PERCENTAGE  = 3;
 	var TRACK_BREADTH_MIN_CONTENT = 4;
 	var TRACK_BREADTH_MAX_CONTENT = 5;
-	
+
 	function GridTrackBreadth() {
 		this.minType = TRACK_BREADTH_AUTO;
 		this.minValue = "auto";
 		this.maxType = TRACK_BREADTH_AUTO;
 		this.maxValue = "auto";
 	}
-	
+
 	GridTrackBreadth.prototype = {
 		toString: function() {
 			if(this.minType==this.maxType && this.minValue==this.maxValue) {
@@ -11413,13 +11414,13 @@ module.exports = (function(window, document) { "use strict";
 			this.minValue = val;
 		}
 	}
-	
+
 	function GridItemPosition(type, name, index) {
 		this.type = type|LOCATE_AUTO;
 		this.name = name;
 		this.index = index|0;
 	}
-	
+
 	GridItemPosition.prototype = {
 		extractXLineIndex: function(grid, TODO_args) {
 			throw "Not implemented";
@@ -11428,79 +11429,79 @@ module.exports = (function(window, document) { "use strict";
 			throw "Not implemented";
 		},
 		toString: function() {
-			
+
 		}
 	}
-	
+
 	function GridItem(element, parentGrid) {
-		
+
 		this.element = element;
 		this.parentGrid = element.parentGridLayout = parentGrid;
-		
+
 		this.reset();
 		this.buggy = true;
-		
+
 	}
-	
+
 	GridItem.prototype = {
-		
+
 		dispose: function() {
 			this.element.parentGridLayout = undefined;
 		},
-		
+
 		reset: function() {
-			
+
 			this.order = 0;
-			
+
 			this.minWidth = 0;
 			this.maxWidth = 0;
-			
+
 			this.hMargins = 0;
 			this.vMargins = 0;
 			this.hPaddings = 0;
 			this.vPaddings = 0;
 			this.hBorders = 0;
 			this.vBorders = 0;
-			
-			
+
+
 			this.xStart = -1;
 			this.xEnd = -1;
-			
+
 			this.specifiedXStart = this.specifiedXStart || new GridItemPosition();
 			this.specifiedXStart.type = LOCATE_AUTO;
 			this.specifiedXStart.name = undefined;
 			this.specifiedXStart.index = undefined;
-			
+
 			this.specifiedXEnd = this.specifiedXEnd || new GridItemPosition();
 			this.specifiedXEnd.type = LOCATE_AUTO;
 			this.specifiedXEnd.name = undefined;
 			this.specifiedXEnd.index = undefined;
 
-			
+
 			this.yStart = -1;
 			this.yEnd = -1;
-			
+
 			this.specifiedYStart = this.specifiedYStart || new GridItemPosition();
 			this.specifiedYStart.type = LOCATE_AUTO;
 			this.specifiedYStart.name = undefined;
 			this.specifiedYStart.index = undefined;
-			
+
 			this.specifiedYEnd = this.specifiedYEnd || new GridItemPosition();
 			this.specifiedYEnd.type = LOCATE_AUTO;
 			this.specifiedYEnd.name = undefined;
 			this.specifiedYEnd.index = undefined;
-			
+
 			this.marginAlignX = ALIGN_CENTER;
 			this.marginAlignY = ALIGN_CENTER;
-			
+
 			this.paddingAlignX = ALIGN_FIT;
 			this.paddingAlignY = ALIGN_FIT;
-			
-			
+
+
 		},
-	
+
 		updateFromElement: function() {
-			
+
 			var element = this.element;
 			var usedStyle = usedStyleOf(element);
 			var style = currentStyleOf(element);
@@ -11509,24 +11510,24 @@ module.exports = (function(window, document) { "use strict";
 				if(typeof(value)=="undefined") { return ""; }
 				return value;
 			}
-			
-			this.reset(); 
+
+			this.reset();
 			this.buggy = false;
-			
+
 			// compute order property
 			this.order = parseInt(style['order'])|0;
-			
+
 			// compute size
 			this.minWidth = cssSizing.minWidthOf(element);
 			this.maxWidth = cssSizing.maxWidthOf(element);
-			
+
 			this.hMargins = parseInt(usedStyle.getPropertyValue('margin-left')) + parseInt(usedStyle.getPropertyValue('margin-right'));
 			this.vMargins = parseInt(usedStyle.getPropertyValue('margin-top')) + parseInt(usedStyle.getPropertyValue('margin-bottom'));
 			this.hPaddings = parseInt(usedStyle.getPropertyValue('padding-left')) + parseInt(usedStyle.getPropertyValue('padding-right'));
 			this.vPaddings = parseInt(usedStyle.getPropertyValue('padding-top')) + parseInt(usedStyle.getPropertyValue('padding-bottom'));
 			this.hBorders = parseInt(usedStyle.getPropertyValue('border-left-width')) + parseInt(usedStyle.getPropertyValue('border-right-width'));
 			this.vBorders = parseInt(usedStyle.getPropertyValue('border-top-width')) + parseInt(usedStyle.getPropertyValue('border-bottom-width'));
-			
+
 			// locate x and y lines together
 			if(style["grid-area"]) {
 				var parts = getStyle("grid-area").split('/');
@@ -11538,7 +11539,7 @@ module.exports = (function(window, document) { "use strict";
 				this.parseLocationInstructions(this.specifiedXStart, this.specifiedXEnd, col_start + " / " + col_end);
 				this.parseLocationInstructions(this.specifiedYStart, this.specifiedYEnd, row_start + " / " + row_end);
 			}
-			
+
 			// locate x lines
 			if(style["grid-column"] || style["grid-column-start"] || style["grid-column-end"]) {
 				var parts = getStyle("grid-column").split('/');
@@ -11546,7 +11547,7 @@ module.exports = (function(window, document) { "use strict";
 				var end   = getStyle("grid-column-end") || parts[1] || parts[0] || start;
 				this.parseLocationInstructions(this.specifiedXStart, this.specifiedXEnd, start + " / " + end);
 			}
-			
+
 			// locate y lines
 			if(style["grid-row"] || style["grid-row-start"] || style["grid-row-end"]) {
 				var parts = getStyle("grid-row").split('/');
@@ -11554,24 +11555,24 @@ module.exports = (function(window, document) { "use strict";
 				var end   = getStyle("grid-row-end") || parts[1] || parts[0];
 				this.parseLocationInstructions(this.specifiedYStart, this.specifiedYEnd, start + " / " + end);
 			}
-			
+
 			// FIXME: is it possible to understand cascading here, and not use a fixed order?
 			// TODO: other positioning methods
-			
+
 		},
-		
+
 		parseLocationInstructions: function(specifiedStart, specifiedEnd, cssText) {
-			
+
 			var unfiltred_value = cssSyntax.parseCSSValue(cssText);
 			var value = unfiltred_value.filter(function(o) { return !(o instanceof cssSyntax.WhitespaceToken); });
 			value.toCSSString = function() { return unfiltred_value.toCSSString(); }
 			var I = 0;
-			
+
 			var updateNameOrIndex = function(data) {
 				if(value[I] instanceof cssSyntax.IdentifierToken) {
-					
+
 					// grid-column: C;
-					if(data.name) { 
+					if(data.name) {
 						// duplicate line-name value
 						console.error("INVALID DECLARATION: grid-column/row: "+value.toCSSString()+" (duplicate line name)");
 						this.buggy = true;
@@ -11579,92 +11580,92 @@ module.exports = (function(window, document) { "use strict";
 					}
 					data.name = value[I++].value;
 					return false;
-					
+
 				} else if(value[I] instanceof cssSyntax.NumberToken) {
-					
+
 					// grid-column: 3
 					data.index = value[I].value|0;
-					
+
 					// only accept integer values
 					if(value[I].value != data.index) {
 						console.error("INVALID DECLARATION: grid-column/row: "+value.toCSSString()+" (non-integer number)");
 						this.buggy = true;
 						return true;
 					}
-					
+
 					// do not accept zero
 					if(data.index == 0) {
 						console.error("INVALID DECLARATION: grid-column/row: "+value.toCSSString()+" (line index can't be zero)");
 						this.buggy = true;
 						return true;
 					}
-					
+
 					// do not accept negative spans
 					if(data.index <= 0 && data.type == LOCATE_SPAN) {
 						console.error("INVALID DECLARATION: grid-column/row: "+value.toCSSString()+" (negative spans not allowed)");
 						this.buggy = true;
 						return true;
 					}
-					
+
 					I++;
-					
+
 					return false;
-					
+
 				} else if(value[I] instanceof cssSyntax.DelimToken && value[I].value == "/") {
-					
+
 					// break grid-column-start detection
 					return true;
-					
+
 				} else {
-					
+
 					// this is wrong
 					console.error("INVALID DECLARATION: grid-column/row: "+value.toCSSString()+" (invalid token)");
 					this.buggy = true;
 					return true;
-					
+
 				}
 			};
-			
+
 			var gatherNameIndexPair = function(data) {
 
 				// first token to be analyzed (may be either kind)
 				updateNameOrIndex.call(this, data);
-				
+
 				// abort if no second token or buggy
 				if(this.buggy || !value[I]) { return; }
-			
+
 				// second token to be analyzed (will have to be the other kind)
 				updateNameOrIndex.call(this, data);
-				
+
 			}
-			
+
 			if(!value[I]) { console.error("INVALID DECLARATION: grid-column/row: "+value.toCSSString()+" (empty declaration)"); this.buggy = true; return; }
-			
+
 
 			// first part
 			gridColumnStart: while(true) {
 				if(value[I] instanceof cssSyntax.IdentifierToken) {
-					
+
 					if(value[I].value == "span") {
-						
+
 						if(!value[++I]) {console.error("INVALID DECLARATION: grid-column/row: "+value.toCSSString()+" (span is not a valid line name, more tokens expected)"); this.buggy = true; return; }
-						
+
 						specifiedStart.type = LOCATE_SPAN;
 						specifiedStart.name = undefined;
 						specifiedStart.index = undefined;
 						gatherNameIndexPair.call(this, specifiedStart);
 						if(this.buggy) { return; }
 						break;
-					
+
 					} else if(value[I].value == "auto") {
-						
+
 						specifiedStart.type = LOCATE_AUTO;
 						specifiedStart.name = undefined;
 						specifiedStart.index = undefined;
 						I++; break;
-						
+
 					} else {
-					
+
 						// grid-column: start-line...
 						specifiedStart.type = LOCATE_LINE;
 						specifiedStart.name = undefined;
@@ -11673,53 +11674,53 @@ module.exports = (function(window, document) { "use strict";
 						if(this.buggy) { return; }
 
 						break;
-					
+
 					}
-					
+
 				} else if(value[I] instanceof cssSyntax.DelimToken && value[I].value == "/") {
-					
+
 					// this is wrong
 					console.error("INVALID DECLARATION: grid-column/row: "+value.toCSSString()+" (no token to analyze before the slash token)");
 					this.buggy = true;
 					return;
-					
+
 				} else {
-					
+
 					specifiedStart.type = LOCATE_LINE;
 					gatherNameIndexPair.call(this, specifiedStart);
 					if(this.buggy) { return; }
-					
+
 					break;
-					
+
 				}
-				
+
 				break;
 			}
-			
+
 			// test whether there is a second part
 			if(value[I]) {
-				
+
 				if(value[I] instanceof cssSyntax.DelimToken && value[I].value == "/") {
-					
+
 					// second part will start now
 					if(!value[++I]) {
 						// unexpected lack token at the start of the second part
 						console.error("INVALID DECLARATION: grid-column/row: "+value.toCSSString()+" (expected at least one more token after the slash token)");
-						this.buggy = true; 
+						this.buggy = true;
 						return;
 					}
-					
+
 				} else {
-				
+
 					// unexpected token at the end of the first part
 					console.error("INVALID DECLARATION: grid-column/row: "+value.toCSSString()+" (expected slash / or end of declaration)");
-					this.buggy = true; 
+					this.buggy = true;
 					return;
-					
+
 				}
-				
+
 			} else {
-				
+
 				// end of declaration
 				if(specifiedStart.type == LOCATE_LINE && specifiedStart.name != undefined && specifiedStart.index == undefined) {
 					// a value consisting of a custom ident is duplicated to the other side
@@ -11732,33 +11733,33 @@ module.exports = (function(window, document) { "use strict";
 					specifiedEnd.name = undefined;
 					specifiedEnd.index = undefined;
 				}
-				
+
 			}
-			
+
 			// second part (after the "/" token)
 			gridColumnEnd: while(value[I]) {
-				
+
 				if(value[I] instanceof cssSyntax.IdentifierToken) {
-					
+
 					if(value[I].value == "span") {
-						
+
 						if(!value[++I]) {console.error("INVALID DECLARATION: grid-column/row: "+value.toCSSString()+" (span is not a valid line name, more tokens expected)"); this.buggy = true; return; }
-						
+
 						specifiedEnd.type = LOCATE_SPAN;
 						specifiedEnd.name = undefined;
 						specifiedEnd.index = undefined;
 						gatherNameIndexPair.call(this, specifiedEnd);
 						if(this.buggy) { return; }
-					
+
 					} else if(value[I].value == "auto") {
-						
+
 						specifiedEnd.type = LOCATE_AUTO;
 						specifiedEnd.name = undefined;
 						specifiedEnd.index = undefined;
 						I++; break;
-						
+
 					} else {
-					
+
 						// grid-column: start-line...
 						specifiedEnd.type = LOCATE_LINE;
 						specifiedEnd.name = undefined;
@@ -11768,67 +11769,67 @@ module.exports = (function(window, document) { "use strict";
 						if(this.buggy) { return; }
 
 						break;
-					
+
 					}
-					
+
 				} else if(value[I] instanceof cssSyntax.DelimToken && value[I].value == "/") {
-					
+
 					// this is wrong
 					console.error("INVALID DECLARATION: grid-column/row: "+value.toCSSString()+" (no token to analyze before the slash token)");
 					this.buggy = true;
 					return;
-					
+
 				} else {
-					
+
 					specifiedEnd.type = LOCATE_LINE;
 					gatherNameIndexPair.call(this, specifiedEnd);
 					if(this.buggy) { return; }
-					
+
 					break;
-					
+
 				}
-				
-				break;					
+
+				break;
 			}
-			
+
 			if(value[I]) {
 				console.error("INVALID DECLARATION: grid-column/row: "+value.toCSSString()+" (tokens after end)");
-				this.buggy = true; 
+				this.buggy = true;
 				return;
 			}
-			
+
 			// If the <integer> is omitted, it defaults to 1.
 			//if(specifiedStart.name && specifiedStart.index == undefined) { specifiedStart.index = 1; }
 			//if(specifiedEnd.name && specifiedEnd.index == undefined) { specifiedEnd.index = 1; }
-			
-			// If both grid-row/column-start and grid-row/column-end specify a span, the end span is ignored. 
+
+			// If both grid-row/column-start and grid-row/column-end specify a span, the end span is ignored.
 			if(specifiedEnd.type == LOCATE_SPAN && specifiedStart.type == LOCATE_SPAN) { specifiedEnd.type = LOCATE_AUTO; specifiedEnd.index = undefined; specifiedEnd.name = undefined; }
-			
+
 			return [specifiedStart, specifiedEnd];
-			
+
 		},
-		
-	
-	};	
+
+
+	};
 
 	function GridLayout(element) {
-	
+
 		// items
 		this.element = element; this.element.gridLayout = this;
 		this.items = []; // array of GridItem
 
 		// reset
 		this.reset();
-		
+
 		// other fields
 		this.isLayoutScheduled = false;
-		
+
 	}
-	
+
 	GridLayout.prototype = {
-	
+
 		reset: function() {
-			
+
 			// layout exclusion style
 			this.hlPadding = 0;
 			this.hrPadding = 0;
@@ -11836,33 +11837,33 @@ module.exports = (function(window, document) { "use strict";
 			this.vbPadding = 0;
 			this.rowGap = 0;
 			this.colGap = 0;
-			
+
 			// computed
 			this.xLines = []; // array of array of names
 			this.xSizes = []; // array of numbers (in pixels)
-			
+
 			this.yLines = [];
 			this.ySizes = [];
 
 			this.growX = false;
 			this.growY = true;
 			this.growDense = false;
-			
+
 			this.rcMatrix = []; // array of array of (whatever is not undefined, probably "true")
-			
+
 			// specified
 			this.specifiedXLines = [];
 			this.specifiedXSizes = [];
-			
+
 			this.specifiedYLines = [];
 			this.specifiedYSizes = [];
-			
+
 			this.defaultXSize = new GridTrackBreadth();
 			this.defaultYSize = new GridTrackBreadth();
 
 		},
-	
-		R: function R(x,y) { 
+
+		R: function R(x,y) {
 			if(this.growY) {
 				// we grow by adding rows (normal behavior)
 				return y;
@@ -11871,8 +11872,8 @@ module.exports = (function(window, document) { "use strict";
 				return x;
 			}
 		},
-		
-		C: function C(x,y) { 
+
+		C: function C(x,y) {
 			if(this.growY) {
 				// we grow by adding rows (normal behavior)
 				return x;
@@ -11881,43 +11882,43 @@ module.exports = (function(window, document) { "use strict";
 				return y;
 			}
 		},
-		
+
 		dispose: function() {
 			for(var i = this.items.length; i--;) { var item = this.items[i];
 				item.dispose();
 			}
 			this.element.gridLayout = undefined;
 		},
-		
+
 		updateFromElement: function() {
-			
+
 			// delete old items
 			for(var i = this.items.length; i--;) { var item = this.items[i];
 				item.dispose();
 			}
-			
+
 			// add new items
 			this.items.length = 0;
 			var currentItem = this.element.firstElementChild;
 			while(currentItem) {
-				
+
 				// add a new grid item for the element
 				var newGridItem = new GridItem(currentItem, this);
 				newGridItem.updateFromElement();
 				this.items.push(newGridItem);
-				
+
 				// move to the next element
 				currentItem = currentItem.nextElementSibling;
 			}
-			
+
 			// sort them by css order (desc) then by dom order (asc)
 			var sortableItems = this.items.map(function(item, i) { return { item: item, order: item.order, position: i } });
 			sortableItems.sort(function(a,b) { if(a.order==b.order) { return a.position-b.position } else if(a.order>b.order) { return +1 } else { return -1; } });
 			this.items = sortableItems.map(function(data) { return data.item; });
-			
+
 			// reset the style
 			this.reset();
-			
+
 			// update its own style
 			var style = usedStyleOf(this.element); var cssText = '';
 			if(cssText=style["grid-template"])         { this.parseGridTemplate(cssText);    }
@@ -11927,10 +11928,10 @@ module.exports = (function(window, document) { "use strict";
 			if(cssText=style["grid-auto-rows"]) { this.parseAutoRowsBreadth(cssText); }
 			if(cssText=style["grid-auto-columns"]) { this.parseAutoColumnsBreadth(cssText); }
 			if(cssText=style["grid-auto-flow"]) { // FIXME: should be in a function
-				
+
 				// FIXME: not a real parse...
 				var tokens = cssText.trim().toLowerCase().split(/\s+/g);
-				
+
 				// direction
 				if(tokens.indexOf('row')>=0) {
 					this.growX = false;
@@ -11939,7 +11940,7 @@ module.exports = (function(window, document) { "use strict";
 					this.growX = true;
 					this.growY = false;
 				}
-				
+
 				// algorithm
 				// FIXME: should also support 'stack' (wtf)
 				if(tokens.indexOf('dense')>=0) {
@@ -11947,39 +11948,39 @@ module.exports = (function(window, document) { "use strict";
 				} else {
 					this.growDense = false;
 				}
-				
+
 			}
 			if(cssText=style["grid-row-gap"]) { this.parseGridRowGap(cssText); }
 			if(cssText=style["grid-column-gap"]) { this.parseGridColumnGap(cssText); }
 			if(cssText=style["grid-gap"]) { this.parseGridGap(cssText); }
-			
+
 			var usedStyle = style;
 			this.hlPadding = parseInt(usedStyle.getPropertyValue('border-left-width')) + parseInt(usedStyle.getPropertyValue('padding-left'));
 			this.hrPadding = parseInt(usedStyle.getPropertyValue('border-right-width')) + parseInt(usedStyle.getPropertyValue('padding-right'));
 			this.vtPadding = parseInt(usedStyle.getPropertyValue('border-top-width')) + parseInt(usedStyle.getPropertyValue('padding-top'));
 			this.vbPadding = parseInt(usedStyle.getPropertyValue('border-bottom-width')) + parseInt(usedStyle.getPropertyValue('padding-bottom'));
-			
+
 		},
-		
+
 		resetItems: function() {
 			for(var i = this.items.length; i--;) {
-				var item = this.items[i]; 
+				var item = this.items[i];
 				item.xStart = item.xEnd = item.yStart = item.yEnd = -1;
 			}
 		},
-		
+
 		resetLinesToSpecified: function() {
 			this.xLines = this.specifiedXLines.slice(0);
 			this.xSizes = this.specifiedXSizes.slice(0);
 			this.yLines = this.specifiedYLines.slice(0);
 			this.ySizes = this.specifiedYSizes.slice(0);
 		},
-		
+
 		parseTrackBreadthToken: function(cssToken) {
-			
+
 			// try to match a pattern
 			if(cssToken instanceof cssSyntax.IdentifierToken) {
-				
+
 				if(cssToken.value == "auto") {
 					return { type: TRACK_BREADTH_AUTO, value:"auto" };
 				} else if(cssToken.value == "min-content") {
@@ -11987,123 +11988,123 @@ module.exports = (function(window, document) { "use strict";
 				} else if(cssToken.value == "max-content") {
 					return { type: TRACK_BREADTH_MAX_CONTENT, value:"max-content" };
 				}
-				
+
 			} else if(cssToken instanceof cssSyntax.DimensionToken) {
-				
+
 				if(cssToken.unit == "fr") {
 					return { type: TRACK_BREADTH_FRACTION, value:cssToken.value };
 				} else {
 					return { type: TRACK_BREADTH_LENGTH, value:cssUnits.convertToPixels(cssToken.toCSSString(), this.element) };
 				}
-				
+
 			} else if(cssToken instanceof cssSyntax.PercentageToken) {
-				
+
 				return { type: TRACK_BREADTH_PERCENTAGE, value:cssToken.value };
-				
+
 			} else {
-				
+
 				// TODO: recognize "calc()", too
-				
+
 			}
-			
+
 			return null;
 		},
-		
+
 		parseTrackBreadth: function(value, I) {
-		
+
 			// TODO: try catch on null parsed token
 			var buggy = false;
-			
+
 			var currentTrackBreadth = new GridTrackBreadth();
 			var parseTrackBreadthToken = function() {
-				
+
 				// try to match a pattern
 				var result = this.parseTrackBreadthToken(value[I]);
 				if(result) { I++; return result; }
-				
+
 				// no pattern matched, so the declaration is invalid:
 				console.error("INVALID DECLARATION: grid-template-rows/columns: "+value.toCSSString()+" (unrecognized track breadth)");
 				buggy = true;
 				return;
-				
+
 			}
-			
+
 			if(value[I] instanceof cssSyntax.Func && value[I].name=="minmax") {
-				
+
 				// we need to parse two subvalues
 				var value_backup = value;
 				var I_backup = I;
-				
+
 				// check we have exactly two arguments
 				var args = value_backup[I_backup].getArguments();
-				if(args.length != 2) { 
+				if(args.length != 2) {
 					console.error("INVALID DECLARATION: grid-template-rows/columns: "+value_backup.toCSSString()+" (invalid number of arguments to the minmax function)");
 					buggy = true;
 					return;
 				}
-				
+
 				// here's the first one:
-				value = args[0].filter(function(t) { return !(t instanceof cssSyntax.WhitespaceToken) }); I = 0;				
+				value = args[0].filter(function(t) { return !(t instanceof cssSyntax.WhitespaceToken) }); I = 0;
 				var data = parseTrackBreadthToken.call(this);
 				currentTrackBreadth.minType = data.type;
 				currentTrackBreadth.minValue = data.value;
-				
+
 				// here's the second one:
-				value = args[1].filter(function(t) { return !(t instanceof cssSyntax.WhitespaceToken) }); I = 0;				
+				value = args[1].filter(function(t) { return !(t instanceof cssSyntax.WhitespaceToken) }); I = 0;
 				var data = parseTrackBreadthToken.call(this);
 				currentTrackBreadth.maxType  = data.type;
 				currentTrackBreadth.maxValue = data.value;
-				
+
 				// restore context
 				value = value_backup;
 				I = I_backup+1;
-				
+
 			} else {
-			
+
 				// we need to parse only one value
 				var data = parseTrackBreadthToken.call(this);
 				currentTrackBreadth.minType  = currentTrackBreadth.maxType  = data.type;
 				currentTrackBreadth.minValue = currentTrackBreadth.maxValue = data.value;
 
 			}
-				
+
 			return { result: currentTrackBreadth, I:I };
-			
+
 		},
-		
+
 		parseAutoRowsBreadth: function(cssText) {
-		
+
 			// TODO: check that no tokens are left when the parsing is done (+columns)
-			
+
 			// parse value into tokens:
 			var unfiltred_value = cssSyntax.parseCSSValue(cssText);
 			var value = unfiltred_value.filter(function(o) { return !(o instanceof cssSyntax.WhitespaceToken); });
 			value.toCSSString = function() { return unfiltred_value.toCSSString(); }
-			
+
 			// parse tokens into data:
 			var data = this.parseTrackBreadth(value, 0);
 			if(data.result) { this.defaultYSize = data.result; } else { throw "TODO: better error message"; }
 			return;
-			
+
 		},
-		
+
 		parseAutoColumnsBreadth: function(cssText) {
-			
+
 			// parse value into tokens:
 			var unfiltred_value = cssSyntax.parseCSSValue(cssText);
 			var value = unfiltred_value.filter(function(o) { return !(o instanceof cssSyntax.WhitespaceToken); });
 			value.toCSSString = function() { return unfiltred_value.toCSSString(); }
-			
+
 			// parse tokens into data:
 			var data = this.parseTrackBreadth(value, 0);
 			if(data.result) { this.defaultXSize = data.result; } else { throw "TODO: better error message"; }
 			return;
-			
+
 		},
-		
+
 		parseGridTemplate: function(cssText) { // TODO: I used some lazy heuristics here
-			var buggy = false; 
-		
+			var buggy = false;
+
 			// step 1: columns are defined before the slash, if any
 			var cssText = cssText.replace(/\/\*(.*?)\*\//g,"");
 			var cssTextSections = cssText.split("/");
@@ -12111,79 +12112,79 @@ module.exports = (function(window, document) { "use strict";
 				if(this.parseColumnsTemplate(cssTextSections[0])) { return buggy=true; }
 				cssText = cssTextSections[1];
 			}
-			
+
 			// check that the syntax makes sense
-			else if(cssTextSections.length >= 3) { 
+			else if(cssTextSections.length >= 3) {
 				return buggy=true;
 			}
-			
+
 			// check if we can find any string
 			if(/"|'/.test(cssText)) {
-			
+
 				// extract strings from the value
 				var strings = [];
 				cssText = cssText.replace(/\s*("(?:.*?)"|'(?:.*?)')\s*([-_a-zA-Z0-9]*)\s*/g,function(data,str,size) { strings.push(str); return ' '+(size||"auto")+' '; });
-				
+
 				// remove duplicate line name blocks
 				cssText = cssText.replace(/\)\s*\(/g," ");
-				
+
 				// parse rows now
 				if(this.parseRowsTemplate(cssText)) { return buggy=true; }
-				
+
 				// parse areas now
 				if(this.parseAreasTemplate(strings.join(' '))) { return buggy=true; }
-			
+
 			} else {
-				
+
 				// parse rows now
 				if(this.parseRowsTemplate(cssText)) { return buggy=true; }
-				
+
 			}
-			
+
 			return buggy;
-			
+
 		},
-		
+
 		parseAreasTemplate: function(cssText) {
-			
+
 			// parse value into tokens:
 			var unfiltred_value = cssSyntax.parseCSSValue(cssText);
 			var value = unfiltred_value.filter(function(o) { return !(o instanceof cssSyntax.WhitespaceToken); });
 			value.toCSSString = function() { return unfiltred_value.toCSSString(); }
-			
+
 			// parse tokens into data:
 			var I = 0;
 			var buggy = false;
 			var regexp = /^([-_a-zA-Z0-9]+|[.]+)\s*/;
 			var grid = [], areas = Object.create(null);
 			while(value[I]) {
-				
+
 				var str = ''+value[I++].value;
-				
+
 				var columns = [];
 				while(str!=='') {
-					
+
 					// extract next token
 					var data = regexp.exec(str); if(!data || data.length != 2) { return buggy=true; }
 					str = str.substr(data[0].length); var cell = data[1];
-					
+
 					// update cell max pos (ignore empty cells)
 					if(cell!='.' && cell[0]!='.') {
 						if(!areas[cell]) { areas[cell] = { xStart:columns.length, xEnd:columns.length+1, yStart: I-1, yEnd: I }; }
-						if(areas[cell].xStart > columns.length) { return buggy=true; } 
+						if(areas[cell].xStart > columns.length) { return buggy=true; }
 						if(areas[cell].yStart > I-1) { return buggy=true; }
 						areas[cell].xEnd = Math.max(areas[cell].xEnd, columns.length+1);
 						areas[cell].yEnd = Math.max(areas[cell].yEnd, I);
 					}
 					// add the cell to this row
 					columns.push(data[1]);
-					
+
 				}
-				
+
 				grid.push(columns);
-				
+
 			}
-			
+
 			// validate areas
 			for(var a in areas) {
 				var area = areas[a];
@@ -12193,68 +12194,68 @@ module.exports = (function(window, document) { "use strict";
 					}
 				}
 			}
-			
+
 			// add autogenerated line names
 			for(var a in areas) {
 				var area = areas[a];
-				
+
 				// make sure we have enough y lines for the areas to fit:
 				while(this.specifiedYLines.length<=area.yEnd) {
 					this.specifiedYLines.push([]);
 					this.specifiedYSizes.push(this.defaultYSize);
 				}
-				
+
 				// add the y line name
 				this.specifiedYLines[area.yStart].push(a+"-start");
 				this.specifiedYLines[area.yEnd].push(a+"-end");
-				
+
 				// make sure we have enough x lines for the areas to fit:
 				while(this.specifiedXLines.length<=area.xEnd) {
 					this.specifiedXLines.push([]);
 					this.specifiedXSizes.push(this.defaultXSize);
 				}
-				
+
 				// add the x line name
 				this.specifiedXLines[area.xStart].push(a+"-start");
 				this.specifiedXLines[area.xEnd].push(a+"-end");
-				
+
 			}
 
 		},
-		
+
 		parseTrackDefinitions: function(lineNames, trackBreadths, cssText) {
-			
+
 			// replace the repeat() function by its full representation
 			cssText = cssText.replace(/\[/g,'(').replace(/\]/g,')').replace(/repeat\(\s*([0-9]+)\s*\,((?:\([^()]*\)|[^()])+)\)/gi, function(s, n, v) {
 				var result = ' ';
-				for(var i = parseInt(n); i--;) { 
+				for(var i = parseInt(n); i--;) {
 					result += v + ' ';
 				}
 				return result;
 			});
 			'TODO: improve the repeat support';
-			
+
 			// merge duplicate name-definitions
 			cssText = cssText.replace(/\)\s*\(/g, ' ');
 			'TODO: improve the duplicate name-definitions support';
-			
+
 			// parse value into tokens:
 			var unfiltred_value = cssSyntax.parseCSSValue(cssText);
 			var value = unfiltred_value.filter(function(o) { return !(o instanceof cssSyntax.WhitespaceToken); });
 			value.toCSSString = function() { return unfiltred_value.toCSSString(); }
-			
+
 			// parse tokens into data:
 			var I = 0;
 			var buggy = false;
-			
+
 			var parseLineNames = function() {
-				
+
 				var currentLineNames = []; // array of string
-				
+
 				if(value[I] instanceof cssSyntax.SimpleBlock && value[I].name == "(") {
 					var tokens = value[I].value;
 					for(var J=tokens.length; J--;) {
-						
+
 						if (tokens[J] instanceof cssSyntax.IdentifierToken) {
 							currentLineNames.push(tokens[J].value);
 						} else if (tokens[J] instanceof cssSyntax.WhitespaceToken) {
@@ -12265,41 +12266,41 @@ module.exports = (function(window, document) { "use strict";
 							buggy = true;
 							return;
 						}
-						
+
 					}
-					
+
 					I++;
 				}
-				
-				lineNames.push(currentLineNames); 
+
+				lineNames.push(currentLineNames);
 				currentLineNames = [];
-				
+
 			};
-			
+
 			var parseTrackBreadth = function() {
-				
+
 				var data = this.parseTrackBreadth(value, I);
 				trackBreadths.push(data.result);
 				I = data.I;
-				
+
 			};
-			
-			parseLineNames(); 
+
+			parseLineNames();
 			while(value[I]) {
 				parseTrackBreadth.call(this); if(buggy) { break; }
 				parseLineNames(); if(buggy) { break; }
 			}
-			
+
 		},
-		
+
 		parseColumnsTemplate: function(cssText) {
 			return this.parseTrackDefinitions(this.specifiedXLines, this.specifiedXSizes, cssText);
 		},
-		
+
 		parseRowsTemplate: function(cssText) {
 			return this.parseTrackDefinitions(this.specifiedYLines, this.specifiedYSizes, cssText);
 		},
-		
+
 		parseTracksTemplate: function(columnsTemplate, rowsTemplate, areasTemplate) {
 			if(rowsTemplate   ) this.parseRowsTemplate(rowsTemplate);
 			if(columnsTemplate) this.parseColumnsTemplate(columnsTemplate);
@@ -12319,13 +12320,13 @@ module.exports = (function(window, document) { "use strict";
 			this.parseGridRowGap(values[0]);
 			this.parseGridColumnGap(values[1] || cssText);
 		},
-		
+
 		buildExplicitMatrix: function() {
-			
+
 			// reset
 			this.resetLinesToSpecified();
 			this.rcMatrix = [];
-			
+
 			// simple autogrow
 			if(this.growY) {
 				this.ensureRows(this.ySizes.length);
@@ -12334,29 +12335,29 @@ module.exports = (function(window, document) { "use strict";
 				this.ensureColumns(this.xSizes.length);
 				this.ensureRows(this.ySizes.length);
 			}
-			
-		}, 
-		
+
+		},
+
 		buildImplicitMatrix: function() { /* see http://dev.w3.org/csswg/css-grid/#auto-placement-algo */
-		
+
 			// start by building the explicit matrix
 			this.buildExplicitMatrix();
-			
+
 			// [1] position non-auto items
 			this.positionNonAutoItems();
-			
+
 			// [2] position auto-in-column-only items
 			this.positionAutoInColumnOnlyItems();
-			
+
 			// [3] make room for implicit tracks
 			this.autoGrow();
-			
+
 		},
-		
+
 		ensureRows: function(yEnd) {
-			
+
 			if(this.growY) {
-				
+
 				// add rows as necessary
 				while(this.ySizes.length<yEnd) {
 					this.ySizes.push(this.defaultYSize);
@@ -12364,49 +12365,49 @@ module.exports = (function(window, document) { "use strict";
 				while(this.rcMatrix.length<yEnd) {
 					this.rcMatrix.push([]);
 				}
-				
+
 			} else {
-				
+
 				// add rows as necessary
 				while(this.ySizes.length<yEnd) {
 					this.ySizes.push(this.defaultYSize);
 				}
-				
+
 				// walk through columns
 				for(var x = this.rcMatrix.length; x--;) {
-				
+
 					// add rows as necessary
 					if(this.rcMatrix[x].length < yEnd) {
 						this.rcMatrix[x].length = yEnd;
 					}
-					
+
 				}
-				
+
 			}
-			
+
 		},
-		
+
 		ensureColumns: function(xEnd) {
-			
+
 			if(this.growY) {
-			
+
 				// add columns as necessary
 				while(this.xSizes.length<xEnd) {
 					this.xSizes.push(this.defaultXSize);
 				}
-				
+
 				// walk through rows
 				for(var y = this.rcMatrix.length; y--;) {
-				
+
 					// add columns as necessary
 					if(this.rcMatrix[y].length < xEnd) {
 						this.rcMatrix[y].length = xEnd;
 					}
-					
+
 				}
-			
+
 			} else {
-				
+
 				// add columns as necessary
 				while(this.xSizes.length<xEnd) {
 					this.xSizes.push(this.defaultXSize);
@@ -12414,122 +12415,122 @@ module.exports = (function(window, document) { "use strict";
 				while(this.rcMatrix.length<xEnd) {
 					this.rcMatrix.push([]);
 				}
-			
+
 			}
 		},
-		
+
 		markAsOccupied: function(item) {
-			
+
 			var xStart = item.xStart;
 			var yStart = item.yStart;
 			var xEnd = item.xEnd;
 			var yEnd = item.yEnd;
-		
+
 			// let's check the rcMatrix mode we're in:
 			if(this.growY) {
-				
+
 				// add rows as necessary
 				this.ensureRows(yEnd);
-				
+
 				// walk through rows
 				for(var y = yStart; y<yEnd; y++) {
-				
+
 					// add columns as necessary
 					if(this.rcMatrix[y].length < xEnd-1) {
 						this.rcMatrix[y].length = xEnd-1;
 					}
-					
+
 					// walk through columns
 					for(var x = xStart; x<xEnd; x++) {
-						
+
 						// the cell is occupied
 						this.rcMatrix[y][x] = item;
-						
+
 					}
 				}
-				
+
 			} else {
-				
+
 				// add columns as necessary
 				this.ensureColumns(xEnd);
-				
+
 				// walk through rows
 				for(var x = xStart; x<xEnd; x++) {
-				
+
 					// add rows as necessary
 					if(this.rcMatrix[x].length < yEnd-1) {
 						this.rcMatrix[x].length = yEnd-1;
 					}
-					
+
 					// walk through rows
 					for(var y = yStart; y<yEnd; y++) {
-						
+
 						// the cell is occupied
 						this.rcMatrix[x][y] = item;
-						
+
 					}
 				}
-				
+
 			}
 
 		},
-		
+
 		positionNonAutoItems: function() {
-			
+
 			for(var i=0, l=this.items.length; i<l; i++) {
 				var item = this.items[i];
-				
+
 				// if the element has a specific column associated to it
 				if(item.specifiedXStart.type == LOCATE_LINE) {
-					
+
 					// if the element has a specified row associated to it
 					if(item.specifiedYStart.type == LOCATE_LINE) {
-						
+
 						// find the start position (x axis)
 						var xStart = this.findXStart(item);
-						
+
 						// find the start position (y axis)
 						var yStart = this.findYStart(item);
-						
+
 						// find the end position (x axis)
 						var xEnd = this.findXEnd(item);
-						
+
 						// find the end position (y axis)
 						var yEnd = this.findYEnd(item);
-						
+
 						// we're done! this is so cool dude!
 						item.xStart = xStart;
 						item.yStart = yStart;
 						item.xEnd = xEnd;
 						item.yEnd = yEnd;
-						
+
 						// we should fill the explicit matrix now!
 						this.markAsOccupied(item);
-						
+
 					}
-					
+
 				}
-				
+
 			}
-			
+
 		},
-		
+
 		positionAutoInColumnOnlyItems: function() {
-			
+
 			if(this.growY) {
-				
+
 				for(var i=0, l=this.items.length; i<l; i++) {
 					var item = this.items[i];
-					
+
 					// if the element has a specified row associated to it, but is not positioned yet
 					if(item.specifiedYStart.type == LOCATE_LINE && (item.yStart==-1)) {
-						
+
 						// find the start position (y axis)
 						var yStart = this.findYStart(item);
-						
+
 						// find the end position (y axis)
 						var yEnd = this.findYEnd(item);
-						
+
 						// assumption: X is either AUTO + SPAN or AUTO + AUTO
 						var spanX = 1;
 						if(item.specifiedXEnd.type == LOCATE_SPAN) {
@@ -12541,58 +12542,58 @@ module.exports = (function(window, document) { "use strict";
 								spanX = 1; console.error('[CSS-GRID] UNSUPPORTED: grid-row/column: auto / span [0-9]+ [A-Z]+');
 							}
 						}
-						
+
 						// add rows as necessary
 						this.ensureRows(yEnd);
-						
+
 						// walk through columns to find a suitable position
 						IncrementalColumnAttempts: for(var sx = 0;;sx++) {
-							
+
 							for(var x = sx+spanX-1; x>=sx; x--) {
 								for(var y = yStart; y<yEnd; y++) {
-								
+
 									// if the cell is occupied
 									if(this.rcMatrix[y][x]) {
 										continue IncrementalColumnAttempts;
 									}
-								
+
 								}
 							}
-							
+
 							break;
-							
+
 						}
-						
+
 						var xStart = sx;
 						var xEnd = sx+spanX;
-						
+
 						// we're done! this is so cool dude!
 						item.xStart = xStart;
 						item.yStart = yStart;
 						item.xEnd = xEnd;
 						item.yEnd = yEnd;
-						
+
 						// we should fill the explicit matrix now!
 						this.markAsOccupied(item);
-						
+
 					}
-					
+
 				}
-				
+
 			} else {
-				
+
 				for(var i=0, l=this.items.length; i<l; i++) {
 					var item = this.items[i];
-					
+
 					// if the element has a specified column associated to it, but is not positioned yet
 					if(item.specifiedXStart.type == LOCATE_LINE && (item.xStart==-1)) {
-						
+
 						// find the start position (x axis)
 						var xStart = this.findXStart(item);
-						
+
 						// find the end position (x axis)
 						var xEnd = this.findXEnd(item);
-						
+
 						// assumption: Y is either AUTO + SPAN or AUTO + AUTO
 						var spanY = 1;
 						if(item.specifiedYEnd.type == LOCATE_SPAN) {
@@ -12604,50 +12605,50 @@ module.exports = (function(window, document) { "use strict";
 								spanY = 1;
 							}
 						}
-						
+
 						// add rows as necessary
 						this.ensureColumns(xEnd);
-						
+
 						// walk through columns to find a suitable position
 						IncrementalRowAttempts: for(var sy = 0;;sy++) {
-							
+
 							for(var y = sy+spanY-1; y>=sy; y--) {
 								for(var x = xStart; x<xEnd; x++) {
-								
+
 									// if the cell is occupied
 									if(this.rcMatrix[x][y]) {
 										continue IncrementalRowAttempts;
 									}
-								
+
 								}
 							}
-							
+
 							break;
-							
+
 						}
-						
+
 						var yStart = sy;
 						var yEnd = sy+spanY;
-						
+
 						// we're done! this is so cool dude!
 						item.xStart = xStart;
 						item.yStart = yStart;
 						item.xEnd = xEnd;
 						item.yEnd = yEnd;
-						
+
 						// we should fill the explicit matrix now!
 						this.markAsOccupied(item);
-						
+
 					}
-					
+
 				}
-				
+
 			}
-	
+
 		},
-		
+
 		autoGrow: function() {
-			
+
 			// helpers
 			var growX = function(index) {
 				while(index >= this.xLines.length) {
@@ -12655,51 +12656,51 @@ module.exports = (function(window, document) { "use strict";
 					this.xSizes.push(this.defaultXSize);
 				}
 			}
-			
+
 			var growY = function(index) {
 				while(index >= this.yLines.length) {
 					this.yLines.push(['*']);
 					this.ySizes.push(this.defaultYSize);
 				}
 			}
-			
+
 			// reset the lines to the specified ones if necessary
 			this.resetLinesToSpecified(); // TODO: why?
-			
+
 			// ensure there's at least one cell
 			growX.call(this,1); growY.call(this,1);
-			
+
 			// check if an item is explicitly positioned outside the explicit grid, and expand it if needed
 			for(var i = this.items.length; i--;) {
-				
+
 				var item = this.items[i];
-				
+
 				// CONSIDER: items already positioned
 				if(item.xEnd > 0) { growX.call(this,item.xEnd); }
 				if(item.yEnd > 0) { growY.call(this,item.yEnd); }
 				if(item.xEnd > 0 && item.yEnd > 0) { continue; }
-				
+
 				// CONSIDER: elements with a known location
-				
+
 				// (x axis):
 				if(item.specifiedXEnd.type == LOCATE_LINE || item.specifiedXStart.type == LOCATE_LINE) {
-					
+
 					var xStart = this.findXStart(item);
 					var xEnd = this.findXEnd(item);
 					growX.call(this,xEnd);
-					
+
 				}
-				
+
 				// (y axis):
 				if(item.specifiedYEnd.type == LOCATE_LINE || item.specifiedYStart.type == LOCATE_LINE) {
-					
+
 					var yStart = this.findYStart(item);
 					var yEnd = this.findYEnd(item);
 					if(yEnd <= yStart) { yEnd = yStart+1; }
 					growY.call(this,yEnd);
-					
+
 				}
-				
+
 				// CONSIDER: known spans
 				// // NOTE: I don't support "grid-row/column-start: span X";
 				if(item.specifiedXEnd.type == LOCATE_SPAN && item.specifiedXEnd.name===undefined) {
@@ -12708,9 +12709,9 @@ module.exports = (function(window, document) { "use strict";
 				if(item.specifiedYEnd.type == LOCATE_SPAN && item.specifiedYEnd.name===undefined) {
 					growY.call(this,item.specifiedYEnd.index);
 				}
-				
+
 			}
-			
+
 			// grow the grid matrix:
 			if(this.growY) {
 				while(this.ySizes.length>this.rcMatrix.length) {
@@ -12727,9 +12728,9 @@ module.exports = (function(window, document) { "use strict";
 					this.rcMatrix[r].length = this.ySizes.length;
 				}
 			}
-			
+
 		},
-		
+
 		scheduleRelayout: function() {
 			var This = this;
 			if(!This.isLayoutScheduled) {
@@ -12762,32 +12763,32 @@ module.exports = (function(window, document) { "use strict";
 				return states;
 			}
 		},
-		
+
 		performLayout: function() {
-		
+
 			// process non-automatic items
 			this.buildImplicitMatrix();
 
-			// position the remaining grid items. 
+			// position the remaining grid items.
 			var cursor = { x: 0, y: 0 };
 
 			if(this.growY) {
-				
+
 				//For each grid item that hasnt been positioned by the previous steps, in order-modified document order:
 				for(var i=0; i<this.items.length; i++) {
 					var item = this.items[i]; if(item.xEnd!=-1 && item.yEnd!=-1) { continue; }
-					
+
 					// reset the cursor if the algorithm is set to 'dense'
 					if(this.growDense) { cursor = { x: 0, y: 0 }; }
-					
-					//If the item has a definite column position: 
+
+					//If the item has a definite column position:
 					if(item.specifiedXStart.type == LOCATE_LINE) {
-					
-						// 1. Set the column position of the cursor to be equal to the inline-start index of the grid item. 
+
+						// 1. Set the column position of the cursor to be equal to the inline-start index of the grid item.
 						var xStart = this.findXStart(item); if(cursor.x > xStart) { cursor.y++; } cursor.x = xStart;
 						var xEnd = this.findXEnd(item); if(xStart>=xEnd) { xEnd=xStart+1}
 						item.xStart=xStart; item.xEnd=xEnd;
-						
+
 						// assumption: Y is either AUTO + SPAN or AUTO + AUTO
 						var spanY = 1;
 						if(item.specifiedYEnd.type == LOCATE_SPAN) {
@@ -12802,39 +12803,39 @@ module.exports = (function(window, document) { "use strict";
 
 						// 2. Increment the auto-placement cursors row position until a value is found where the grid item does not overlap any occupied grid cells (creating new rows in the implicit grid as necessary).
 						IncrementalRowAttempts: while(true) {
-							
+
 							// make room for the currently attempted position
 							this.ensureRows(cursor.y+spanY);
-							
+
 							// check the non-overlap condition
 							for(var y = cursor.y+spanY-1; y>=cursor.y; y--) {
 								for(var x = xStart; x<xEnd; x++) {
-									
+
 									// if the cell is occupied
 									if(this.rcMatrix[y][x]) {
-									
+
 										// move to the next row
 										cursor.y=y+1; continue IncrementalRowAttempts;
-										
+
 									}
-									
+
 								}
 							}
-							
+
 							break;
-							
+
 						}
-						
+
 						// settle the position
 						item.xStart = xStart;
 						item.xEnd = xEnd;
 						item.yStart = cursor.y;
 						item.yEnd = cursor.y+spanY;
-						
-						this.markAsOccupied(item);					
-						
-					} else { // If the item has an automatic grid position in both axes: 
-						
+
+						this.markAsOccupied(item);
+
+					} else { // If the item has an automatic grid position in both axes:
+
 						// assumption: X is either AUTO + SPAN or AUTO + AUTO
 						var spanX = 1;
 						if(item.specifiedXEnd.type == LOCATE_SPAN) {
@@ -12846,7 +12847,7 @@ module.exports = (function(window, document) { "use strict";
 								spanX = 1; console.error('[CSS-GRID] UNSUPPORTED: grid-row/column: auto / span [0-9]+ [A-Z]+');
 							}
 						}
-						
+
 						// assumption: Y is either AUTO + SPAN or AUTO + AUTO
 						var spanY = 1;
 						if(item.specifiedYEnd.type == LOCATE_SPAN) {
@@ -12858,7 +12859,7 @@ module.exports = (function(window, document) { "use strict";
 								spanY = 1;
 							}
 						}
-						
+
 						// Increment the auto-placement cursors row/column position (creating new rows in the implicit grid as necessary)
 						var nextStep = function() {
 							cursor.x++; if(cursor.x+spanX>this.rcMatrix[0].length) { cursor.y++; this.ensureRows(cursor.y + spanY); cursor.x=0; }
@@ -12867,59 +12868,59 @@ module.exports = (function(window, document) { "use strict";
 
 						// 1. Increment the column position of the auto-placement cursor until this items grid area does not overlap any occupied grid cells
 						IncrementalYXPositionAttempts: while(true) {
-							
+
 							// make room for the currently attempted position
 							this.ensureRows(cursor.y+spanY);
-							
+
 							// check the non-overlap condition
 							for(var y = cursor.y+spanY-1; y>=cursor.y; y--) {
 								for(var x = cursor.x+spanX-1; x>=cursor.x; x--) {
-									
+
 									// if the cell is occupied
 									if(this.rcMatrix[y][x]) {
-									
+
 										// move to the next row/column
 										nextStep.call(this); continue IncrementalYXPositionAttempts;
-										
+
 									}
-									
+
 								}
 							}
-							
+
 							break;
-							
-							
+
+
 						}
-						
+
 						// settle the position
 						item.xStart = cursor.x;
 						item.xEnd = cursor.x+spanX;
 						item.yStart = cursor.y;
 						item.yEnd = cursor.y+spanY;
-						
+
 						this.markAsOccupied(item);
-						
+
 					}
-					
+
 				}
-				
+
 			} else {
-				
+
 				//For each grid item that hasnt been positioned by the previous steps, in order-modified document order:
 				for(var i=0; i<this.items.length; i++) {
 					var item = this.items[i]; if(item.xEnd!=-1 && item.yEnd!=-1) { continue; }
-					
+
 					// reset the cursor if the algorithm is set to 'dense'
 					if(this.growDense) { cursor = { x: 0, y: 0 }; }
-					
-					//If the item has a definite row position: 
+
+					//If the item has a definite row position:
 					if(item.specifiedYStart.type == LOCATE_LINE) {
-					
-						// 1. Set the column position of the cursor to be equal to the inline-start index of the grid item. 
+
+						// 1. Set the column position of the cursor to be equal to the inline-start index of the grid item.
 						var yStart = this.findYStart(item); if(cursor.y > yStart) { cursor.x++; } cursor.y = yStart;
 						var yEnd = this.findYEnd(item); if(yStart>=yEnd) { yEnd=yStart+1}
 						item.yStart=yStart; item.yEnd=yEnd;
-						
+
 						// assumption: X is either AUTO + SPAN or AUTO + AUTO
 						var spanX = 1;
 						if(item.specifiedXEnd.type == LOCATE_SPAN) {
@@ -12934,39 +12935,39 @@ module.exports = (function(window, document) { "use strict";
 
 						// 2. Increment the auto-placement cursors row position until a value is found where the grid item does not overlap any occupied grid cells (creating new rows in the implicit grid as necessary).
 						IncrementalColumnAttempts: while(true) {
-							
+
 							// make room for the currently attempted position
 							this.ensureColumns(cursor.x+spanX);
-							
+
 							// check the non-overlap condition
 							for(var x = cursor.x+spanX-1; x>=cursor.x; x--) {
 								for(var y = yStart; y<yEnd; y++) {
-									
+
 									// if the cell is occupied
 									if(this.rcMatrix[x][y]) {
-									
+
 										// move to the next row
 										cursor.x=x+1; continue IncrementalColumnAttempts;
-										
+
 									}
-									
+
 								}
 							}
-							
+
 							break;
-							
+
 						}
-						
+
 						// settle the position
 						item.yStart = yStart;
 						item.yEnd = yEnd;
 						item.xStart = cursor.x;
 						item.yEnd = cursor.x+spanX;
-						
-						this.markAsOccupied(item);					
-						
-					} else { // If the item has an automatic grid position in both axes: 
-						
+
+						this.markAsOccupied(item);
+
+					} else { // If the item has an automatic grid position in both axes:
+
 						// assumption: Y is either AUTO + SPAN or AUTO + AUTO
 						var spanY = 1;
 						if(item.specifiedYEnd.type == LOCATE_SPAN) {
@@ -12978,7 +12979,7 @@ module.exports = (function(window, document) { "use strict";
 								spanY = 1;
 							}
 						}
-						
+
 						// assumption: X is either AUTO + SPAN or AUTO + AUTO
 						var spanX = 1;
 						if(item.specifiedXEnd.type == LOCATE_SPAN) {
@@ -12990,7 +12991,7 @@ module.exports = (function(window, document) { "use strict";
 								spanX = 1; console.error('[CSS-GRID] UNSUPPORTED: grid-row/column: auto / span [0-9]+ [A-Z]+');
 							}
 						}
-						
+
 						// Increment the auto-placement cursors row/column position (creating new rows in the implicit grid as necessary)
 						var nextStep = function() {
 							cursor.y++; if(cursor.y+spanY>this.rcMatrix[0].length) { cursor.x++; this.ensureRows(cursor.x + spanX); cursor.y=0; }
@@ -12999,51 +13000,51 @@ module.exports = (function(window, document) { "use strict";
 
 						// 1. Increment the column position of the auto-placement cursor until this items grid area does not overlap any occupied grid cells
 						IncrementalXYPositionAttempts: while(true) {
-							
+
 							// make room for the currently attempted position
 							this.ensureColumns(cursor.x+spanX);
-							
+
 							// check the non-overlap condition
 							for(var x = cursor.x+spanX-1; x>=cursor.x; x--) {
 								for(var y = cursor.y+spanY-1; y>=cursor.y; y--) {
-									
+
 									// if the cell is occupied
 									if(this.rcMatrix[x][y]) {
-									
+
 										// move to the next row/column
 										nextStep.call(this); continue IncrementalXYPositionAttempts;
-										
+
 									}
-									
+
 								}
 							}
-							
+
 							break;
-							
-							
+
+
 						}
-						
+
 						// settle the position
 						item.xStart = cursor.x;
 						item.xEnd = cursor.x+spanX;
 						item.yStart = cursor.y;
 						item.yEnd = cursor.y+spanY;
-						
+
 						this.markAsOccupied(item);
-						
+
 					}
-					
+
 				}
 
 			}
 			this.computeAbsoluteTrackBreadths();
 
-			
-			
+
+
 		},
-		
+
 		computeAbsoluteTrackBreadths: function() {
-		
+
 			///////////////////////////////////////////////////////////
 			// hide child elements, to get free width/height
 			///////////////////////////////////////////////////////////
@@ -13056,11 +13057,11 @@ module.exports = (function(window, document) { "use strict";
 			for(var i = this.items.length; i--;) {
 				runtimeStyle.set(this.items[i],{"display":"none"});
 			}
-			
+
 			///////////////////////////////////////////////////////////
 			// hide child elements, to get free width/height
 			///////////////////////////////////////////////////////////
-			var LIMIT_IS_INFINITE = 1;		
+			var LIMIT_IS_INFINITE = 1;
 			var infinity = 9999999.0;
 			var rowCount = this.growY ? this.rcMatrix.length : this.rcMatrix[0].length;
 			var colCount = this.growY ? this.rcMatrix[0].length : this.rcMatrix.length;
@@ -13068,44 +13069,44 @@ module.exports = (function(window, document) { "use strict";
 			var fullHeight = this.element.offsetHeight - this.vtPadding - this.vbPadding;
 			var fullDistributableWidth = Math.max(0, fullWidth - Math.max(0, colCount - 1) * this.colGap);
 			var fullDistributableHeight = Math.max(0, fullHeight - Math.max(0, rowCount - 1) * this.rowGap);
-			
+
 			///////////////////////////////////////////////////////////
 			// show child elements again
 			///////////////////////////////////////////////////////////
 			runtimeStyle.revoke();
-			
-			// 
+
+			//
 			// 10.3  Initialize Track Sizes
-			// 
+			//
 			var initializeFromConstraints = function(v) {
-				
+
 				var base = 0, limit = infinity;
 				switch(v.minType) {
-					
-					// For fixed track sizes, resolve to an absolute length and use that size. 
+
+					// For fixed track sizes, resolve to an absolute length and use that size.
 					case TRACK_BREADTH_LENGTH:      base = v.minValue; break;
 					case TRACK_BREADTH_PERCENTAGE:  base = v.minValue*fullSize/100; break;
-					
+
 				}
-				
+
 				switch(v.maxType) {
-					
-					// For fixed track sizes, resolve to an absolute length and use that size. 
+
+					// For fixed track sizes, resolve to an absolute length and use that size.
 					case TRACK_BREADTH_LENGTH:      limit = v.minValue; break;
 					case TRACK_BREADTH_PERCENTAGE:  limit = v.minValue*fullSize/100; break;
-					
-					// For flexible track sizes, use the tracks initial base size as its initial growth limit.  
+
+					// For flexible track sizes, use the tracks initial base size as its initial growth limit.
 					case TRACK_BREADTH_FRACTION:    limit = base; break;
-					
-					// For intrinsic track sizes, use an initial growth limit of infinity. 
+
+					// For intrinsic track sizes, use an initial growth limit of infinity.
 					default:                        limit = infinity; break;
-					
+
 				}
-				
+
 				return { base:base, limit:limit, breadth:0, flags:((limit==infinity)?LIMIT_IS_INFINITE:0)|0 };
-				
+
 			}
-			
+
 			//
 			// Equal distribution algorithm
 			//
@@ -13114,27 +13115,27 @@ module.exports = (function(window, document) { "use strict";
 				var trackAmount = tracks.length;
 				var spacePerTrack = spaceToDistribute/trackAmount;
 				if(kind=='base') {
-				
+
 					// if we enforce the limit, grow up to the most limitating track
 					if(enforceLimit) {
 						for(var t = tracks.length; t--;) { var cx = tracks[t].x;
-							
+
 							// find the lowest acceptable increase for all tracks
 							var newBase = xSizes[cx].base + spacePerTrack;
-							
+
 							// if limits are enfo
 							if(enforceLimit && (xSizes[cx].flags & LIMIT_IS_INFINITE == 0) && newBase > xSizes[cx].limit) {
 								spacePerTrack -= newBase - xSizes[cx].limit;
 							}
 						}
 					}
-					
+
 					for(var t = tracks.length; t--;) { var cx = tracks[t].x;
 						xSizes[cx].base += spacePerTrack;
 					}
-					
+
 				} else if(kind == 'limit') {
-				
+
 					// Update the tracks' affected sizes by folding in the calculated increase so that the next round of space distribution will account for the increase.
 					for(var t = tracks.length; t--;) { var cx = tracks[t].x;
 						// If the growth limit is infinite...
@@ -13153,117 +13154,117 @@ module.exports = (function(window, document) { "use strict";
 				}
 			}
 
-			
-			// 
+
+			//
 			// 10.4  Resolve Content-Based Track Sizing Functions
-			// 
+			//
 			var computeTrackBreadth = function(xSizes, specifiedSizes, getMinWidthOf, getMaxWidthOf, getXStartOf, getXEndOf) {
-				
+
 				// For each track
 				var items_done = 0; // items already consumed for this algorithm
 				for(var x = specifiedSizes.length; x--;) {
-				
+
 					var dontCountMaxItems = false;
-					
+
 					// If the track has a min-content min track sizing function
 					if(specifiedSizes[x].minType == TRACK_BREADTH_MIN_CONTENT || specifiedSizes[x].minType == TRACK_BREADTH_AUTO) {
-						
-						// Consider the items in it with a span of 1: 
+
+						// Consider the items in it with a span of 1:
 						for(var i = this.items.length; i--;) { var item = this.items[i]; var item_xStart = getXStartOf(item); var item_xEnd = getXEndOf(item);
 							if(item_xStart>x || item_xEnd<=x || item_xEnd-item_xStart != 1) continue;
-							
-							// Set its base size to the maximum of the items min-content contributions. 
+
+							// Set its base size to the maximum of the items min-content contributions.
 							xSizes[x].base = Math.max(xSizes[x].base, getMinWidthOf(item)); items_done++; dontCountMaxItems=true;
-							
+
 						}
-						
+
 					}
-					
+
 					// If the track has a max-content min track sizing function
 					else if(specifiedSizes[x].minType == TRACK_BREADTH_MAX_CONTENT) {
-						
-						// Consider the items in it with a span of 1: 
+
+						// Consider the items in it with a span of 1:
 						for(var i = this.items.length; i--;) { var item = this.items[i]; var item_xStart = getXStartOf(item); var item_xEnd = getXEndOf(item);
 							if(item_xStart>x || item_xEnd<=x || item_xEnd-item_xStart != 1) continue;
-							
-							// Set its base size to the maximum of the items max-content contributions. 
+
+							// Set its base size to the maximum of the items max-content contributions.
 							xSizes[x].base = Math.max(xSizes[x].base, getMaxWidthOf(item)); items_done++; dontCountMaxItems=true;
-							
+
 						}
-						
+
 					}
-					
+
 					// If the track has a min-content max track sizing function
 					if(specifiedSizes[x].maxType == TRACK_BREADTH_MIN_CONTENT) {
-						
-						// Consider the items in it with a span of 1: 
+
+						// Consider the items in it with a span of 1:
 						for(var i = this.items.length; i--;) { var item = this.items[i]; var item_xStart = getXStartOf(item); var item_xEnd = getXEndOf(item);
 							if(item_xStart>x || item_xEnd<=x || item_xEnd-item_xStart != 1) continue;
-							
-							// Set its growth limit to the maximum of the items min-content contributions. 
+
+							// Set its growth limit to the maximum of the items min-content contributions.
 							if(xSizes[x].limit == infinity) { xSizes[x].limit = getMinWidthOf(item); }
 							else { xSizes[x].limit = Math.max(xSizes[x].limit, getMinWidthOf(item)); }
-							
+
 							if(!dontCountMaxItems) { items_done++; }
-							
+
 						}
-						
-					} 
-					
+
+					}
+
 					// If the track has a max-content max track sizing function
 					else if(specifiedSizes[x].maxType == TRACK_BREADTH_MAX_CONTENT || specifiedSizes[x].minType == TRACK_BREADTH_AUTO) {
-						
-						// Consider the items in it with a span of 1: 
+
+						// Consider the items in it with a span of 1:
 						for(var i = this.items.length; i--;) { var item = this.items[i]; var item_xStart = getXStartOf(item); var item_xEnd = getXEndOf(item);
 							if(item_xStart>x || item_xEnd<=x || item_xEnd-item_xStart != 1) continue;
-							
-							// Set its growth limit to the maximum of the items max-content contributions. 
+
+							// Set its growth limit to the maximum of the items max-content contributions.
 							if(xSizes[x].limit == infinity) { xSizes[x].limit = getMaxWidthOf(item); }
 							else { xSizes[x].limit = Math.max(xSizes[x].limit, getMaxWidthOf(item)); }
-							
+
 							if(!dontCountMaxItems) { items_done++; }
-							
+
 						}
-						
+
 					}
-					
+
 					// update infinity flag
 					if(xSizes[x].limit != infinity) {
 						xSizes[x].flags = xSizes[x].flags & ~LIMIT_IS_INFINITE;
 					}
-					
+
 				}
-				
-				// Next, consider the items with a span of 2 that do not span a track with a flexible sizing function: 
+
+				// Next, consider the items with a span of 2 that do not span a track with a flexible sizing function:
 				// Repeat incrementally for items with greater spans until all items have been considered.
 				for(var span = 2; items_done < this.items.length && span <= specifiedSizes.length; span++) {
 					ItemLoop: for(var i = this.items.length; i--;) { var item = this.items[i]; var item_xStart = getXStartOf(item); var item_xEnd = getXEndOf(item);
 						if(item_xEnd-item_xStart != span) continue ItemLoop;
-						
+
 						// gather some pieces of data about the tracks
 						var full_base = 0; var full_limit = 0;
-						for(var cx = item_xStart; cx<item_xEnd; cx++) { 
-							
+						for(var cx = item_xStart; cx<item_xEnd; cx++) {
+
 							// 1. we want to make sure none is flexible
 							if(specifiedSizes[cx].maxType == TRACK_BREADTH_FRACTION) continue ItemLoop;
-							
+
 							// 2. compute aggregated sizes
 							full_base += xSizes[cx].base;
 							full_limit += xSizes[cx].limit;
-							
+
 						}
 						if(full_limit > infinity) full_limit=infinity;
-						
+
 						var distributeFreeSpace = function(requiredSpace, kind /*'base'|'limit'*/, target /*'min-content'|'max-content'*/) {
-							
+
 							while (true) {
-							
+
 								// compute the required extra space
 								var spaceToDistribute = requiredSpace;
 								for(var cx = item_xStart; cx<item_xEnd; cx++) {
 									spaceToDistribute -= xSizes[cx][kind];
 								}
-								
+
 								// if no space to distribute, just lock auto columns:
 								if(spaceToDistribute <= 1/1024) { //due to double precision, this may never reach perfect 0
 									for(var cx = item_xStart; cx<item_xEnd; cx++) {
@@ -13277,8 +13278,8 @@ module.exports = (function(window, document) { "use strict";
 								// sort rows by growth limit
 								var rows_and_limits = [];
 								for(var cx = item_xStart; cx<item_xEnd; cx++) {
-									rows_and_limits.push({ 
-										x:cx, 
+									rows_and_limits.push({
+										x:cx,
 										base:xSizes[cx].base,
 										limit:xSizes[cx].limit,
 										minIsMinContent: specifiedSizes[cx].minType == TRACK_BREADTH_MIN_CONTENT || specifiedSizes[cx].minType == TRACK_BREADTH_AUTO,
@@ -13288,7 +13289,7 @@ module.exports = (function(window, document) { "use strict";
 									});
 								}
 								rows_and_limits.sort(function(a,b) { return a.limit-b.limit; });
-								
+
 								// remove non-affected tracks
 								rows_and_limits = rows_and_limits.filter(function(b) {
 									if(kind=='base') {
@@ -13306,76 +13307,76 @@ module.exports = (function(window, document) { "use strict";
 									}
 									return false;
 								});
-								
+
 								// check that there is at least one affected track
 								if(rows_and_limits.length == 0) { return; }
-								
+
 								// apply the algorithm
 								if(kind=='base') {
-									
+
 									// Distribute space up to growth limits
 									var tracks = rows_and_limits.filter(function(b) { return b.base<b.limit; }, 0);
 									var trackAmount = tracks.length;
 									if(trackAmount > 0) {
-										
+
 										distributeEquallyAmongTracks(xSizes, kind, tracks, spaceToDistribute, /*enforceLimit:*/true);
-											
+
 									} else {
-										
+
 										// Distribute space beyond growth limits
 										// If space remains after all tracks are frozen, unfreeze and continue to distribute space to
- 
-										
-										// - when handling min-content base sizes: 
+
+
+										// - when handling min-content base sizes:
 										if(target=='min-content') {
-											
-											// any affected track that happens to also have an intrinsic max track sizing function; 
+
+											// any affected track that happens to also have an intrinsic max track sizing function;
 											var tracks = rows_and_limits.filter(function(b) { return b.maxIsMinContent||b.maxIsMaxContent; }, 0);
 											var trackAmount = tracks.length;
 											if(trackAmount>=1) {
-												
+
 												// (such tracks exist:)
 												distributeEquallyAmongTracks(xSizes, kind, tracks, spaceToDistribute, /*enforceLimit:*/false);
-												
+
 											} else {
-												
-												// if there are no such tracks, then all affected tracks. 
+
+												// if there are no such tracks, then all affected tracks.
 												distributeEquallyAmongTracks(xSizes, kind, rows_and_limits, spaceToDistribute, /*enforceLimit:*/false);
 											}
-											
+
 										}
-										
-										// - when handling max-content base sizes: 
+
+										// - when handling max-content base sizes:
 										else if(target=='max-content') {
-											
+
 											// any affected track that happens to also have a max-content max track sizing function;
 											var tracks = rows_and_limits.filter(function(b) { return b.maxIsMaxContent; }, 0);
 											var trackAmount = tracks.length;
 											if(trackAmount>=1) {
-												
+
 												// (such tracks exist:)
 												distributeEquallyAmongTracks(xSizes, kind, tracks, spaceToDistribute, /*enforceLimit:*/false);
-												
+
 											} else {
-												
-												// if there are no such tracks, then all affected tracks. 
+
+												// if there are no such tracks, then all affected tracks.
 												distributeEquallyAmongTracks(xSizes, kind, rows_and_limits, spaceToDistribute, /*enforceLimit:*/false);
 											}
-											
+
 										}
 									}
-									
+
 								}
-								
+
 								else if (kind == 'limit') {
-									
+
 									// distribute among all tracks
 									distributeEquallyAmongTracks(xSizes, kind, rows_and_limits, spaceToDistribute);
-									
+
 								}
 							}
 						};
-						
+
 						var updateInfiniteLimitFlag = function() {
 							for(var x = xSizes.length; x--;) {
 								if(xSizes[x].limit != infinity) {
@@ -13383,46 +13384,46 @@ module.exports = (function(window, document) { "use strict";
 								}
 							}
 						}
-						
+
 						//
-						// 1. For intrinsic minimums: First increase the base size of tracks with a min track sizing function of min-content or max-content by distributing extra space as needed to account for these items' min-content contributions. 
+						// 1. For intrinsic minimums: First increase the base size of tracks with a min track sizing function of min-content or max-content by distributing extra space as needed to account for these items' min-content contributions.
 						//
 						distributeFreeSpace(getMinWidthOf(item), 'base', 'min-content');
 						updateInfiniteLimitFlag();
-						
-						
+
+
 						//
-						// 2. For max-content minimums: Next continue to increase the base size of tracks with a min track sizing function of max-content by distributing extra space as needed to account for these items' max-content contributions. 
+						// 2. For max-content minimums: Next continue to increase the base size of tracks with a min track sizing function of max-content by distributing extra space as needed to account for these items' max-content contributions.
 						//
 						distributeFreeSpace(getMaxWidthOf(item), 'base', 'max-content');
 						updateInfiniteLimitFlag();
-						
+
 						//
-						// 3. For intrinsic maximums: Third increase the growth limit of tracks with a max track sizing function of min-content or max-content by distributing extra space as needed to account for these items' min-content contributions. 
-						// Mark any tracks whose growth limit changed from infinite to finite in this step as infinitely growable for the next step. 
+						// 3. For intrinsic maximums: Third increase the growth limit of tracks with a max track sizing function of min-content or max-content by distributing extra space as needed to account for these items' min-content contributions.
+						// Mark any tracks whose growth limit changed from infinite to finite in this step as infinitely growable for the next step.
 						// (aka do not update infinity flag)
 						//
 						distributeFreeSpace(getMinWidthOf(item), 'limit', 'min-content');
-						
+
 						//
-						// 4. For max-content maximums: Lastly continue to increase the growth limit of tracks with a max track sizing function of max-content by distributing extra space as needed to account for these items' max-content contributions. 
+						// 4. For max-content maximums: Lastly continue to increase the growth limit of tracks with a max track sizing function of max-content by distributing extra space as needed to account for these items' max-content contributions.
 						//
 						distributeFreeSpace(getMaxWidthOf(item), 'limit', 'max-content');
 						updateInfiniteLimitFlag();
-						
+
 						items_done++;
-						
+
 					}
 				}
 
 			}
-			
+
 			var computeTrackBreadthIncrease = function(xSizes, specifiedSizes, fullSize, fullDistributableSize, getMinWidthOf, getMaxWidthOf, getXStartOf, getXEndOf) {
-				
+
 				// sort rows by growth limit
-				var rows_and_limits = xSizes.map(function(item, cx) { 
-					return { 
-						x:cx, 
+				var rows_and_limits = xSizes.map(function(item, cx) {
+					return {
+						x:cx,
 						base:xSizes[cx].base,
 						limit:xSizes[cx].limit,
 						minIsMinContent: specifiedSizes[cx].minType == TRACK_BREADTH_MIN_CONTENT || specifiedSizes[cx].minType == TRACK_BREADTH_AUTO,
@@ -13432,44 +13433,44 @@ module.exports = (function(window, document) { "use strict";
 					};
 				});
 				rows_and_limits.sort(function(a,b) { return a.limit-b.limit; });
-				
+
 				while(true) {
-					
+
 					// compute size to distribute
 					var spaceToDistribute = fullDistributableSize;
 					for(var cx = xSizes.length; cx--;) {
 						spaceToDistribute -= xSizes[cx].base;
 					}
-					
+
 					// check that there is some space to distribute
 					if(spaceToDistribute <= 1/1024) { return; } // NOTE: the space may never become 0 due to a rounding issue
-					
+
 					// Distribute space up to growth limits
 					var tracks = rows_and_limits = rows_and_limits.filter(function(b) { return ((b.minIsMinContent||b.minIsMaxContent) && b.base<b.limit); }, 0);
 					var trackAmount = tracks.length; if(trackAmount <= 0) { return; }
 					distributeEquallyAmongTracks(xSizes, 'base', tracks, spaceToDistribute, /*enforceLimit:*/true);
-					
+
 				}
 			}
-			
+
 			var computeFlexibleTrackBreadth = function(xSizes, specifiedSizes, fullSize, fullDistributableSize, getMinWidthOf, getMaxWidthOf, getXStartOf, getXEndOf) {
-				
-				// If the free space is an indefinite length: 
+
+				// If the free space is an indefinite length:
 				if(fullSize==0) {
-					
-					//The used flex fraction is the maximum of: 
+
+					//The used flex fraction is the maximum of:
 					var currentFraction = 0;
-					
-					//  Each flexible tracks base size divided by its flex factor. 
+
+					//  Each flexible tracks base size divided by its flex factor.
 					'TODO: I believe this is completely useless, but CSSWG will not change it.';
-					
-					//  The result of finding the size of an fr for each grid item that crosses a flexible track, using all the grid tracks that the item crosses and a space to fill of the items max-content contribution. 
+
+					//  The result of finding the size of an fr for each grid item that crosses a flexible track, using all the grid tracks that the item crosses and a space to fill of the items max-content contribution.
 					for(var i = this.items.length; i--;) { var item = this.items[i]; var item_xStart = getXStartOf(item); var item_xEnd = getXEndOf(item);
-						
+
 						// gather some pieces of data about the tracks
 						var spaceToDistribute = getMaxWidthOf(item); var flexFactorSum = 0;
-						for(var cx = item_xStart; cx<item_xEnd; cx++) { 
-							
+						for(var cx = item_xStart; cx<item_xEnd; cx++) {
+
 							if(specifiedSizes[cx].maxType == TRACK_BREADTH_FRACTION) {
 								// compute how much flexible tracks are required
 								flexFactorSum += specifiedSizes[cx].maxValue;
@@ -13477,44 +13478,44 @@ module.exports = (function(window, document) { "use strict";
 								// deduce non-flexible tracks from the space to distribute
 								spaceToDistribute -= xSizes[cx].base;
 							}
-							
+
 						}
-						
+
 						// compute the minimum flex fraction for this item
 						if(spaceToDistribute > 0 && flexFactorSum > 0) {
 							currentFraction = Math.max(currentFraction, spaceToDistribute / flexFactorSum)
 						}
-						
+
 					}
-					
+
 					// for each flexible track
 					for(var x = xSizes.length; x--;) {
 						if(specifiedSizes[x].maxType == TRACK_BREADTH_FRACTION) {
-							
+
 							// Compute the product of the hypothetical flex fraction and the tracks flex factor
 							var trackSize = currentFraction * specifiedSizes[x].maxValue;
-							
+
 							// If that size is less than the tracks base size:
 							if(xSizes[x].base < trackSize) {
-								
+
 								// set its base size to that product.
 								xSizes[x].breadth = trackSize;
-								
+
 							} else {
-								
+
 								xSizes[x].breadth = xSizes[x].base;
-								
+
 							}
-							
+
 						} else {
-							
+
 							xSizes[x].breadth = xSizes[x].base;
-							
+
 						}
 					}
-					
+
 				} else {
-				
+
 					// compute the leftover space
 					var spaceToDistribute = fullDistributableSize;
 					var tracks = []; var fractionSum = 0;
@@ -13528,47 +13529,47 @@ module.exports = (function(window, document) { "use strict";
 
 					// while there are flexible tracks to size
 					while(tracks.length>0) {
-						
+
 						// Let the hypothetical flex fraction be the leftover space divided by the sum of the flex factors of the flexible tracks.
 						var currentFraction = spaceToDistribute / fractionSum; var restart = false;
-						
+
 						// for each flexible track
 						for(var i = tracks.length; i--;) { var x = tracks[i];
-							
+
 							// Compute the product of the hypothetical flex fraction and the tracks flex factor
 							var trackSize = currentFraction * specifiedSizes[x].maxValue;
-							
+
 							// If that size is less than the tracks base size:
 							if(xSizes[x].base < trackSize) {
-								
+
 								// set its base size to that product.
 								xSizes[x].breadth = trackSize;
 
 							} else {
-								
+
 								// mark as non-flexible
 								xSizes[x].breadth = xSizes[x].base;
-								
+
 								// remove from computation
 								fractionSum -= specifiedSizes[x].maxValue;
 								tracks.splice(i,1);
-								
+
 								// restart
 								restart=true;
-								
+
 							}
-							
+
 						}
-						
+
 						if(!restart) { tracks.length = 0; }
-						
+
 					}
-					
+
 				}
 			}
-			
+
 			var computeFinalTrackBreadth = function(xSizes, this_xSizes, fullWidth, fullDistributableWidth, getMinWidthOf, getMaxWidthOf, getXStartOf, getXEndOf) {
-				
+
 				// compute base and limit
 				computeTrackBreadth.call(
 					this,
@@ -13579,12 +13580,12 @@ module.exports = (function(window, document) { "use strict";
 					getXStartOf,
 					getXEndOf
 				);
-				
+
 				// ResolveContentBasedTrackSizingFunctions (step 4)
 				for(var x = this_xSizes.length; x--;) {
 					if(xSizes[x].limit == infinity) { xSizes[x].limit = xSizes[x].base; }
 				}
-				
+
 				// grow tracks up to their max
 				computeTrackBreadthIncrease.call(
 					this,
@@ -13597,14 +13598,14 @@ module.exports = (function(window, document) { "use strict";
 					getXStartOf,
 					getXEndOf
 				);
-				
+
 				// handle flexible things
 				computeFlexibleTrackBreadth.call(
 					this,
 					xSizes,
 					this_xSizes,
 					fullWidth,
-					fullDistributableWidth,					
+					fullDistributableWidth,
 					getMinWidthOf,
 					getMaxWidthOf,
 					getXStartOf,
@@ -13612,7 +13613,7 @@ module.exports = (function(window, document) { "use strict";
 				);
 
 			}
-			
+
 			///////////////////////////////////////////////////////////
 			// compute breadth of columns
 			///////////////////////////////////////////////////////////
@@ -13624,52 +13625,52 @@ module.exports = (function(window, document) { "use strict";
 
 			var getMinWidthOf = function(item) { return item.minWidth + item.hMargins - Math.max(0, item.xEnd - item.xStart - 1) * colGap; };
 			var getMaxWidthOf = function(item) { return item.maxWidth + item.hMargins - Math.max(0, item.xEnd - item.xStart - 1) * colGap; };
-			var getXStartOf = function(item) { return item.xStart; }; 
+			var getXStartOf = function(item) { return item.xStart; };
 			var getXEndOf = function(item) { return item.xEnd; };
-			
+
 			// compute base and limit
 			computeFinalTrackBreadth.call(
 				this,
 				xSizes,
 				this.xSizes,
 				fullWidth,
-				fullDistributableWidth,				
+				fullDistributableWidth,
 				getMinWidthOf,
 				getMaxWidthOf,
 				getXStartOf,
 				getXEndOf
 			);
-			
+
 			///////////////////////////////////////////////////////////
 			// position each element absolutely, and set width to compute height
 			///////////////////////////////////////////////////////////
 			var usedStyle = usedStyleOf(this.element);
 			var runtimeStyle = createRuntimeStyle('temp-position', this.element);
-			
-			if(usedStyle.getPropertyValue('position')=='static') { 
+
+			if(usedStyle.getPropertyValue('position')=='static') {
 				runtimeStyle.set(this.element, {"position":"relative"});
 			}
-			
+
 			this.items.forEach(function(item) {
-				
+
 				// firstly, compute the total breadth of the spanned tracks
 				var totalBreadth = 0;
 				for(var cx = item.xStart; cx<item.xEnd; cx++) {
 					totalBreadth += xSizes[cx].breadth;
 				}
-				
+
 				// secondly, adapt to the alignment properties
 				"TODO: alignment";
-				
+
 				// finally, set the style
 				runtimeStyle.set(item.element, {
 					"position"   : "absolute",
 					"width"      : ""+totalBreadth+"px",
 					"box-sizing" : "border-box"
 				});
-				
+
 			});
-			
+
 			///////////////////////////////////////////////////////////
 			// compute breadth of rows
 			///////////////////////////////////////////////////////////
@@ -13683,30 +13684,30 @@ module.exports = (function(window, document) { "use strict";
 			var getMaxHeightOf = function(item) { return item.element.offsetHeight + item.vMargins - Math.max(0, item.yEnd - item.yStart - 1) * rowGap; };
 			var getYStartOf = function(item) { return item.yStart; };
 			var getYEndOf = function(item) { return item.yEnd; };
-			
+
 			computeFinalTrackBreadth.call(
 				this,
 				ySizes,
 				this.ySizes,
 				fullHeight,
-				fullDistributableHeight,				
+				fullDistributableHeight,
 				getMinHeightOf,
 				getMaxHeightOf,
 				getYStartOf,
 				getYEndOf
 			);
-									
+
 			///////////////////////////////////////////////////////////
 			// release the override style of elements
 			///////////////////////////////////////////////////////////
 			runtimeStyle.revoke();
-			
+
 			///////////////////////////////////////////////////////////
 			// save the results
 			////
 			this.finalXSizes = xSizes;
 			this.finalYSizes = ySizes;
-			
+
 			///////////////////////////////////////////////////////////
 			// log the results
 			///////////////////////////////////////////////////////////
@@ -13716,46 +13717,46 @@ module.exports = (function(window, document) { "use strict";
 				y: ySizes,
 				yBreadths: ySizes.map(function(e) { return e.breadth; }),
 			});*/
-		
+
 		},
-		
+
 		generateMSGridStyle: function() {
-			
+
 			this.element.style.setProperty("display","-ms-grid");
 			this.element.style.setProperty("-ms-grid-rows",this.ySizes.join(' '));
 			this.element.style.setProperty("-ms-grid-columns",this.xSizes.join(' '));
-			
-			for(var i=this.items.length; i--;) { var item = this.items[i]; 
-				
+
+			for(var i=this.items.length; i--;) { var item = this.items[i];
+
 				item.element.style.setProperty("-ms-grid-row", item.yStart+1);
 				item.element.style.setProperty("-ms-grid-column", item.xStart+1);
 				item.element.style.setProperty("-ms-grid-row-span", item.yEnd-item.yStart);
 				item.element.style.setProperty("-ms-grid-column-span", item.xEnd-item.xStart);
-				
+
 			}
-			
+
 		},
-		
+
 		generatePolyfilledStyle: function() {
-		
+
 			var usedStyle = usedStyleOf(this.element);
 			var runtimeStyle = createRuntimeStyle("css-grid", this.element);
-		
+
 			var xSizes = this.finalXSizes;
 			var ySizes = this.finalYSizes;
-			
+
 			var grid_width = 0;
 			for(var x = 0; x<xSizes.length; x++) {
 				grid_width += xSizes[x].breadth;
 			}
 			grid_width += this.colGap * (xSizes.length - 1);
-			
+
 			var grid_height = 0;
 			for(var y = 0; y<ySizes.length; y++) {
 				grid_height += ySizes[y].breadth;
 			}
 			grid_height += this.rowGap * (ySizes.length - 1);
-			
+
 			var runtimeStyleData = {};
 			if(["block","inline-block"].indexOf(usedStyle.getPropertyValue("display")) == -1) {
 				runtimeStyleData["display"] = "block";
@@ -13763,55 +13764,55 @@ module.exports = (function(window, document) { "use strict";
 			if(usedStyle.getPropertyValue('position')=='static') {
 				runtimeStyleData["position"] = "relative";
 			}
-			
+
 			runtimeStyle.set(this.element, runtimeStyleData);
-			
+
 
 			// set the position and sizing of each elements
 			var width = grid_width; var height = grid_height;
-			var items_widths = []; var items_heights = []; 
+			var items_widths = []; var items_heights = [];
 			items_widths.length = items_heights.length = this.items.length;
-			for(var i=this.items.length; i--;) { var item = this.items[i]; 
-				
+			for(var i=this.items.length; i--;) { var item = this.items[i];
+
 				var left = this.hlPadding;
 				for(var x = 0; x<item.xStart; x++) {
 					left += xSizes[x].breadth;
 				}
 				left += this.colGap * item.xStart;
-				
+
 				var width = 0;
 				for(var x = item.xStart; x<item.xEnd; x++) {
 					width += xSizes[x].breadth;
 				}
 				width += Math.max(0, item.xEnd - item.xStart - 1) * this.colGap;
-				
+
 				var top = this.vtPadding;
 				for(var y = 0; y<item.yStart; y++) {
 					top += ySizes[y].breadth;
 				}
 				top += this.rowGap * item.yStart;
-				
+
 				var height = 0;
 				for(var y = item.yStart; y<item.yEnd; y++) {
 					height += ySizes[y].breadth;
 				}
 				height += Math.max(0, item.yEnd - item.yStart - 1) * this.rowGap;
-				
-				
+
+
 				runtimeStyle.set(item.element, {
 					"position"    : "absolute",
 					"box-sizing"  : "border-box",
 					"top"         : ""+top +"px",
 					"left"        : ""+left+'px'
 				});
-				
+
 				items_widths[i] = width-item.hMargins;
 				items_heights[i] = height-item.vMargins;
-				
+
 			}
-			
+
 			var isReplaced = /^(SVG|MATH|IMG|VIDEO|PICTURE|OBJECT|EMBED|IFRAME)$/i;
-			
+
 			// if horizontal stretch
 			if(true) { // TODO: horizontal stretch
 				for(var i=this.items.length; i--;) { var item = this.items[i]; var width = items_widths[i];
@@ -13820,7 +13821,7 @@ module.exports = (function(window, document) { "use strict";
 					}
 				}
 			}
-			
+
 			// if vertical stretch
 			if(true) { // TODO: vertical stretch
 				for(var i=this.items.length; i--;) { var item = this.items[i]; var height = items_heights[i];
@@ -13829,7 +13830,7 @@ module.exports = (function(window, document) { "use strict";
 					}
 				}
 			}
-			
+
 			// make sure the final size is right:
 			var runtimeStyleData = {};
 			//if(["absolute","fixed"].indexOf(usedStyle.getPropertyValue("position")) >= 0) { runtimeStyleData["width"] = grid_width+'px'; }
@@ -13837,222 +13838,222 @@ module.exports = (function(window, document) { "use strict";
 			if(["auto","0px"].indexOf(usedStyle.getPropertyValue("height")) >= 0) { runtimeStyleData["height"] = grid_height+'px'; }
 			runtimeStyle.set(this.element, runtimeStyleData);
 
-			
+
 		},
-		
+
 		revokePolyfilledStyle: function() {
-			
+
 			createRuntimeStyle('css-grid', this.element).revoke();
-			
+
 		},
-		
+
 		findXStart: function(item) {
-		
+
 			//////////////////////////////////////////////////////////////////////////////
 			// TODO: this doesn't reflect the spec after the changes made at my request //
 			//////////////////////////////////////////////////////////////////////////////
-			
+
 			var xStart = -1;
 			if(item.specifiedXStart.type !== LOCATE_LINE) return 0;
-			
+
 			if(item.specifiedXStart.name) {
-				
+
 				//
 				// <integer>? <custom-ident>
 				//
-				
+
 				if(item.specifiedXStart.index === undefined) {
-					
+
 					// First attempts to match the grid areas edge to a named grid area
 					xStart = this.findXLine(item.specifiedXStart.name+"-start", 0, 0, /*dontFallback*/true);
-					
+
 				}
 				if(xStart==-1) {
-				
-					// Otherwise, contributes the first named line with the specified name to the grid items placement. 
+
+					// Otherwise, contributes the first named line with the specified name to the grid items placement.
 					xStart = this.findXLine(item.specifiedXStart.name, 0, (item.specifiedXStart.index||1)-1);
-					
+
 				}
-				
+
 			} else {
-				
+
 				//
 				// <integer>
 				//
 				xStart = (item.specifiedXStart.index||1)-1;
-				
+
 			}
-			
+
 			// correct impossible values
 			if(xStart < 0) { xStart=0; }
-			
+
 			// return the final result
 			return item.xStart = xStart;
-			
+
 		},
-		
+
 		findYStart: function(item) {
-			
+
 			var yStart = -1;
 			if(item.specifiedYStart.type !== LOCATE_LINE) return 0;
 
 			if(item.specifiedYStart.name) {
-				
+
 				//
 				// <interger>? <custom-ident>
 				//
-				
+
 				if(item.specifiedYStart.index === undefined) {
-					
+
 					// First attempts to match the grid areas edge to a named grid area
 					yStart = this.findYLine(item.specifiedYStart.name+"-start", 0, 0, /*dontFallback*/true);
-					
+
 				}
 				if(yStart == -1) {
-					
-					// Otherwise, contributes the first named line with the specified name to the grid items placement. 
+
+					// Otherwise, contributes the first named line with the specified name to the grid items placement.
 					yStart = this.findYLine(item.specifiedYStart.name, 0,(item.specifiedYStart.index||1)-1);
-					
+
 				}
-				
+
 			} else {
-				
+
 				//
 				// <integer>
 				//
 				yStart = (item.specifiedYStart.index||1)-1;
-				
+
 			}
-			
+
 			// correct impossible values
 			if(yStart < 0) { yStart=0; }
-			
+
 			// return the final result
 			return item.yStart = yStart;
-			
+
 		},
-		
+
 		findXEnd: function(item) {
-			
+
 			var xEnd = -1;
 			var xStart = item.xStart;
 			switch(item.specifiedXEnd.type) {
-				
+
 				case LOCATE_LINE:
 					if(item.specifiedXEnd.name) {
 						if(item.specifiedXEnd.index === undefined) {
-							
+
 							// First attempts to match the grid areas edge to a named grid area
 							xEnd = this.findXLine(item.specifiedXEnd.name+"-end", 0, 0, /*dontFallback*/true);
-							
+
 						}
 						if(xEnd == -1) {
-							
-							// Otherwise, contributes the first named line with the specified name to the grid items placement. 
+
+							// Otherwise, contributes the first named line with the specified name to the grid items placement.
 							xEnd = this.findXLine(item.specifiedXEnd.name, 0, (item.specifiedXEnd.index||1)-1);
-							
+
 						}
 					} else {
 						xEnd = (item.specifiedXEnd.index||1)-1;
 					}
 					break;
-					
+
 				case LOCATE_SPAN:
 					if(item.specifiedXEnd.name) {
-					
-						// Set the corresponding edge N lines apart from its opposite edge. 
+
+						// Set the corresponding edge N lines apart from its opposite edge.
 						xEnd = this.findXLine(item.specifiedXEnd.name, xStart+1, (item.specifiedXEnd.index||1)-1);
-						
+
 					} else {
-						
-						// Set the corresponding edge N lines apart from its opposite edge. 
+
+						// Set the corresponding edge N lines apart from its opposite edge.
 						xEnd = xStart+((item.specifiedXEnd.index|0)||1);
 					}
 					break;
-					
+
 				case LOCATE_AUTO:
 					// I don't support subgrids, so this is always true:
 					xEnd = xStart+1;
 					break;
 			}
-			
+
 			if(xEnd <= xStart) { xEnd = xStart+1; }
 			return item.xEnd = xEnd;
-			
+
 		},
-		
+
 		findYEnd: function(item) {
-			
+
 			var yEnd = -1;
 			var yStart = item.yStart;
 			switch(item.specifiedYEnd.type) {
-				
+
 				case LOCATE_LINE:
 					if(item.specifiedYEnd.name) {
-						
+
 						//
 						// <integer>? <identifier>
-						// 
+						//
 						if(item.specifiedYEnd.index === undefined) {
-							
+
 							// First attempts to match the grid areas edge to a named grid area
 							yEnd = this.findYLine(item.specifiedYEnd.name+"-end", 0, 0, /*dontFallback*/true);
-							
+
 						}
 						if(yEnd == -1) {
-							
-							// Otherwise, contributes the first named line with the specified name to the grid items placement. 
+
+							// Otherwise, contributes the first named line with the specified name to the grid items placement.
 							yEnd = this.findYLine(item.specifiedYEnd.name, 0, (item.specifiedYEnd.index||1)-1);
-							
+
 						}
-						
+
 					} else {
-						
+
 						//
 						// <integer>
 						//
 						yEnd = (item.specifiedYEnd.index||1)-1;
-						
+
 					}
 					break;
-					
+
 				case LOCATE_SPAN:
 					if(item.specifiedYEnd.name) {
-					
-						// Set the corresponding edge N lines apart from its opposite edge. 
+
+						// Set the corresponding edge N lines apart from its opposite edge.
 						yEnd = this.findYLine(item.specifiedYEnd.name, yStart+1, (item.specifiedYEnd.index||1)-1);
-						
+
 						// TODO: I'm having the wrong behavior here, I sent a mail to csswg to get the spec changed
 						// "The spec is more what you'd call 'guidelines' than actual rules"
 						if(yEnd==-1) { yEnd = 0; }
-						
+
 					} else {
-						
-						// Set the corresponding edge N lines apart from its opposite edge. 
+
+						// Set the corresponding edge N lines apart from its opposite edge.
 						yEnd = yStart+((item.specifiedYEnd.index|0)||1);
 					}
 					break;
-					
+
 				case LOCATE_AUTO:
 					// I don't support subgrids, so this is always true:
 					yEnd = yStart+1;
 					break;
-					
+
 			}
-			
+
 			// correct impossible end values
 			if(yEnd <= yStart) { yEnd = yStart+1; }
-			
+
 			// return the final result
 			return item.yEnd = yEnd;
 
 		},
-		
+
 		findXLine: function(name, startIndex, skipCount, dontFallback) {
-		
+
 			startIndex=startIndex|0;
 			skipCount=skipCount|0;
-			
+
 			// special case for cases where the name isn't provided
 			if(!name) {
 				if(startIndex+skipCount < this.xLines.length) {
@@ -14061,11 +14062,11 @@ module.exports = (function(window, document) { "use strict";
 					return this.xLines.length;
 				}
 			}
-			
+
 			// find the 1+skipCount'th line to match the right name
 			var last = -1;
 			for(var i = startIndex; i<this.xLines.length; i++) {
-				if(this.xLines[i].indexOf(name) >= 0 || (!dontFallback && this.xLines[i].indexOf('*') >= 0)) { 
+				if(this.xLines[i].indexOf(name) >= 0 || (!dontFallback && this.xLines[i].indexOf('*') >= 0)) {
 					if(skipCount>0) { last=i; skipCount--; }
 					else { return i; }
 				}
@@ -14074,14 +14075,14 @@ module.exports = (function(window, document) { "use strict";
 			// if we still have lines to find, we know that lines of the implicit grid match all names
 			if(!dontFallback) { console.warn('[CSS-GRID] Missing '+(skipCount+1)+' lines named "'+name+'" after line '+startIndex+'.'); last = this.xLines.length+skipCount+1; this.ensureRows(last); }
 			return last;
-			
+
 		},
-		
+
 		findYLine: function(name, startIndex, skipCount, dontFallback) {
 
 			startIndex=startIndex|0;
 			skipCount=skipCount|0;
-			
+
 			// special case for cases where the name isn't provided
 			if(!name) {
 				if(startIndex+skipCount < this.yLines.length) {
@@ -14090,36 +14091,36 @@ module.exports = (function(window, document) { "use strict";
 					return this.yLines.length;
 				}
 			}
-			
+
 			// find the 1+skipCount'th line to match the right name
 			var last = -1;
 			for(var i = startIndex; i<this.yLines.length; i++) {
-				if(this.yLines[i].indexOf(name) >= 0 || (!dontFallback && this.yLines[i].indexOf('*') >= 0)) { 
+				if(this.yLines[i].indexOf(name) >= 0 || (!dontFallback && this.yLines[i].indexOf('*') >= 0)) {
 					if(skipCount>0) { last=i; skipCount--; }
 					else { return i; }
 				}
 			}
-			
+
 			// if we still have lines to find, we know that lines of the implicit grid match all names
 			if(!dontFallback) { console.warn('[CSS-GRID] Missing '+(skipCount+1)+' lines named "'+name+'" after line '+startIndex+'.'); last = this.yLines.length+skipCount+1; this.ensureColumns(last); }
 			return last;
-			
+
 		},
-		
+
 	}
-	
+
 	var cssGrid = {
-		
+
 		LOCATE_LINE   :  LOCATE_LINE,
 		LOCATE_SPAN   :  LOCATE_SPAN,
 		LOCATE_AREA   :  LOCATE_AREA,
 		LOCATE_AUTO   :  LOCATE_AUTO,
-		
+
 		ALIGN_START   :  ALIGN_START,
 		ALIGN_CENTER  :  ALIGN_CENTER,
 		ALIGN_END     :  ALIGN_END,
-		ALIGN_FIT     :  ALIGN_FIT,  
-		
+		ALIGN_FIT     :  ALIGN_FIT,
+
 		TRACK_BREADTH_AUTO        : TRACK_BREADTH_AUTO,
 		TRACK_BREADTH_LENGTH      : TRACK_BREADTH_LENGTH,
 		TRACK_BREADTH_FRACTION    : TRACK_BREADTH_FRACTION,
@@ -14127,14 +14128,14 @@ module.exports = (function(window, document) { "use strict";
 		TRACK_BREADTH_MIN_CONTENT : TRACK_BREADTH_MIN_CONTENT,
 		TRACK_BREADTH_MAX_CONTENT : TRACK_BREADTH_MAX_CONTENT,
 
-		GridLayout: GridLayout, 
-		GridItem: GridItem, 
+		GridLayout: GridLayout,
+		GridItem: GridItem,
 		GridItemPosition: GridItemPosition,
 		GridTrackBreadth: GridTrackBreadth,
-		
+
 	};
 	return cssGrid;
-	
+
 })(window, document)
 
 require.define('src/css-grid/lib/grid-layout.js');
@@ -14151,7 +14152,7 @@ require.define('src/css-grid/lib/grid-layout.js');
 	require('src/core/polyfill-dom-console.js');
 	var cssCascade = require('src/core/css-cascade.js');
 	var cssGrid = require('src/css-grid/lib/grid-layout.js');
-	
+
 	var enabled = false;
 	var enablePolyfill = function() { if(enabled) { return; } else { enabled = true; }
 
@@ -14159,38 +14160,38 @@ require.define('src/css-grid/lib/grid-layout.js');
 		// [0] define css properties
 		// those properties can now be set using Element.myStyle.xyz if they weren't already
 		//
-		
+
 		var gridProperties = ['grid','grid-template','grid-template-rows','grid-template-columns','grid-template-areas','grid-areas','grid-auto-flow','grid-row-gap','grid-column-gap','grid-gap'];
 		var gridItemProperties = ['grid-area','grid-row','grid-column','grid-row-start','grid-row-end','grid-column-start','grid-column-end','order'];
 		for(var i=gridProperties.length; i--;)     { cssCascade.polyfillStyleInterface(gridProperties[i]); }
 		for(var i=gridItemProperties.length; i--;) { cssCascade.polyfillStyleInterface(gridItemProperties[i]); }
-		
-		// 
+
+		//
 		// [1] when any update happens:
 		// construct new content and region flow pairs
 		// restart the region layout algorithm for the modified pairs
-		// 
-		
+		//
+
 		cssCascade.startMonitoringProperties(
-			gridProperties, 
+			gridProperties,
 			{
 				onupdate: function onupdate(element, rule) {
 
 					// log some message in the console for debug
 					cssConsole.dir({message:"onupdate",element:element,selector:rule.selector.toCSSString(),rule:rule});
-					
+
 					// check if the element already has a grid or grid-item layout
 					if(element.gridLayout) {
-					
+
 						// the layout must be recomputed
 						element.gridLayout.scheduleRelayout();
-						
+
 					} else {
-					
+
 						// setup a new grid model, and schedule a relayout
 						element.gridLayout = new cssGrid.GridLayout(element);
 						element.gridLayout.scheduleRelayout();
-					
+
 						// TODO: watch DOM for updates in the element?
 						if("MutationObserver" in window) {
 							// non-attribute-related changes
@@ -14201,9 +14202,9 @@ require.define('src/css-grid/lib/grid-layout.js');
 								});
 								var target = document.documentElement;
 								var config = {
-									subtree: true, 
-									attributes: false, 
-									childList: true, 
+									subtree: true,
+									attributes: false,
+									childList: true,
 									characterData: true
 								};
 								observer.observe(target, config);
@@ -14221,15 +14222,15 @@ require.define('src/css-grid/lib/grid-layout.js');
 									//}
 								});
 								var target = element;
-								var config = { 
-									subtree: true, 
-									attributes: true, 
+								var config = {
+									subtree: true,
+									attributes: true,
 									attributeFilter: ['class', 'style', 'width', 'height', 'src'],
-									childList: false, 
+									childList: false,
 									characterData: false
 								};
 							}();
-							
+
 						} else if("MutationEvent" in window) {
 							element.addEventListener('DOMSubtreeModified', function() {
 								if(!element.gridLayout.isLayoutScheduled) { element.gridLayout.scheduleRelayout(); }
@@ -14256,48 +14257,48 @@ require.define('src/css-grid/lib/grid-layout.js');
 						for(var i = images.length; i--;) {
 							images[i].addEventListener('load', function(){element.gridLayout&&element.gridLayout.scheduleRelayout()});
 						}
-						
+
 					}
-					
+
 				}
 			}
 		);
-		
+
 		cssCascade.startMonitoringProperties(
-			gridItemProperties, 
+			gridItemProperties,
 			{
 				onupdate: function onupdate(element, rule) {
 
 					// log some message in the console for debug
 					cssConsole.dir({message:"onupdate",element:element,selector:rule.selector.toCSSString(),rule:rule});
-					
+
 					// check if the element already has a grid or grid-item layout
 					if(element.parentGridLayout) {
-						
+
 						// the parent layout must be recomputed
 						element.parentGridLayout.scheduleRelayout();
-						
+
 					}
-					
+
 				}
 			}
 		);
-		
+
 	}
 
 	// expose the enabler
 	cssGrid.enablePolyfill = enablePolyfill;
-	
+
 	// enable the polyfill automatically
 	try {
 		if(!("no_auto_css_grid" in window)) { enablePolyfill(); }
 	} catch (ex) {
 		setImmediate(function() { throw ex; });
 	}
-	
+
 	// return the module
 	return cssGrid;
-	
+
 })(window, document);
 require.define('src/css-grid/polyfill.js');
 
