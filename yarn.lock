@@ -1195,9 +1195,9 @@ css-loader@^3.2.0:
   resolved "https://github.com/FremyCompany/css-grid-polyfill.git#fa8ac29dbae404b22e8404bfa386801dc6c038a7"
 
 css-vars-ponyfill@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/css-vars-ponyfill/-/css-vars-ponyfill-2.1.1.tgz#61bc0335ad9edcf52b1a2a00065ff541e55b3059"
-  integrity sha512-bkeGukYLbGpZYZev+MQVIhB7LY/GV3thA2qO2wp16CG1XJ2m+kvlVJrQXLXR0PiIJAGZz6LrXC69GAko6Ony8Q==
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/css-vars-ponyfill/-/css-vars-ponyfill-2.1.2.tgz#0de2e49e72a6bac09cb456a0325c8584cadaecd2"
+  integrity sha512-Jfff/j2AGwr+WJaIbxVroTa9sFXy9b0xe5zjWEVQ9aoeCpd0e6iOo4D+d3OoLDTWcHCf2UBTswis/hN6fKEKiA==
 
 cssesc@^3.0.0:
   version "3.0.0"
