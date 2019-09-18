@@ -51,7 +51,7 @@ This package is intended to be incorporated in [SharePoint SPFx Client-Side WebP
 
 #### Polyfills list
 
-**[Changelog](blob/master/CHANGELOG.md)**
+**[Changelog](CHANGELOG.md)**
 
 **_Covered_**
 
