@@ -13,11 +13,11 @@ require('./featureDetection')
 */
 
 //#region Libraries
-require('better-dom/dist/better-dom')
+require('better-dom/dist/better-dom.min')
 //#endregion Libraries
 
 //#region Polyfills
-require('better-dateinput-polyfill/dist/better-dateinput-polyfill')
+require('better-dateinput-polyfill/dist/better-dateinput-polyfill.min')
 require('./es6')
 require('./cssVars')
 
@@ -29,7 +29,7 @@ require('./cssVars')
  * @param fn Function. The function to execute
  */
 const ready = fn => {
-  if ((<any> document).attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {
+  if ((<any>document).attachEvent ? document.readyState === 'complete' : document.readyState !== 'loading') {
     fn()
   } else {
     document.addEventListener('DOMContentLoaded', fn)
@@ -37,6 +37,6 @@ const ready = fn => {
 }
 
 ready(() => {
-  require('css-polyfills/bin/css-polyfills') // CSS Grid Polyfills
+  require('css-polyfills/bin/css-polyfills.min') // CSS Grid Polyfills
 })
 //#endregion Ready callback

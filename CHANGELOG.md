@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.1.1
+
+_2019-09-18_
+
+- Update dependencies
+- Using minified files
+
 ## 1.1.0
 
 _2019-09-04_
