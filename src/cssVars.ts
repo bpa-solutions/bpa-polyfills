@@ -1,4 +1,4 @@
-const cssVars = require('css-vars-ponyfill/dist/css-vars-ponyfill')
+const cssVars = require('css-vars-ponyfill/dist/css-vars-ponyfill.min')
 
 cssVars({
   // Targets
