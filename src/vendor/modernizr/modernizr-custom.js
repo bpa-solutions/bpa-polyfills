@@ -1,6 +1,6 @@
 /*!
- * modernizr v3.7.1
- * Build https://modernizr.com/download?-details-inputtypes-picture-srcset-addtest-printshiv-setclasses-testprop-dontmin
+ * modernizr v3.8.0
+ * Build https://modernizr.com/download?-cssgrid_cssgridlegacy-details-inputtypes-picture-srcset-addtest-printshiv-setclasses-testprop-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -36,7 +36,7 @@
    */
   var ModernizrProto = {
     // The current version, dummy
-    _version: '3.7.1',
+    _version: '3.8.0',
 
     // Any settings that don't work as separate modules
     // can go in here as configuration.
@@ -157,8 +157,8 @@
           if (featureNameSplit.length === 1) {
             Modernizr[featureNameSplit[0]] = result;
           } else {
-            // cast to a Boolean, if not one already
-            if (Modernizr[featureNameSplit[0]] && !(Modernizr[featureNameSplit[0]] instanceof Boolean)) {
+            // cast to a Boolean, if not one already or if it doesnt exist yet (like inputtypes)
+            if (!Modernizr[featureNameSplit[0]] || Modernizr[featureNameSplit[0]] && !(Modernizr[featureNameSplit[0]] instanceof Boolean)) {
               Modernizr[featureNameSplit[0]] = new Boolean(Modernizr[featureNameSplit[0]]);
             }
 
@@ -1312,12 +1312,12 @@
     var afterInit, i, propsLength, prop, before;
 
     // If we don't have a style element, that means we're running async or after
-    // the core tests, so we'll need to create our own elements to use
+    // the core tests, so we'll need to create our own elements to use.
 
-    // inside of an SVG element, in certain browsers, the `style` element is only
+    // Inside of an SVG element, in certain browsers, the `style` element is only
     // defined for valid tags. Therefore, if `modernizr` does not have one, we
     // fall back to a less used element and hope for the best.
-    // for strict XHTML browsers the hardly used samp element is used
+    // For strict XHTML browsers the hardly used samp element is used.
     var elems = ['modernizr', 'tspan', 'samp'];
     while (!mStyle.style && elems.length) {
       afterInit = true;
@@ -1476,18 +1476,14 @@ Modernizr.inputtypes.week
   //   containing each input type with its corresponding true/false value
 
   // Big thanks to @miketaylr for the html5 forms expertise. miketaylr.com/
-  var inputtypes = 'search tel url email datetime date month week time datetime-local number range color'.split(' ');
-  var inputs = {};
-
-  Modernizr.inputtypes = (function(props) {
-    var len = props.length;
+  (function() {
+    var props = ['search', 'tel', 'url', 'email', 'datetime', 'date', 'month', 'week','time', 'datetime-local', 'number', 'range', 'color'];
     var smile = '1)';
     var inputElemType;
     var defaultView;
     var bool;
 
-    for (var i = 0; i < len; i++) {
-
+    for (var i = 0; i < props.length; i++) {
       inputElem.setAttribute('type', inputElemType = props[i]);
       bool = inputElem.type !== 'text' && 'style' in inputElem;
 
@@ -1496,7 +1492,7 @@ Modernizr.inputtypes.week
       // If the value doesn't stick, we know there's input sanitization which infers a custom UI
       if (bool) {
 
-        inputElem.value         = smile;
+        inputElem.value = smile;
         inputElem.style.cssText = 'position:absolute;visibility:hidden;';
 
         if (/^range$/.test(inputElemType) && inputElem.style.WebkitAppearance !== undefined) {
@@ -1505,7 +1501,7 @@ Modernizr.inputtypes.week
           defaultView = document.defaultView;
 
           // Safari 2-4 allows the smiley as a value, despite making a slider
-          bool =  defaultView.getComputedStyle &&
+          bool = defaultView.getComputedStyle &&
             defaultView.getComputedStyle(inputElem, null).WebkitAppearance !== 'textfield' &&
             // Mobile android web browser has false positive, so must
             // check the height to see if the widget is actually there.
@@ -1530,10 +1526,213 @@ Modernizr.inputtypes.week
         }
       }
 
-      inputs[ props[i] ] = !!bool;
+      Modernizr.addTest('inputtypes.' + inputElemType, !!bool);
     }
-    return inputs;
-  })(inputtypes);
+  })();
+
+
+  /**
+   * If the browsers follow the spec, then they would expose vendor-specific styles as:
+   *   elem.style.WebkitBorderRadius
+   * instead of something like the following (which is technically incorrect):
+   *   elem.style.webkitBorderRadius
+
+   * WebKit ghosts their properties in lowercase but Opera & Moz do not.
+   * Microsoft uses a lowercase `ms` instead of the correct `Ms` in IE8+
+   *   erik.eae.net/archives/2008/03/10/21.48.10/
+
+   * More here: github.com/Modernizr/Modernizr/issues/issue/21
+   *
+   * @access private
+   * @returns {string} The string representing the vendor-specific style properties
+   */
+  var omPrefixes = 'Moz O ms Webkit';
+  
+
+  var cssomPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.split(' ') : []);
+  ModernizrProto._cssomPrefixes = cssomPrefixes;
+  
+
+  /**
+   * List of JavaScript DOM values used for tests
+   *
+   * @memberOf Modernizr
+   * @name Modernizr._domPrefixes
+   * @optionName Modernizr._domPrefixes
+   * @optionProp domPrefixes
+   * @access public
+   * @example
+   *
+   * Modernizr._domPrefixes is exactly the same as [_prefixes](#modernizr-_prefixes), but rather
+   * than kebab-case properties, all properties are their Capitalized variant
+   *
+   * ```js
+   * Modernizr._domPrefixes === [ "Moz", "O", "ms", "Webkit" ];
+   * ```
+   */
+  var domPrefixes = (ModernizrProto._config.usePrefixes ? omPrefixes.toLowerCase().split(' ') : []);
+  ModernizrProto._domPrefixes = domPrefixes;
+  
+
+  /**
+   * fnBind is a super small [bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) polyfill.
+   *
+   * @access private
+   * @function fnBind
+   * @param {Function} fn - a function you want to change `this` reference to
+   * @param {Object} that - the `this` you want to call the function with
+   * @returns {Function} The wrapped version of the supplied function
+   */
+  function fnBind(fn, that) {
+    return function() {
+      return fn.apply(that, arguments);
+    };
+  }
+
+  ;
+
+  /**
+   * testDOMProps is a generic DOM property test; if a browser supports
+   *   a certain property, it won't return undefined for it.
+   *
+   * @access private
+   * @function testDOMProps
+   * @param {Array<string>} props - An array of properties to test for
+   * @param {Object} obj - An object or Element you want to use to test the parameters again
+   * @param {boolean|Object} elem - An Element to bind the property lookup again. Use `false` to prevent the check
+   * @returns {false|*} returns false if the prop is unsupported, otherwise the value that is supported
+   */
+  function testDOMProps(props, obj, elem) {
+    var item;
+
+    for (var i in props) {
+      if (props[i] in obj) {
+
+        // return the property name as a string
+        if (elem === false) {
+          return props[i];
+        }
+
+        item = obj[props[i]];
+
+        // let's bind a function
+        if (is(item, 'function')) {
+          // bind to obj unless overridden
+          return fnBind(item, elem || obj);
+        }
+
+        // return the unbound function or obj or value
+        return item;
+      }
+    }
+    return false;
+  }
+
+  ;
+
+  /**
+   * testPropsAll tests a list of DOM properties we want to check against.
+   * We specify literally ALL possible (known and/or likely) properties on
+   * the element including the non-vendor prefixed one, for forward-
+   * compatibility.
+   *
+   * @access private
+   * @function testPropsAll
+   * @param {string} prop - A string of the property to test for
+   * @param {string|Object} [prefixed] - An object to check the prefixed properties on. Use a string to skip
+   * @param {HTMLElement|SVGElement} [elem] - An element used to test the property and value against
+   * @param {string} [value] - A string of a css value
+   * @param {boolean} [skipValueTest] - An boolean representing if you want to test if value sticks when set
+   * @returns {false|string} returns the string version of the property, or false if it is unsupported
+   */
+  function testPropsAll(prop, prefixed, elem, value, skipValueTest) {
+
+    var ucProp = prop.charAt(0).toUpperCase() + prop.slice(1),
+      props = (prop + ' ' + cssomPrefixes.join(ucProp + ' ') + ucProp).split(' ');
+
+    // did they call .prefixed('boxSizing') or are we just testing a prop?
+    if (is(prefixed, 'string') || is(prefixed, 'undefined')) {
+      return testProps(props, prefixed, value, skipValueTest);
+
+      // otherwise, they called .prefixed('requestAnimationFrame', window[, elem])
+    } else {
+      props = (prop + ' ' + (domPrefixes).join(ucProp + ' ') + ucProp).split(' ');
+      return testDOMProps(props, prefixed, elem);
+    }
+  }
+
+  // Modernizr.testAllProps() investigates whether a given style property,
+  // or any of its vendor-prefixed variants, is recognized
+  //
+  // Note that the property names must be provided in the camelCase variant.
+  // Modernizr.testAllProps('boxSizing')
+  ModernizrProto.testAllProps = testPropsAll;
+
+  
+
+  /**
+   * testAllProps determines whether a given CSS property is supported in the browser
+   *
+   * @memberOf Modernizr
+   * @name Modernizr.testAllProps
+   * @optionName Modernizr.testAllProps()
+   * @optionProp testAllProps
+   * @access public
+   * @function testAllProps
+   * @param {string} prop - String naming the property to test (either camelCase or kebab-case)
+   * @param {string} [value] - String of the value to test
+   * @param {boolean} [skipValueTest=false] - Whether to skip testing that the value is supported when using non-native detection
+   * @returns {false|string} returns the string version of the property, or false if it is unsupported
+   * @example
+   *
+   * testAllProps determines whether a given CSS property, in some prefixed form,
+   * is supported by the browser.
+   *
+   * ```js
+   * testAllProps('boxSizing')  // true
+   * ```
+   *
+   * It can optionally be given a CSS value in string form to test if a property
+   * value is valid
+   *
+   * ```js
+   * testAllProps('display', 'block') // true
+   * testAllProps('display', 'penguin') // false
+   * ```
+   *
+   * A boolean can be passed as a third parameter to skip the value check when
+   * native detection (@supports) isn't available.
+   *
+   * ```js
+   * testAllProps('shapeOutside', 'content-box', true);
+   * ```
+   */
+  function testAllProps(prop, value, skipValueTest) {
+    return testPropsAll(prop, undefined, undefined, value, skipValueTest);
+  }
+
+  ModernizrProto.testAllProps = testAllProps;
+
+  
+/*!
+{
+  "name": "CSS Grid (old & new)",
+  "property": ["cssgrid", "cssgridlegacy"],
+  "authors": ["Faruk Ates"],
+  "tags": ["css"],
+  "notes": [{
+    "name": "The new, standardized CSS Grid",
+    "href": "https://www.w3.org/TR/css3-grid-layout/"
+  }, {
+    "name": "The _old_ CSS Grid (legacy)",
+    "href": "https://www.w3.org/TR/2011/WD-css3-grid-layout-20110407/"
+  }]
+}
+!*/
+
+  // `grid-columns` is only in the old syntax, `grid-column` exists in both and so `grid-template-rows` is used for the new syntax.
+  Modernizr.addTest('cssgridlegacy', testAllProps('grid-columns', '10px', true));
+  Modernizr.addTest('cssgrid', testAllProps('grid-template-rows', 'none', true));
 
 
   /**

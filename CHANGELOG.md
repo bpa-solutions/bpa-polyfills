@@ -1,5 +1,15 @@
 # Change Log
 
+## 1.1.2
+
+_2019-11-01_
+
+- CSS Variable polyfill config changes (watch mode enabled)
+- CSS Grid polyfill loaded only when document is ready
+- Add a global variable to ensure the bundle are loaded only once
+- Adds Webpack Bundle Analyzer
+- Update dependencies
+
 ## 1.1.1
 
 _2019-09-18_

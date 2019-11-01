@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const mode = 'development'
 
@@ -18,6 +19,7 @@ let config = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new BundleAnalyzerPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(mode),
