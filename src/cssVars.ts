@@ -1,4 +1,4 @@
-const cssVars = require('css-vars-ponyfill/dist/css-vars-ponyfill.min')
+const cssVars = require('css-vars-ponyfill/dist/css-vars-ponyfill')
 
 cssVars({
   // Targets
@@ -13,9 +13,9 @@ cssVars({
   // Options
   onlyLegacy: true,
   preserveStatic: true,
-  preserveVars: false,
+  preserveVars: true,
   silent: false,
   updateDOM: true,
   updateURLs: true,
-  watch: false,
+  watch: true,
 })
