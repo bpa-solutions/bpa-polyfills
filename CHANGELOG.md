@@ -1,5 +1,12 @@
 # Change Log
 
+## 1.1.3
+
+_2019-12-04_
+
+- Removed some polyfills, as we support only Edge for the moment
+- Updated dependencies
+
 ## 1.1.2
 
 _2019-11-01_

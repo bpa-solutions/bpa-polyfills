@@ -1,6 +1,6 @@
 # BPA Polyfills
 
-## A collection of polyfills for IE 11 in SharePoint SPFx environment
+## A collection of polyfills for Edge in SharePoint SPFx environment
 
 [![npm version](https://badge.fury.io/js/%40bpa-solutions%2Fbpa-polyfills.svg)](https://badge.fury.io/js/%40bpa-solutions%2Fbpa-polyfills)
 [![Dependency Status](https://david-dm.org/bpa-solutions/bpa-polyfills.svg)](https://david-dm.org/bpa-solutions/bpa-polyfills)
@@ -62,16 +62,16 @@ JS:
 - E2016 Array Includes
 - ES2017 Object
 - ES2017 String
-- IntersectionObserver
 
 HTML:
 
 - input type="date"
-- input type="color"
 - details
 - summary
-- srcset
-- pictures
+
+CSS:
+
+- CSS Custom Properties
 
 **_Missing / ToDo_**
 

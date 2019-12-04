@@ -2,6 +2,8 @@ const gulp = require('gulp')
 
 const isDev = process.env.NODE_ENV !== 'production'
 
+console.log({ isDev, node_env: process.env.NODE_ENV })
+
 const { scripts } = require('./webpack')
 const { modernizr } = require('./modernizr')
 
