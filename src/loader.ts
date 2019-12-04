@@ -7,12 +7,12 @@ if (isDev) {
 /*
  js-polyfills library
 */
-require('js-polyfills/polyfill')
+import 'js-polyfills/polyfill'
 
 /*
  load polyfills with Modernizr feature detection
 */
-require('./featureDetection')
+import './featureDetection'
 
 /*
  load polyfills with bundled feature detection
@@ -24,7 +24,7 @@ require('better-dom/dist/better-dom')
 
 //#region Polyfills
 require('better-dateinput-polyfill/dist/better-dateinput-polyfill')
-require('./es6')
-require('./cssVars')
+import './es6'
+import './cssVars'
 
 //#endregion Polyfills
