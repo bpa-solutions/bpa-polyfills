@@ -25,6 +25,12 @@ let config = {
     minimizer: [
       new TerserPlugin({
         include: /\.min\.js$/,
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+        extractComments: false,
       }),
     ],
   },
